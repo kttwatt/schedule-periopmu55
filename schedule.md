@@ -117,9 +117,9 @@
 | ศ. 25 ก.ย. 2569 | 13.00–15.00 | - | Perioperative Nursing care in Ophthalmic surgery | พว.อัจฉราวดี สุบรรณเสณี (งานการพยาบาลผ่าตัด) | 508 | - | - |
 | ศ. 25 ก.ย. 2569 | 15.00–16.00 | - | MEWs / Pressure Injury Prevention in OR | พว.นพเก ภาชนะภัย (งานการพยาบาลผ่าตัด) | 508 | - | - |
 | จ. 28 ก.ย. 2569 | 08.00–10.00 | - | Self-study | - | - | - | - |
-| จ. 28 ก.ย. 2569 | 10.00–11.00 | - | Perioperative Nursing Care in Vascular Surgery | พว.ศันศนีย์ บัวพูล (งานการพยาบาลผ่าตัด) | 508 | - | - |
+| จ. 28 ก.ย. 2569 | 10.00–11.00 | - | Perioperative Nursing Care in Vascular Surgery | พว.ศันศนีย์ บัวพูล (งานการพยาบาลผ่าตัด) | Online | - | - |
 | จ. 28 ก.ย. 2569 | 11.00–12.00 | - | Self-study | - | - | - | - |
-| จ. 28 ก.ย. 2569 | 13.00–15.00 | - | Anatomy, Physiology of Craniomaxillofacial System & Surgery | ศ.คลินิกเกียรติคุณ นพ.อภิรักษ์ ช่วงสุวนิช (ภาควิชาศัลยศาสตร์) | 508 | - | - |
+| จ. 28 ก.ย. 2569 | 13.00–15.00 | - | Anatomy, Physiology of Craniomaxillofacial System & Surgery | ศ.คลินิกเกียรติคุณ นพ.อภิรักษ์ ช่วงสุวนิช (ภาควิชาศัลยศาสตร์) | Online | - | - |
 | จ. 28 ก.ย. 2569 | 15.00–16.00 | - | Self-study | - | - | - | - |
 | อ. 29 ก.ย. 2569 | 08.00–09.00 | - | Common Operative Urogynecological Procedures to Correct Pelvic Floor Disorders and Malfunction | ผศ.พญ.พัทยา เฮงรัศมี (ภาควิชาสูติศาสตร์-นรีเวชวิทยา) | 508 | - | - |
 | อ. 29 ก.ย. 2569 | 09.00–10.00 | - | Postoperative Nursing care during Recovery period | พว.สรรสณีย์ รัตนมนตรี (งานการพยาบาลผ่าตัด) | 508 | - | - |

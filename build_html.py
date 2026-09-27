@@ -24,6 +24,7 @@ THAI_MONTHS = [
 FORMAT_META = {
     "onsite":    {"label": "Onsite", "class": "fmt-onsite"},
     "hybrid":    {"label": "Hybrid", "class": "fmt-hybrid"},
+    "online":    {"label": "Online", "class": "fmt-online"},
     "selfstudy": {"label": "Self-study", "class": "fmt-selfstudy"},
     "exam":      {"label": "สอบ", "class": "fmt-exam"},
     "clinical":  {"label": "Clinical", "class": "fmt-clinical"},
@@ -235,6 +236,8 @@ def detect_format(topic, room):
         return "exam"
     if "hybrid" in rl:
         return "hybrid"
+    if "online" in rl:
+        return "online"
     if "self-study" in tl or "self-study" in rl:
         return "selfstudy"
     if "clinical practice" in rl or "clinical practice" in tl:
@@ -601,6 +604,8 @@ CSS = """
   --exam-light: #fdecec;
   --hybrid: #7c3aed;
   --hybrid-light: #f1ebfe;
+  --online: #0e7490;
+  --online-light: #cffafe;
   --selfstudy: #6b7280;
   --selfstudy-light: #eef0f3;
   --clinical: #059669;
@@ -806,6 +811,7 @@ header.course-header .period { font-size: 1.25rem; font-weight: 600; color: var(
 
 .fmt-onsite    { background: var(--primary-light); color: var(--primary); }
 .fmt-hybrid    { background: var(--hybrid-light);   color: var(--hybrid); }
+.fmt-online    { background: var(--online-light);   color: var(--online); }
 .fmt-selfstudy { background: var(--selfstudy-light);color: var(--selfstudy); }
 .fmt-exam      { background: var(--exam-light);     color: var(--exam); }
 .fmt-clinical  { background: var(--clinical-light); color: var(--clinical); }
