@@ -1584,11 +1584,9 @@ DOCS_JS = """
   }
 
   function cardHtml(exam, subj) {
-    // แสดงป้ายเฉพาะวิชาที่มีช่วงข้อ (สอบครั้งที่ 1) — ไม่ต้องติดป้าย "สอบครั้งที่ 2" ทุกแถว
-    var badge = subj.qrange
-      ? '<span class="doc-badge ' + esc(exam.id) + '">' + esc(exam.label.replace('สอบครั้งที่ ', 'สอบ ') + ' · ' + subj.qrange) + '</span>'
-      : '';
-    var meta = [subj.day, subj.lecturer].filter(Boolean).join(' · ');
+    // ไม่ติดป้ายครั้งที่สอบในแถวแล้ว — ข้อมูลช่วงข้อสอบย้ายไปอยู่ในบรรทัดข้อมูลย่อย
+    var badge = '';
+    var meta = [subj.day, subj.lecturer, subj.qrange].filter(Boolean).join(' · ');
     var actions = subj.docs.map(function (d) {
       return '<a class="doc-btn" href="' + esc(d.url) + '" target="_blank" rel="noopener">📄 ' + esc(d.label) + '</a>';
     }).join('');
