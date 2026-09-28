@@ -922,7 +922,7 @@ GRID_CSS = """
   margin: 4px 0 14px;
 }
 .view-tab {
-  flex: 1 1 auto;
+  flex: 1 1 0;
   font-family: inherit;
   font-size: .92rem;
   font-weight: 600;
@@ -1110,10 +1110,10 @@ GRID_CSS = """
 DOCS_CSS = """
 /* ===== แท็บหลัก: ตารางเรียน | เอกสารรายวิชา ===== */
 :root { --docs: #0f766e; --docs-light: #ccfbf1; }
-.main-tabs { display: flex; gap: 8px; justify-content: center; margin: 0 0 14px; }
-.main-tab { flex: 1 1 0; max-width: 220px; text-align: center; border: 1px solid var(--border); background: var(--card);
-  color: var(--text); font-family: inherit; font-weight: 700; font-size: 0.95rem; padding: 11px 8px;
-  border-radius: 12px; cursor: pointer; opacity: 0.72; }
+.main-tabs { display: flex; gap: 6px; margin: 4px 0 14px; }
+.main-tab { flex: 1 1 0; text-align: center; border: 1px solid var(--border); background: var(--card);
+  color: var(--muted); font-family: inherit; font-weight: 700; font-size: 0.92rem; padding: 9px 10px;
+  border-radius: 8px; cursor: pointer; }
 .main-tab[data-main="schedule"].active { background: var(--primary); border-color: var(--primary); color: #fff; opacity: 1; }
 .main-tab[data-main="docs"].active { background: var(--docs); border-color: var(--docs); color: #fff; opacity: 1; }
 .main-tab[data-main="schedule"]:not(.active):hover { border-color: var(--primary); color: var(--primary); }
