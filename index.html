@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Periop-mu55-schedule</title>
+<script data-goatcounter="https://periopmu55.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <style>
 :root {
   --bg: #f6f7f9;
@@ -1663,7 +1664,9 @@ const DOCS = {"generated": "2026-09-28", "exams": [{"id": "exam1", "label": "ส
     var badge = '';
     var meta = [subj.day, subj.lecturer, subj.qrange].filter(Boolean).join(' · ');
     var actions = subj.docs.map(function (d) {
-      return '<a class="doc-btn" href="' + esc(d.url) + '" target="_blank" rel="noopener">📄 ' + esc(d.label) + '</a>';
+      var fname = d.url.split('/').pop();
+      return '<a class="doc-btn" data-goatcounter-click="' + esc(fname) + '" href="' + esc(d.url) +
+        '" target="_blank" rel="noopener">📄 ' + esc(d.label) + '</a>';
     }).join('');
     if (!actions) actions = '<span class="doc-meta">ยังไม่มีไฟล์เอกสาร</span>';
     return '<div class="doc-row' + (subj.status === 'ok' ? '' : ' pending') + '" id="doc-' + esc(exam.id + '-' + subj.id) + '">' +
