@@ -308,26 +308,34 @@ footer.page-footer {
 .fab-top:active { transform: scale(.92); }
 body.docs-mode .fab-top { bottom: calc(16px + env(safe-area-inset-bottom, 0px)); }
 
+/* แท็บย่อย (รายวัน / ตารางรายสัปดาห์) — ทรงที่คั่นหนังสือ แนบกับเนื้อหาด้านล่าง */
 .view-toggle {
-  display: flex; gap: 6px;
-  margin: 4px 0 14px;
+  display: flex; gap: 6px; align-items: flex-end;
+  margin: 6px 0 12px; padding: 0 6px 0; position: relative; z-index: 2;
+  border-bottom: 1px solid var(--border);
 }
 .view-tab {
   flex: 1 1 0;
   font-family: inherit;
   font-size: .92rem;
-  font-weight: 600;
-  padding: 9px 10px;
-  border: 1px solid var(--border);
-  background: var(--card);
+  font-weight: 700;
+  padding: 9px 10px 11px;
+  border: 1px solid var(--border); border-bottom: none;
+  border-radius: 12px 12px 0 0;
+  background: #e9edf3;
   color: var(--muted);
-  border-radius: 8px;
-  cursor: pointer;
+  box-shadow: inset 0 -7px 9px -9px rgba(0, 0, 0, .28);
+  cursor: pointer; margin-bottom: -1px;
+  transition: background .18s ease, color .18s ease, box-shadow .18s ease;
 }
+.view-tab:hover { background: #eef2f7; }
 .view-tab.active {
-  background: var(--primary);
-  border-color: var(--primary);
-  color: #fff;
+  background: var(--card);
+  color: var(--primary);
+  border-top: 3px solid var(--primary);
+  border-bottom: 1px solid var(--card);
+  margin-bottom: -1px;
+  box-shadow: 0 -2px 6px -3px rgba(37, 99, 235, .35);
 }
 .view-panel-hidden { display: none; }
 
@@ -545,10 +553,20 @@ body.docs-mode .fab-top { bottom: calc(16px + env(safe-area-inset-bottom, 0px));
 .main-panel-hidden { display: none !important; }
 body.docs-mode #fabToday { display: none; }
 .docs-toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 14px; }
-.docs-chips { display: flex; gap: 6px; flex-wrap: wrap; }
-.chip { border: 1px solid var(--docs); background: var(--docs-light); color: var(--docs);
-  font-family: inherit; font-weight: 700; font-size: 0.8rem; padding: 7px 13px; border-radius: 999px; cursor: pointer; }
-.chip.active { background: var(--docs); color: #fff; }
+.docs-chips {
+  display: flex; gap: 6px; flex-wrap: wrap; align-items: flex-end;
+  border-bottom: 1px solid var(--border);
+}
+/* ชิปกรอง (ทั้งหมด / สอบครั้งที่ 1 / สอบครั้งที่ 2) — ทรงที่คั่นหนังสือเช่นกัน */
+.chip { border: 1px solid var(--border); border-bottom: none; border-radius: 12px 12px 0 0;
+  background: #e9edf3; color: var(--muted); font-family: inherit; font-weight: 700; font-size: 0.8rem;
+  padding: 8px 14px 10px; cursor: pointer; margin-bottom: -1px;
+  box-shadow: inset 0 -7px 9px -9px rgba(0, 0, 0, .28);
+  transition: background .18s ease, color .18s ease, box-shadow .18s ease; }
+.chip:hover { background: #eef2f7; }
+.chip.active { background: var(--card); color: var(--docs); border-top: 3px solid var(--docs);
+  border-bottom: 1px solid var(--card); margin-bottom: -1px;
+  box-shadow: 0 -2px 6px -3px rgba(15, 118, 110, .35); }
 .docs-search { flex: 1 1 160px; min-width: 140px; padding: 9px 12px; border: 1px solid var(--border);
   border-radius: 10px; font-family: inherit; font-size: 0.85rem; background: var(--card); color: var(--text); }
 .docs-count { font-size: 0.78rem; color: var(--muted); width: 100%; }
