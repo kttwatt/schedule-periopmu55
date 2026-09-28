@@ -1153,14 +1153,40 @@ GRID_CSS = """
 DOCS_CSS = """
 /* ===== แท็บหลัก: ตารางเรียน | เอกสารรายวิชา ===== */
 :root { --docs: #0f766e; --docs-light: #ccfbf1; }
-.main-tabs { display: flex; gap: 6px; margin: 4px 0 14px; }
-.main-tab { flex: 1 1 0; text-align: center; border: 1px solid var(--border); background: var(--card);
-  color: var(--muted); font-family: inherit; font-weight: 700; font-size: 0.92rem; padding: 9px 10px;
-  border-radius: 8px; cursor: pointer; }
-.main-tab[data-main="schedule"].active { background: var(--primary); border-color: var(--primary); color: #fff; opacity: 1; }
-.main-tab[data-main="docs"].active { background: var(--docs); border-color: var(--docs); color: #fff; opacity: 1; }
-.main-tab[data-main="schedule"]:not(.active):hover { border-color: var(--primary); color: var(--primary); }
-.main-tab[data-main="docs"]:not(.active):hover { border-color: var(--docs); color: var(--docs); }
+/* แท็บหลัก ออกแบบเป็น "ที่คั่นหนังสือ/แท็บแฟ้ม" — แท็บที่เลือกจะแนบสนิทกับเนื้อหาด้านล่าง */
+.main-tabs {
+  display: flex; gap: 6px; align-items: flex-end;
+  margin: 6px 0 0; padding: 0 6px; position: relative; z-index: 2;
+}
+.main-tab {
+  flex: 1 1 0; text-align: center;
+  font-family: inherit; font-weight: 700; font-size: 0.92rem;
+  padding: 10px 10px 12px;
+  border: 1px solid var(--border); border-bottom: none;
+  border-radius: 14px 14px 0 0;
+  background: #e9edf3; color: var(--muted);
+  box-shadow: inset 0 -7px 9px -9px rgba(0, 0, 0, .28);
+  cursor: pointer; margin-bottom: -1px;
+  transition: background .18s ease, color .18s ease, box-shadow .18s ease;
+}
+.main-tab:hover { background: #eef2f7; }
+.main-tab[data-main="schedule"].active {
+  background: var(--card); color: var(--primary);
+  border-top: 3px solid var(--primary);
+  box-shadow: 0 -2px 6px -3px rgba(37, 99, 235, .35);
+}
+.main-tab[data-main="docs"].active {
+  background: var(--card); color: var(--docs);
+  border-top: 3px solid var(--docs);
+  box-shadow: 0 -2px 6px -3px rgba(15, 118, 110, .35);
+}
+.main-panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0 14px 14px 14px;
+  padding: 14px 12px 18px;
+  position: relative; z-index: 1;
+}
 .main-panel-hidden { display: none !important; }
 body.docs-mode #fabToday { display: none; }
 .docs-toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 14px; }
