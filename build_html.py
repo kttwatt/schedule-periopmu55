@@ -1639,7 +1639,7 @@ DOCS_JS = """
     }
     var parts = h.split('/');
     var ex = parts[1] || 'all';
-    state.exam = (ex === 'exam1' || ex === 'exam2') ? ex : 'all';
+    state.exam = (ex === 'exam1' || ex === 'exam2' || ex === 'other') ? ex : 'all';
     chips.forEach(function (c) { c.classList.toggle('active', c.getAttribute('data-exam') === state.exam); });
     render();
     showMain('docs', false);
@@ -1757,6 +1757,7 @@ def build_html(course, sessions, homework, notes):
           <button type="button" class="chip active" data-exam="all">ทั้งหมด</button>
           <button type="button" class="chip" data-exam="exam1">สอบครั้งที่ 1</button>
           <button type="button" class="chip" data-exam="exam2">สอบครั้งที่ 2</button>
+          <button type="button" class="chip" data-exam="other">อื่น ๆ</button>
         </div>
         <input id="docsSearch" class="docs-search" type="search" placeholder="ค้นหาวิชา / วิทยากร…">
         <div class="docs-count" id="docsCount"></div>

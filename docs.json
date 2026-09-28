@@ -211,94 +211,9 @@
   {
    "id": "exam2",
    "label": "สอบครั้งที่ 2",
-   "date_label": "ศ. 2 ต.ค. 2569",
+   "date_label": "ศ. 2 ต.ค. 2569 · 26 วิชาตามลิสต์ทางการ",
    "urlbase": "https://kttwatt.github.io/periop-mu55/slides/exam-02oct/",
    "subjects": [
-    {
-     "id": "cost-analysis-in-or",
-     "num": 1,
-     "name": "Cost Analysis in OR",
-     "lecturer": "พว.กุลวรา คุปรัตน์",
-     "day": "28 ส.ค.",
-     "qrange": "",
-     "qcount": "",
-     "exam": "exam2",
-     "docs": [
-      {
-       "label": "เอกสาร",
-       "url": "https://kttwatt.github.io/periop-mu55/slides/exam-02oct/00a-cost-analysis.pdf"
-      }
-     ],
-     "status": "ok"
-    },
-    {
-     "id": "risk-management-in-or",
-     "num": 2,
-     "name": "Risk Management in OR",
-     "lecturer": "พว.น้องนุช ภูมิสนธิ์",
-     "day": "28 ส.ค.",
-     "qrange": "",
-     "qcount": "",
-     "exam": "exam2",
-     "docs": [
-      {
-       "label": "เอกสาร",
-       "url": "https://kttwatt.github.io/periop-mu55/slides/exam-02oct/00d-risk-management.pdf"
-      }
-     ],
-     "status": "ok"
-    },
-    {
-     "id": "organ-transplant-donor-recipient",
-     "num": 3,
-     "name": "Organ Transplant: Donor/Recipient",
-     "lecturer": "พว.กมลทิพย์ สกุลกันบัณฑิต",
-     "day": "3 ก.ย.",
-     "qrange": "",
-     "qcount": "",
-     "exam": "exam2",
-     "docs": [
-      {
-       "label": "เอกสาร",
-       "url": "https://kttwatt.github.io/periop-mu55/slides/exam-02oct/00-organ-transplant.pdf"
-      }
-     ],
-     "status": "ok"
-    },
-    {
-     "id": "nurse-coordinator",
-     "num": 4,
-     "name": "Nurse Coordinator",
-     "lecturer": "พว.พีรา ปานพรม",
-     "day": "3 ก.ย.",
-     "qrange": "",
-     "qcount": "",
-     "exam": "exam2",
-     "docs": [
-      {
-       "label": "เอกสาร",
-       "url": "https://kttwatt.github.io/periop-mu55/slides/exam-02oct/00b-nurse-coordinator.pdf"
-      }
-     ],
-     "status": "ok"
-    },
-    {
-     "id": "anesthesia-perioperative-surgery",
-     "num": 5,
-     "name": "Anesthesia & Perioperative Surgery",
-     "lecturer": "รศ.นพ.ประเสริฐ สวัสดิ์วิภาชัย",
-     "day": "7 ก.ย.",
-     "qrange": "",
-     "qcount": "",
-     "exam": "exam2",
-     "docs": [
-      {
-       "label": "เอกสาร",
-       "url": "https://kttwatt.github.io/periop-mu55/slides/exam-02oct/00c-anesthesia.pdf"
-      }
-     ],
-     "status": "ok"
-    },
     {
      "id": "dise-modified-uppp",
      "num": 6,
@@ -705,6 +620,99 @@
      "exam": "exam2",
      "docs": [],
      "status": "pending"
+    }
+   ]
+  },
+  {
+   "id": "other",
+   "label": "อื่น ๆ",
+   "date_label": "ยังไม่อยู่ในลิสต์ทางการ — เก็บไว้ดู",
+   "urlbase": "https://kttwatt.github.io/periop-mu55/slides/exam-02oct/",
+   "subjects": [
+    {
+     "id": "cost-analysis-in-or",
+     "num": 1,
+     "name": "Cost Analysis in OR",
+     "lecturer": "พว.กุลวรา คุปรัตน์",
+     "day": "28 ส.ค.",
+     "qrange": "",
+     "qcount": "",
+     "exam": "other",
+     "docs": [
+      {
+       "label": "เอกสาร",
+       "url": "https://kttwatt.github.io/periop-mu55/slides/exam-02oct/00a-cost-analysis.pdf"
+      }
+     ],
+     "status": "ok"
+    },
+    {
+     "id": "risk-management-in-or",
+     "num": 2,
+     "name": "Risk Management in OR",
+     "lecturer": "พว.น้องนุช ภูมิสนธิ์",
+     "day": "28 ส.ค.",
+     "qrange": "",
+     "qcount": "",
+     "exam": "other",
+     "docs": [
+      {
+       "label": "เอกสาร",
+       "url": "https://kttwatt.github.io/periop-mu55/slides/exam-02oct/00d-risk-management.pdf"
+      }
+     ],
+     "status": "ok"
+    },
+    {
+     "id": "organ-transplant-donor-recipient",
+     "num": 3,
+     "name": "Organ Transplant: Donor/Recipient",
+     "lecturer": "พว.กมลทิพย์ สกุลกันบัณฑิต",
+     "day": "3 ก.ย.",
+     "qrange": "",
+     "qcount": "",
+     "exam": "other",
+     "docs": [
+      {
+       "label": "เอกสาร",
+       "url": "https://kttwatt.github.io/periop-mu55/slides/exam-02oct/00-organ-transplant.pdf"
+      }
+     ],
+     "status": "ok"
+    },
+    {
+     "id": "nurse-coordinator",
+     "num": 4,
+     "name": "Nurse Coordinator",
+     "lecturer": "พว.พีรา ปานพรม",
+     "day": "3 ก.ย.",
+     "qrange": "",
+     "qcount": "",
+     "exam": "other",
+     "docs": [
+      {
+       "label": "เอกสาร",
+       "url": "https://kttwatt.github.io/periop-mu55/slides/exam-02oct/00b-nurse-coordinator.pdf"
+      }
+     ],
+     "status": "ok"
+    },
+    {
+     "id": "anesthesia-perioperative-surgery",
+     "num": 5,
+     "name": "Anesthesia & Perioperative Surgery",
+     "lecturer": "รศ.นพ.ประเสริฐ สวัสดิ์วิภาชัย",
+     "day": "7 ก.ย.",
+     "qrange": "",
+     "qcount": "",
+     "exam": "other",
+     "docs": [
+      {
+       "label": "เอกสาร",
+       "url": "https://kttwatt.github.io/periop-mu55/slides/exam-02oct/00c-anesthesia.pdf"
+      }
+     ],
+     "status": "ok"
     },
     {
      "id": "thoracic-system",
@@ -714,7 +722,7 @@
      "day": "30 ก.ย.",
      "qrange": "",
      "qcount": "",
-     "exam": "exam2",
+     "exam": "other",
      "docs": [],
      "status": "pending"
     },
@@ -726,7 +734,7 @@
      "day": "30 ก.ย.",
      "qrange": "",
      "qcount": "",
-     "exam": "exam2",
+     "exam": "other",
      "docs": [],
      "status": "pending"
     },
@@ -738,7 +746,7 @@
      "day": "30 ก.ย.",
      "qrange": "",
      "qcount": "",
-     "exam": "exam2",
+     "exam": "other",
      "docs": [],
      "status": "pending"
     },
@@ -750,7 +758,7 @@
      "day": "30 ก.ย.",
      "qrange": "",
      "qcount": "",
-     "exam": "exam2",
+     "exam": "other",
      "docs": [],
      "status": "pending"
     },
@@ -762,7 +770,7 @@
      "day": "1 ต.ค.",
      "qrange": "",
      "qcount": "",
-     "exam": "exam2",
+     "exam": "other",
      "docs": [],
      "status": "pending"
     },
@@ -774,7 +782,7 @@
      "day": "1 ต.ค.",
      "qrange": "",
      "qcount": "",
-     "exam": "exam2",
+     "exam": "other",
      "docs": [],
      "status": "pending"
     },
@@ -786,7 +794,7 @@
      "day": "1 ต.ค.",
      "qrange": "",
      "qcount": "",
-     "exam": "exam2",
+     "exam": "other",
      "docs": [],
      "status": "pending"
     }

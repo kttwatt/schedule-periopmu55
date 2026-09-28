@@ -80,9 +80,25 @@ def main():
         # ครั้งที่ 1: ตัด Thoracic ที่เลื่อนไปสอบครั้งที่ 2 (ปรากฏใน board ครั้งที่ 1 ด้วย)
         if b["id"] == "exam1":
             subs = [s for s in subs if "thoracic" not in s["name"].lower()]
+            out["exams"].append({
+                "id": b["id"], "label": b["label"], "date_label": b["date_label"],
+                "urlbase": b["urlbase"], "subjects": subs,
+            })
+            continue
+
+        # ครั้งที่ 2: ยึด "ลิสต์ทางการ" (16–29 ก.ย. = แถวที่ 6–31 ของ board) เป็นขอบเขตสอบ
+        # แถวที่เหลือ (28 ส.ค.–7 ก.ย. และ 30 ก.ย.–1 ต.ค.) = เก็บไว้ในกลุ่ม "อื่น ๆ" ไม่นับเป็นขอบเขตสอบ
+        official = [s for s in subs if s.get("num") and 6 <= s["num"] <= 31]
+        other = [s for s in subs if not (s.get("num") and 6 <= s["num"] <= 31)]
+        for s in other:
+            s["exam"] = "other"
         out["exams"].append({
-            "id": b["id"], "label": b["label"], "date_label": b["date_label"],
-            "urlbase": b["urlbase"], "subjects": subs,
+            "id": "exam2", "label": "สอบครั้งที่ 2", "date_label": "ศ. 2 ต.ค. 2569 · 26 วิชาตามลิสต์ทางการ",
+            "urlbase": b["urlbase"], "subjects": official,
+        })
+        out["exams"].append({
+            "id": "other", "label": "อื่น ๆ", "date_label": "ยังไม่อยู่ในลิสต์ทางการ — เก็บไว้ดู",
+            "urlbase": b["urlbase"], "subjects": other,
         })
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=1)
