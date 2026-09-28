@@ -1109,17 +1109,22 @@ GRID_CSS = """
 
 DOCS_CSS = """
 /* ===== แท็บหลัก: ตารางเรียน | เอกสารรายวิชา ===== */
-.main-tabs { display: flex; gap: 8px; margin: 0 0 14px; }
-.main-tab { flex: 1; border: 1px solid var(--border); background: var(--card); color: var(--text);
-  font-family: inherit; font-weight: 700; font-size: 0.95rem; padding: 11px 8px; border-radius: 12px; cursor: pointer; }
-.main-tab.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+:root { --docs: #0f766e; --docs-light: #ccfbf1; }
+.main-tabs { display: flex; gap: 8px; justify-content: center; margin: 0 0 14px; }
+.main-tab { flex: 1 1 0; max-width: 220px; text-align: center; border: 1px solid var(--border); background: var(--card);
+  color: var(--text); font-family: inherit; font-weight: 700; font-size: 0.95rem; padding: 11px 8px;
+  border-radius: 12px; cursor: pointer; opacity: 0.72; }
+.main-tab[data-main="schedule"].active { background: var(--primary); border-color: var(--primary); color: #fff; opacity: 1; }
+.main-tab[data-main="docs"].active { background: var(--docs); border-color: var(--docs); color: #fff; opacity: 1; }
+.main-tab[data-main="schedule"]:not(.active):hover { border-color: var(--primary); color: var(--primary); }
+.main-tab[data-main="docs"]:not(.active):hover { border-color: var(--docs); color: var(--docs); }
 .main-panel-hidden { display: none !important; }
 body.docs-mode #fabToday { display: none; }
 .docs-toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 14px; }
 .docs-chips { display: flex; gap: 6px; flex-wrap: wrap; }
-.chip { border: 1px solid var(--primary); background: var(--primary-light); color: var(--primary);
+.chip { border: 1px solid var(--docs); background: var(--docs-light); color: var(--docs);
   font-family: inherit; font-weight: 700; font-size: 0.8rem; padding: 7px 13px; border-radius: 999px; cursor: pointer; }
-.chip.active { background: var(--primary); color: #fff; }
+.chip.active { background: var(--docs); color: #fff; }
 .docs-search { flex: 1 1 160px; min-width: 140px; padding: 9px 12px; border: 1px solid var(--border);
   border-radius: 10px; font-family: inherit; font-size: 0.85rem; background: var(--card); color: var(--text); }
 .docs-count { font-size: 0.78rem; color: var(--muted); width: 100%; }
@@ -1128,17 +1133,17 @@ body.docs-mode #fabToday { display: none; }
 @media (max-width: 700px) { .docs-list { grid-template-columns: 1fr; } }
 .doc-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 12px 14px;
   display: flex; flex-direction: column; gap: 6px; }
-.doc-card.pending { border-style: dashed; border-color: var(--primary); background: var(--primary-light); }
-.doc-card.flash { box-shadow: 0 0 0 2px var(--primary) inset; }
+.doc-card.pending { border-style: dashed; border-color: var(--docs); background: var(--docs-light); }
+.doc-card.flash { box-shadow: 0 0 0 2px var(--docs) inset; }
 .doc-head { display: flex; justify-content: space-between; gap: 8px; align-items: flex-start; }
 .doc-name { font-weight: 700; font-size: 0.9rem; line-height: 1.35; }
 .doc-badge { flex-shrink: 0; background: var(--primary-light); color: var(--primary); font-size: 0.68rem; font-weight: 700;
   padding: 3px 9px; border-radius: 999px; white-space: nowrap; border: 1px solid var(--border); }
-.doc-badge.exam1 { background: #eef2ff; color: #3730a3; }
-.doc-badge.exam2 { background: var(--exam-light); color: var(--exam); }
+.doc-badge.exam1 { background: #eef2ff; color: #3730a3; border-color: #c7d2fe; }
+.doc-badge.exam2 { background: var(--exam-light); color: var(--exam); border-color: #fca5a5; }
 .doc-meta { font-size: 0.78rem; color: var(--muted); }
 .doc-actions { display: flex; flex-wrap: wrap; gap: 6px; }
-.doc-btn { display: inline-flex; align-items: center; gap: 4px; background: var(--primary); color: #fff;
+.doc-btn { display: inline-flex; align-items: center; gap: 4px; background: var(--docs); color: #fff;
   font-size: 0.78rem; font-weight: 700; text-decoration: none; padding: 8px 12px; border-radius: 10px; }
 .doc-btn:hover { filter: brightness(0.94); }
 """
