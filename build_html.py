@@ -546,11 +546,14 @@ def render_week_grid(week_label, days):
     for i in range(9):
         hour = 8 + i
         col = 2 + i * 2
-        end_label = '<span class="wg-hour-end">17:00</span>' if i == 8 else ""
         header_parts.append(
             f'<div class="wg-hour" style="grid-column:{col}/{col + 2}; grid-row:1">'
-            f'<span>{hour:02d}:00</span>{end_label}</div>'
+            f'<span>{hour:02d}:00</span></div>'
         )
+    # คอลัมน์ปลายตาราง: แสดงป้าย 17:00 แยกออกมา ไม่ให้ทับกับ 16:00
+    header_parts.append(
+        '<div class="wg-hour-end" style="grid-column:20; grid-row:1">17:00</div>'
+    )
     grid_html = "".join(header_parts) + "".join(body_parts)
     return f"""<section class="week-grid">
   <h3 class="week-grid-title">{esc(week_label)}</h3>
@@ -966,7 +969,7 @@ GRID_CSS = """
 .grid-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; }
 .wgrid {
   display: grid;
-  grid-template-columns: 52px repeat(18, minmax(36px, 1fr));
+  grid-template-columns: 52px repeat(18, minmax(36px, 1fr)) 30px;
   grid-auto-rows: minmax(40px, auto);
   background: var(--card);
   min-width: 0;
@@ -986,8 +989,14 @@ GRID_CSS = """
   white-space: nowrap;
   overflow: hidden;
 }
-.wg-hour-end { font-size: .62rem; font-weight: 600; color: var(--muted); opacity: .9; }
-.wg-hour:last-of-type { border-right: 1px solid var(--border); }
+.wg-hour-end {
+  display: flex; align-items: center; justify-content: flex-start;
+  font-size: .66rem; font-weight: 600; color: var(--muted);
+  padding: 3px 0 3px 3px; border-bottom: 1px solid var(--border);
+  border-left: 1px solid var(--border); white-space: nowrap;
+}
+.wg-hour:last-of-type { border-right: 0; }
+.wg-tail { border-left: 1px solid transparent; }
 .wg-daylabel {
   position: sticky; left: 0; z-index: 2;
   display: flex; align-items: center;
