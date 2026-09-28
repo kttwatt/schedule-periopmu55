@@ -1107,7 +1107,43 @@ GRID_CSS = """
 }
 """
 
-CSS = CSS + GRID_CSS
+DOCS_CSS = """
+/* ===== แท็บหลัก: ตารางเรียน | เอกสารรายวิชา ===== */
+.main-tabs { display: flex; gap: 8px; margin: 0 0 14px; }
+.main-tab { flex: 1; border: 1px solid var(--border); background: var(--card); color: var(--text);
+  font-family: inherit; font-weight: 700; font-size: 0.95rem; padding: 11px 8px; border-radius: 12px; cursor: pointer; }
+.main-tab.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+.main-panel-hidden { display: none !important; }
+body.docs-mode #fabToday { display: none; }
+.docs-toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 14px; }
+.docs-chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip { border: 1px solid var(--primary); background: var(--primary-light); color: var(--primary);
+  font-family: inherit; font-weight: 700; font-size: 0.8rem; padding: 7px 13px; border-radius: 999px; cursor: pointer; }
+.chip.active { background: var(--primary); color: #fff; }
+.docs-search { flex: 1 1 160px; min-width: 140px; padding: 9px 12px; border: 1px solid var(--border);
+  border-radius: 10px; font-family: inherit; font-size: 0.85rem; background: var(--card); color: var(--text); }
+.docs-count { font-size: 0.78rem; color: var(--muted); width: 100%; }
+.docs-group-title { font-size: 0.8rem; font-weight: 800; color: var(--muted); margin: 14px 2px 8px; }
+.docs-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 700px) { .docs-list { grid-template-columns: 1fr; } }
+.doc-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 12px 14px;
+  display: flex; flex-direction: column; gap: 6px; }
+.doc-card.pending { border-style: dashed; border-color: var(--primary); background: var(--primary-light); }
+.doc-card.flash { box-shadow: 0 0 0 2px var(--primary) inset; }
+.doc-head { display: flex; justify-content: space-between; gap: 8px; align-items: flex-start; }
+.doc-name { font-weight: 700; font-size: 0.9rem; line-height: 1.35; }
+.doc-badge { flex-shrink: 0; background: var(--primary-light); color: var(--primary); font-size: 0.68rem; font-weight: 700;
+  padding: 3px 9px; border-radius: 999px; white-space: nowrap; border: 1px solid var(--border); }
+.doc-badge.exam1 { background: #eef2ff; color: #3730a3; }
+.doc-badge.exam2 { background: var(--exam-light); color: var(--exam); }
+.doc-meta { font-size: 0.78rem; color: var(--muted); }
+.doc-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+.doc-btn { display: inline-flex; align-items: center; gap: 4px; background: var(--primary); color: #fff;
+  font-size: 0.78rem; font-weight: 700; text-decoration: none; padding: 8px 12px; border-radius: 10px; }
+.doc-btn:hover { filter: brightness(0.94); }
+"""
+
+CSS = CSS + GRID_CSS + DOCS_CSS
 
 JS = """
 (function () {
@@ -1398,6 +1434,142 @@ JS = """
   });
 })();
 """
+DOCS_JS = """
+(function () {
+  var listEl = document.getElementById('docsList');
+  var countEl = document.getElementById('docsCount');
+  var searchEl = document.getElementById('docsSearch');
+  var scheduleMain = document.getElementById('scheduleMain');
+  var docsMain = document.getElementById('docsMain');
+  var mainTabs = Array.prototype.slice.call(document.querySelectorAll('.main-tab'));
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.docs-chips .chip'));
+  if (!listEl || !docsMain || !scheduleMain || typeof DOCS === 'undefined') return;
+
+  var state = { exam: 'all', q: '' };
+
+  function esc(v) {
+    return String(v == null ? '' : v)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function allSubjects() {
+    var out = [];
+    DOCS.exams.forEach(function (e) {
+      e.subjects.forEach(function (s) { out.push({ exam: e, subj: s }); });
+    });
+    return out;
+  }
+
+  function match(item) {
+    if (state.exam !== 'all' && item.exam.id !== state.exam) return false;
+    var q = state.q.trim().toLowerCase();
+    if (!q) return true;
+    var hay = (item.subj.name + ' ' + item.subj.lecturer + ' ' + (item.subj.day || '') + ' ' + (item.subj.qrange || '')).toLowerCase();
+    return hay.indexOf(q) !== -1;
+  }
+
+  function cardHtml(exam, subj) {
+    var badge = subj.qrange
+      ? '<span class="doc-badge ' + esc(exam.id) + '">' + esc(exam.label.replace('สอบครั้งที่ ', 'สอบ ') + ' · ' + subj.qrange) + '</span>'
+      : '<span class="doc-badge ' + esc(exam.id) + '">' + esc(exam.label) + '</span>';
+    var meta = [subj.day, subj.lecturer].filter(Boolean).join(' · ');
+    var actions = subj.docs.map(function (d) {
+      return '<a class="doc-btn" href="' + esc(d.url) + '" target="_blank" rel="noopener">📄 ' + esc(d.label) + '</a>';
+    }).join('');
+    if (!actions) actions = '<span class="doc-meta">ยังไม่มีไฟล์เอกสาร</span>';
+    return '<div class="doc-card' + (subj.status === 'ok' ? '' : ' pending') + '" id="doc-' + esc(exam.id + '-' + subj.id) + '">' +
+      '<div class="doc-head"><span class="doc-name">' + esc(subj.name) + '</span>' + badge + '</div>' +
+      (meta ? '<div class="doc-meta">' + esc(meta) + '</div>' : '') +
+      '<div class="doc-actions">' + actions + '</div></div>';
+  }
+
+  function render() {
+    var items = allSubjects().filter(match);
+    var withDocs = items.filter(function (i) { return i.subj.status === 'ok'; }).length;
+    countEl.textContent = items.length + ' วิชา · มีเอกสาร ' + withDocs + ' วิชา';
+    var html = '';
+    if (state.exam === 'all') {
+      html = DOCS.exams.map(function (e) {
+        var sub = items.filter(function (i) { return i.exam.id === e.id; });
+        if (!sub.length) return '';
+        return '<div class="docs-group-title">' + esc(e.label + ' · ' + e.date_label + ' — ' + sub.length + ' วิชา') + '</div>' +
+          '<div class="docs-list">' + sub.map(function (i) { return cardHtml(e, i.subj); }).join('') + '</div>';
+      }).join('');
+    } else {
+      html = '<div class="docs-list">' + items.map(function (i) { return cardHtml(i.exam, i.subj); }).join('') + '</div>';
+    }
+    listEl.innerHTML = html;
+  }
+
+  function showMain(which, pushHash) {
+    var isDocs = which === 'docs';
+    docsMain.classList.toggle('main-panel-hidden', !isDocs);
+    scheduleMain.classList.toggle('main-panel-hidden', isDocs);
+    document.body.classList.toggle('docs-mode', isDocs);
+    mainTabs.forEach(function (b) {
+      b.classList.toggle('active', b.getAttribute('data-main') === (isDocs ? 'docs' : 'schedule'));
+    });
+    if (pushHash) {
+      var h = isDocs ? ('#docs' + (state.exam === 'all' ? '' : '/' + state.exam)) : '#schedule';
+      if (location.hash !== h) {
+        try { history.replaceState(null, '', h); } catch (err) { location.hash = h; }
+      }
+    }
+  }
+
+  function applyHash() {
+    var h = (location.hash || '').replace(/^#/, '');
+    if (h.indexOf('docs') !== 0) {
+      if (h === 'schedule') showMain('schedule', false);
+      return;
+    }
+    var parts = h.split('/');
+    var ex = parts[1] || 'all';
+    state.exam = (ex === 'exam1' || ex === 'exam2') ? ex : 'all';
+    chips.forEach(function (c) { c.classList.toggle('active', c.getAttribute('data-exam') === state.exam); });
+    render();
+    showMain('docs', false);
+    if (parts[2]) {
+      var el = document.getElementById('doc-' + state.exam + '-' + parts[2]);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el.classList.add('flash');
+        setTimeout(function () { el.classList.remove('flash'); }, 1600);
+      }
+    }
+  }
+
+  mainTabs.forEach(function (b) {
+    b.addEventListener('click', function () { showMain(b.getAttribute('data-main'), true); });
+  });
+
+  chips.forEach(function (c) {
+    c.addEventListener('click', function () {
+      chips.forEach(function (x) { x.classList.remove('active'); });
+      c.classList.add('active');
+      state.exam = c.getAttribute('data-exam');
+      render();
+      showMain('docs', true);
+    });
+  });
+
+  searchEl.addEventListener('input', function () { state.q = searchEl.value; render(); });
+  window.addEventListener('hashchange', applyHash);
+
+  render();
+  applyHash();
+})();
+"""
+
+
+def load_docs():
+    """อ่าน docs.json (manifest เอกสารรายวิชา) — ถ้าไม่มีให้คืนโครงว่าง"""
+    import os
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "docs.json")
+    if not os.path.exists(path):
+        return {"generated": "", "exams": []}
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
 
 
 def build_html(course, sessions, homework, notes):
@@ -1423,6 +1595,8 @@ def build_html(course, sessions, homework, notes):
 
     title = "Periop-mu55-schedule"
     homework_html = render_homework(homework, notes)
+    docs = load_docs()
+    js_all = JS + "\nconst DOCS = " + json.dumps(docs, ensure_ascii=False) + ";\n" + DOCS_JS
 
     return f"""<!DOCTYPE html>
 <html lang="th">
@@ -1440,20 +1614,40 @@ def build_html(course, sessions, homework, notes):
       {period_html}
     </header>
 
-    <div class="view-toggle">
-      <button type="button" class="view-tab active" data-view="list">รายวัน</button>
-      <button type="button" class="view-tab" data-view="grid">ตารางรายสัปดาห์</button>
+    <div class="main-tabs">
+      <button type="button" class="main-tab active" data-main="schedule">📅 ตารางเรียน</button>
+      <button type="button" class="main-tab" data-main="docs">📚 เอกสารรายวิชา</button>
     </div>
 
-    <div class="legend">{legend_items}</div>
+    <div id="scheduleMain" class="main-panel">
+      <div class="view-toggle">
+        <button type="button" class="view-tab active" data-view="list">รายวัน</button>
+        <button type="button" class="view-tab" data-view="grid">ตารางรายสัปดาห์</button>
+      </div>
 
-    <div id="gridView" class="view-panel view-panel-hidden">
-      {grid_html}
+      <div class="legend">{legend_items}</div>
+
+      <div id="gridView" class="view-panel view-panel-hidden">
+        {grid_html}
+      </div>
+      <div id="listView" class="view-panel">
+        <main>
+          {days_html}
+        </main>
+      </div>
     </div>
-    <div id="listView" class="view-panel">
-      <main>
-        {days_html}
-      </main>
+
+    <div id="docsMain" class="main-panel main-panel-hidden">
+      <div class="docs-toolbar">
+        <div class="docs-chips">
+          <button type="button" class="chip active" data-exam="all">ทั้งหมด</button>
+          <button type="button" class="chip" data-exam="exam1">สอบครั้งที่ 1</button>
+          <button type="button" class="chip" data-exam="exam2">สอบครั้งที่ 2</button>
+        </div>
+        <input id="docsSearch" class="docs-search" type="search" placeholder="ค้นหาวิชา / วิทยากร…">
+        <div class="docs-count" id="docsCount"></div>
+      </div>
+      <div id="docsList"></div>
     </div>
 
     <footer class="page-footer">
@@ -1473,7 +1667,7 @@ def build_html(course, sessions, homework, notes):
       <div class="wg-modal-row wg-modal-row-room"><span class="wg-modal-label">ห้อง</span><span class="wg-modal-value"></span></div>
     </div>
   </div>
-  <script>{JS}</script>
+  <script>{js_all}</script>
 </body>
 </html>
 """
