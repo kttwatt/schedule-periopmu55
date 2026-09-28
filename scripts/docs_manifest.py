@@ -66,7 +66,7 @@ def parse_board(path, urlbase, exam_id):
             "qrange": html.unescape(re.sub(r'<[^>]+>', '', qr.group(1))).strip() if qr else "",
             "qcount": html.unescape(re.sub(r'<[^>]+>', '', qc.group(1))).strip() if qc else "",
             "exam": exam_id,
-            "docs": ([{"label": "สไลด์", "url": urlbase + doc.group(1)}] if doc else []),
+            "docs": ([{"label": "เอกสาร", "url": urlbase + doc.group(1)}] if doc else []),
             "status": "ok" if doc else "pending",
         }
         subjects.append(item)
