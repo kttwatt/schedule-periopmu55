@@ -594,8 +594,13 @@
      "qrange": "",
      "qcount": "",
      "exam": "exam2",
-     "docs": [],
-     "status": "pending"
+     "docs": [
+      {
+       "label": "เอกสาร",
+       "url": "https://kttwatt.github.io/periop-mu55/slides/exam-02oct/22-postop-nursing-recovery.pdf"
+      }
+     ],
+     "status": "ok"
     },
     {
      "id": "exam2-30",
