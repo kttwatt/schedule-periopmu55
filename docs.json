@@ -628,8 +628,13 @@
      "qrange": "",
      "qcount": "",
      "exam": "exam2",
-     "docs": [],
-     "status": "pending"
+     "docs": [
+      {
+       "label": "เอกสาร",
+       "url": "https://kttwatt.github.io/periop-mu55/slides/exam-02oct/23-spine-anatomy-surgery.pdf"
+      }
+     ],
+     "status": "ok"
     }
    ]
   },
