@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-28",
+ "generated": "2026-09-29",
  "exams": [
   {
    "id": "exam1",
@@ -606,8 +606,13 @@
      "qrange": "",
      "qcount": "",
      "exam": "exam2",
-     "docs": [],
-     "status": "pending"
+     "docs": [
+      {
+       "label": "เอกสาร",
+       "url": "https://kttwatt.github.io/periop-mu55/slides/exam-02oct/21-special-care-pediatric-elderly.pdf"
+      }
+     ],
+     "status": "ok"
     },
     {
      "id": "spine-anatomy-surgery",
