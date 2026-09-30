@@ -569,8 +569,13 @@
      "qrange": "",
      "qcount": "4 ข้อ",
      "exam": "exam2",
-     "docs": [],
-     "status": "pending"
+     "docs": [
+      {
+       "label": "เอกสาร",
+       "url": "https://kttwatt.github.io/periop-mu55/slides/exam-02oct/28-urogyne-pelvic-floor.pdf"
+      }
+     ],
+     "status": "ok"
     },
     {
      "id": "postop-nursing-recovery",
