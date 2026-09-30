@@ -1,0 +1,132 @@
+{
+  "source": "OR_2.pdf (Kit upload, 1 page)",
+  "exam_date": "2026-10-02",
+  "total_questions": 134,
+  "subjects": [
+    {
+      "board_num": 6,
+      "subject": "DISE & Modified UPPP",
+      "questions": 4
+    },
+    {
+      "board_num": 7,
+      "subject": "Sialendoscopy",
+      "questions": 5
+    },
+    {
+      "board_num": 8,
+      "subject": "Emergency Management in ENT",
+      "questions": 4
+    },
+    {
+      "board_num": 9,
+      "subject": "Neuro Navigator: Usage & Maintenance",
+      "questions": 4
+    },
+    {
+      "board_num": 10,
+      "subject": "Neuro Navigator: Apply",
+      "questions": 4
+    },
+    {
+      "board_num": 11,
+      "subject": "Endoscopic Neurosurgery",
+      "questions": 4
+    },
+    {
+      "board_num": 12,
+      "subject": "Ophthalmic Anatomy & Physiology",
+      "questions": 8
+    },
+    {
+      "board_num": 13,
+      "subject": "Ophthalmic Surgery",
+      "questions": 8
+    },
+    {
+      "board_num": 14,
+      "subject": "Clinical ENT Anatomy & Surgery",
+      "questions": 12
+    },
+    {
+      "board_num": 15,
+      "subject": "Loaner Instrument",
+      "questions": 4
+    },
+    {
+      "board_num": 16,
+      "subject": "Hand-off Communication",
+      "questions": 4
+    },
+    {
+      "board_num": 17,
+      "subject": "Surgery in Neurology",
+      "questions": 4
+    },
+    {
+      "board_num": 18,
+      "subject": "ERAS: Concepts & How to Implement",
+      "questions": 8
+    },
+    {
+      "board_num": 19,
+      "subject": "Neurology Anatomy & Surgery",
+      "questions": 8
+    },
+    {
+      "board_num": 20,
+      "subject": "OBGYN Anatomy & Surgery",
+      "questions": 4
+    },
+    {
+      "board_num": 21,
+      "subject": "Periop OBGYN",
+      "questions": 4
+    },
+    {
+      "board_num": 22,
+      "subject": "Periop GYN: Robotic",
+      "questions": 4
+    },
+    {
+      "board_num": 23,
+      "subject": "Robotic Surgery in GYN",
+      "questions": 5
+    },
+    {
+      "board_num": 24,
+      "subject": "Periop Ophthalmic Nursing",
+      "questions": 8
+    },
+    {
+      "board_num": 26,
+      "subject": "Periop Vascular Surgery",
+      "questions": 4
+    },
+    {
+      "board_num": 27,
+      "subject": "Craniomaxillofacial & Surgery",
+      "questions": 4
+    },
+    {
+      "board_num": 28,
+      "subject": "Urogyne Pelvic Floor",
+      "questions": 4
+    },
+    {
+      "board_num": 29,
+      "subject": "Postop Nursing: Recovery",
+      "questions": 4
+    },
+    {
+      "board_num": 30,
+      "subject": "ผู้ป่วยพิเศษ (เด็ก/ผู้สูงอายุ)",
+      "questions": 4
+    },
+    {
+      "board_num": 31,
+      "subject": "Spine Anatomy & Surgery",
+      "questions": 8
+    }
+  ]
+}

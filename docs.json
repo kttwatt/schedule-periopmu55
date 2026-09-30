@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-29",
+ "generated": "2026-09-30",
  "exams": [
   {
    "id": "exam1",
@@ -211,7 +211,7 @@
   {
    "id": "exam2",
    "label": "สอบครั้งที่ 2",
-   "date_label": "ศ. 2 ต.ค. 2569 · 26 วิชาตามลิสต์ทางการ",
+   "date_label": "ศ. 2 ต.ค. 2569 · 25 วิชา / 134 ข้อตาม OR_2.pdf",
    "urlbase": "https://kttwatt.github.io/periop-mu55/slides/exam-02oct/",
    "subjects": [
     {
@@ -221,7 +221,7 @@
      "lecturer": "พว.สุภาวดี ดีเจริญ",
      "day": "16 ก.ย.",
      "qrange": "",
-     "qcount": "",
+     "qcount": "4 ข้อ",
      "exam": "exam2",
      "docs": [
       {
@@ -238,7 +238,7 @@
      "lecturer": "พว.นฤมล พละสุข",
      "day": "16 ก.ย.",
      "qrange": "",
-     "qcount": "",
+     "qcount": "5 ข้อ",
      "exam": "exam2",
      "docs": [
       {
@@ -255,7 +255,7 @@
      "lecturer": "พว.กร อังสุวรรณเขต",
      "day": "16 ก.ย.",
      "qrange": "",
-     "qcount": "",
+     "qcount": "4 ข้อ",
      "exam": "exam2",
      "docs": [
       {
@@ -272,7 +272,7 @@
      "lecturer": "พว.ธนัชพร ผลทวีชัย",
      "day": "16 ก.ย.",
      "qrange": "",
-     "qcount": "",
+     "qcount": "4 ข้อ",
      "exam": "exam2",
      "docs": [
       {
@@ -289,7 +289,7 @@
      "lecturer": "พว.จันจิรา จารุพัตร",
      "day": "16 ก.ย.",
      "qrange": "",
-     "qcount": "",
+     "qcount": "4 ข้อ",
      "exam": "exam2",
      "docs": [
       {
@@ -306,7 +306,7 @@
      "lecturer": "พว.ธนพรรณ กุณาละสิริ",
      "day": "16 ก.ย.",
      "qrange": "",
-     "qcount": "",
+     "qcount": "4 ข้อ",
      "exam": "exam2",
      "docs": [
       {
@@ -323,7 +323,7 @@
      "lecturer": "ผศ.พญ.เพียงพร ศักดิ์ศิริวุฒิโฆ",
      "day": "17 ก.ย.",
      "qrange": "",
-     "qcount": "",
+     "qcount": "8 ข้อ",
      "exam": "exam2",
      "docs": [
       {
@@ -340,7 +340,7 @@
      "lecturer": "รศ.นพ.พิทยา ภมรเวชวรรณ",
      "day": "17 ก.ย.",
      "qrange": "",
-     "qcount": "",
+     "qcount": "8 ข้อ",
      "exam": "exam2",
      "docs": [],
      "status": "pending"
@@ -352,7 +352,7 @@
      "lecturer": "รศ.นพ.ภาวิน เกษกุล",
      "day": "17 ก.ย.",
      "qrange": "",
-     "qcount": "",
+     "qcount": "12 ข้อ",
      "exam": "exam2",
      "docs": [
       {
@@ -369,7 +369,7 @@
      "lecturer": "พว.หทัยา รัตนโชติ",
      "day": "18 ก.ย.",
      "qrange": "",
-     "qcount": "",
+     "qcount": "4 ข้อ",
      "exam": "exam2",
      "docs": [
       {
@@ -386,7 +386,7 @@
      "lecturer": "พว.สุดารัตน์ ศรีสมุทรนาค",
      "day": "18 ก.ย.",
      "qrange": "",
-     "qcount": "",
+     "qcount": "4 ข้อ",
      "exam": "exam2",
      "docs": [
       {
@@ -403,7 +403,7 @@
      "lecturer": "ศ.นพ.บรรพต สิทธินามสุวรรณ",
      "day": "23 ก.ย.",
      "qrange": "",
-     "qcount": "",
+     "qcount": "4 ข้อ",
      "exam": "exam2",
      "docs": [],
      "status": "pending"
@@ -415,7 +415,7 @@
      "lecturer": "รศ.พญ.มิ่งขวัญ วงษ์ยิ่งสิน",
      "day": "23 ก.ย.",
      "qrange": "",
-     "qcount": "",
+     "qcount": "8 ข้อ",
      "exam": "exam2",
      "docs": [
       {
@@ -432,7 +432,7 @@
      "lecturer": "ผศ.นพ.ปฤณัต อิทธิเมธินทร์",
      "day": "23 ก.ย.",
      "qrange": "",
-     "qcount": "",
+     "qcount": "8 ข้อ",
      "exam": "exam2",
      "docs": [
       {
@@ -449,7 +449,7 @@
      "lecturer": "ผศ.นพ.พิสุทธิ์ ศรีชัยกุล",
      "day": "25 ก.ย.",
      "qrange": "",
-     "qcount": "",
+     "qcount": "4 ข้อ",
      "exam": "exam2",
      "docs": [
       {
@@ -466,7 +466,7 @@
      "lecturer": "พว.ฐิติยา วายุภักตร์",
      "day": "25 ก.ย.",
      "qrange": "",
-     "qcount": "",
+     "qcount": "4 ข้อ",
      "exam": "exam2",
      "docs": [
       {
@@ -483,7 +483,7 @@
      "lecturer": "พว.สุชาดา กล่อมจิต",
      "day": "25 ก.ย.",
      "qrange": "",
-     "qcount": "",
+     "qcount": "4 ข้อ",
      "exam": "exam2",
      "docs": [
       {
@@ -500,7 +500,7 @@
      "lecturer": "ผศ.นพ.บุญเลิศ วิริยะภาค",
      "day": "25 ก.ย.",
      "qrange": "",
-     "qcount": "",
+     "qcount": "5 ข้อ",
      "exam": "exam2",
      "docs": [
       {
@@ -517,29 +517,12 @@
      "lecturer": "พว.อัจฉราวดี สุบรรณเสณี",
      "day": "25 ก.ย.",
      "qrange": "",
-     "qcount": "",
+     "qcount": "8 ข้อ",
      "exam": "exam2",
      "docs": [
       {
        "label": "เอกสาร",
        "url": "https://kttwatt.github.io/periop-mu55/slides/exam-02oct/17-ophthalmic-periop-nursing.pdf"
-      }
-     ],
-     "status": "ok"
-    },
-    {
-     "id": "mews-pressure-injury-in-or",
-     "num": 25,
-     "name": "MEWS / Pressure Injury in OR",
-     "lecturer": "พว.นพเก้า ชนะภัย",
-     "day": "25 ก.ย.",
-     "qrange": "",
-     "qcount": "",
-     "exam": "exam2",
-     "docs": [
-      {
-       "label": "เอกสาร",
-       "url": "https://kttwatt.github.io/periop-mu55/slides/exam-02oct/14-mews-pressure-injury.pdf"
       }
      ],
      "status": "ok"
@@ -551,7 +534,7 @@
      "lecturer": "พว.ศันศนีย์ บัวพูล",
      "day": "28 ก.ย.",
      "qrange": "",
-     "qcount": "",
+     "qcount": "4 ข้อ",
      "exam": "exam2",
      "docs": [
       {
@@ -568,7 +551,7 @@
      "lecturer": "ศ.คลินิกเกียรติคุณ นพ.อภิรักษ์ ช่วงสุวนิช",
      "day": "28 ก.ย.",
      "qrange": "",
-     "qcount": "",
+     "qcount": "4 ข้อ",
      "exam": "exam2",
      "docs": [],
      "status": "pending"
@@ -580,7 +563,7 @@
      "lecturer": "ผศ.พญ.พัทยา เฮงรัศมี",
      "day": "29 ก.ย.",
      "qrange": "",
-     "qcount": "",
+     "qcount": "4 ข้อ",
      "exam": "exam2",
      "docs": [],
      "status": "pending"
@@ -592,7 +575,7 @@
      "lecturer": "พว.สรรสณีย์ รัตนมนตรี",
      "day": "29 ก.ย.",
      "qrange": "",
-     "qcount": "",
+     "qcount": "4 ข้อ",
      "exam": "exam2",
      "docs": [
       {
@@ -609,7 +592,7 @@
      "lecturer": "พว.สรรสณีย์ รัตนมนตรี",
      "day": "29 ก.ย.",
      "qrange": "",
-     "qcount": "",
+     "qcount": "4 ข้อ",
      "exam": "exam2",
      "docs": [
       {
@@ -626,7 +609,7 @@
      "lecturer": "ผศ.นพ.เอกพจน์ ก่อวุฒิกุลรังษี",
      "day": "29 ก.ย.",
      "qrange": "",
-     "qcount": "",
+     "qcount": "8 ข้อ",
      "exam": "exam2",
      "docs": [
       {
@@ -725,6 +708,23 @@
       {
        "label": "เอกสาร",
        "url": "https://kttwatt.github.io/periop-mu55/slides/exam-02oct/00c-anesthesia.pdf"
+      }
+     ],
+     "status": "ok"
+    },
+    {
+     "id": "mews-pressure-injury-in-or",
+     "num": 25,
+     "name": "MEWS / Pressure Injury in OR",
+     "lecturer": "พว.นพเก้า ชนะภัย",
+     "day": "25 ก.ย.",
+     "qrange": "",
+     "qcount": "",
+     "exam": "other",
+     "docs": [
+      {
+       "label": "เอกสาร",
+       "url": "https://kttwatt.github.io/periop-mu55/slides/exam-02oct/14-mews-pressure-injury.pdf"
       }
      ],
      "status": "ok"

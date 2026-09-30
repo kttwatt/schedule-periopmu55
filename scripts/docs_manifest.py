@@ -86,14 +86,28 @@ def main():
             })
             continue
 
-        # ครั้งที่ 2: ยึด "ลิสต์ทางการ" (16–29 ก.ย. = แถวที่ 6–31 ของ board) เป็นขอบเขตสอบ
-        # แถวที่เหลือ (28 ส.ค.–7 ก.ย. และ 30 ก.ย.–1 ต.ค.) = เก็บไว้ในกลุ่ม "อื่น ๆ" ไม่นับเป็นขอบเขตสอบ
-        official = [s for s in subs if s.get("num") and 6 <= s["num"] <= 31]
-        other = [s for s in subs if not (s.get("num") and 6 <= s["num"] <= 31)]
+        # ขอบเขตสอบครั้งที่ 2 ยึด PDF OR_2 ที่ Kit ส่ง (25 วิชา / 134 ข้อ)
+        # ห้ามอาศัยช่วงเลขแถวของ board: MEWS (#25) ไม่มีใน blueprint
+        with open("exam2-blueprint.json", encoding="utf-8") as f:
+            blueprint = json.load(f)
+        by_num = {s["num"]: s for s in subs}
+        official = []
+        for row in blueprint["subjects"]:
+            s = by_num.get(row["board_num"])
+            if s is None or s["name"] != row["subject"]:
+                raise ValueError(f'Blueprint/board mismatch: {row}')
+            s["qcount"] = f'{row["questions"]} ข้อ'
+            official.append(s)
+        if len(official) != len(blueprint["subjects"]) or sum(
+            int(s["qcount"].split()[0]) for s in official
+        ) != blueprint["total_questions"]:
+            raise ValueError("Blueprint totals mismatch")
+        official_nums = {s["num"] for s in official}
+        other = [s for s in subs if s["num"] not in official_nums]
         for s in other:
             s["exam"] = "other"
         out["exams"].append({
-            "id": "exam2", "label": "สอบครั้งที่ 2", "date_label": "ศ. 2 ต.ค. 2569 · 26 วิชาตามลิสต์ทางการ",
+            "id": "exam2", "label": "สอบครั้งที่ 2", "date_label": "ศ. 2 ต.ค. 2569 · 25 วิชา / 134 ข้อตาม OR_2.pdf",
             "urlbase": b["urlbase"], "subjects": official,
         })
         out["exams"].append({

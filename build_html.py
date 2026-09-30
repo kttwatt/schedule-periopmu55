@@ -1586,7 +1586,7 @@ DOCS_JS = """
   function cardHtml(exam, subj) {
     // ไม่ติดป้ายครั้งที่สอบในแถวแล้ว — ข้อมูลช่วงข้อสอบย้ายไปอยู่ในบรรทัดข้อมูลย่อย
     var badge = '';
-    var meta = [subj.day, subj.lecturer, subj.qrange].filter(Boolean).join(' · ');
+    var meta = [subj.day, subj.lecturer, subj.qrange, exam.id === 'exam2' ? subj.qcount : ''].filter(Boolean).join(' · ');
     var actions = subj.docs.map(function (d) {
       var fname = d.url.split('/').pop();
       return '<a class="doc-btn" data-goatcounter-click="' + esc(fname) + '" href="' + esc(d.url) +
