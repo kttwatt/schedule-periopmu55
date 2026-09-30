@@ -802,8 +802,13 @@
      "qrange": "",
      "qcount": "",
      "exam": "other",
-     "docs": [],
-     "status": "pending"
+     "docs": [
+      {
+       "label": "เอกสาร",
+       "url": "https://kttwatt.github.io/periop-mu55/slides/exam-02oct/29-palatoplasty.pdf"
+      }
+     ],
+     "status": "ok"
     },
     {
      "id": "periop-gi-vascular-sealing",
