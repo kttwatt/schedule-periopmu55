@@ -50,7 +50,7 @@ def parse_board(path, urlbase, exam_id):
         lect = re.search(r'<span class="lecturer">(.*?)</span>', block, re.S)
         qr = re.search(r'<span class="qrange">(.*?)</span>', block, re.S)
         qc = re.search(r'<span class="qcount">(.*?)</span>', block, re.S)
-        doc = re.search(r'href="([^"]+\.pdf)"', block)
+        docs = re.findall(r'href="([^"#?]+\.pdf)"', block)
         name = html.unescape(re.sub(r'<[^>]+>', '', subj.group(1))).strip() if subj else ""
         lecturer = html.unescape(re.sub(r'<[^>]+>', '', lect.group(1))).strip() if lect else ""
         # ตัดข้อความ qrange ที่ติดมากับ lecturer ออก (เผื่อ parser อื่นแทรก)
@@ -66,8 +66,8 @@ def parse_board(path, urlbase, exam_id):
             "qrange": html.unescape(re.sub(r'<[^>]+>', '', qr.group(1))).strip() if qr else "",
             "qcount": html.unescape(re.sub(r'<[^>]+>', '', qc.group(1))).strip() if qc else "",
             "exam": exam_id,
-            "docs": ([{"label": "เอกสาร", "url": urlbase + doc.group(1)}] if doc else []),
-            "status": "ok" if doc else "pending",
+            "docs": [{"label": "เอกสาร", "url": urlbase + filename} for filename in docs],
+            "status": "ok" if docs else "pending",
         }
         subjects.append(item)
     return subjects

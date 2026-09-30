@@ -134,6 +134,10 @@
       {
        "label": "เอกสาร",
        "url": "https://kttwatt.github.io/periop-mu55/slides/exam-18sep/07-gi-surgical-staple.pdf"
+      },
+      {
+       "label": "เอกสาร",
+       "url": "https://kttwatt.github.io/periop-mu55/slides/exam-18sep/07b-gi-bariatric-stapling.pdf"
       }
      ],
      "status": "ok"
@@ -738,8 +742,17 @@
      "qrange": "",
      "qcount": "",
      "exam": "other",
-     "docs": [],
-     "status": "pending"
+     "docs": [
+      {
+       "label": "เอกสาร",
+       "url": "https://kttwatt.github.io/periop-mu55/slides/exam-02oct/24-thoracic-system-part1.pdf"
+      },
+      {
+       "label": "เอกสาร",
+       "url": "https://kttwatt.github.io/periop-mu55/slides/exam-02oct/25-thoracic-system-part2.pdf"
+      }
+     ],
+     "status": "ok"
     },
     {
      "id": "breast-anatomy-physiology",
@@ -750,8 +763,13 @@
      "qrange": "",
      "qcount": "",
      "exam": "other",
-     "docs": [],
-     "status": "pending"
+     "docs": [
+      {
+       "label": "เอกสาร",
+       "url": "https://kttwatt.github.io/periop-mu55/slides/exam-02oct/26-breast-anatomy.pdf"
+      }
+     ],
+     "status": "ok"
     },
     {
      "id": "periop-breast-surgery",
@@ -762,8 +780,13 @@
      "qrange": "",
      "qcount": "",
      "exam": "other",
-     "docs": [],
-     "status": "pending"
+     "docs": [
+      {
+       "label": "เอกสาร",
+       "url": "https://kttwatt.github.io/periop-mu55/slides/exam-02oct/27-periop-breast-surgery.pdf"
+      }
+     ],
+     "status": "ok"
     },
     {
      "id": "plastic-palatoplasty",
