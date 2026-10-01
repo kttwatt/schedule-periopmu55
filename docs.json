@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-01",
+ "generated": "2026-10-02",
  "exams": [
   {
    "id": "exam1",
@@ -215,7 +215,7 @@
   {
    "id": "exam2",
    "label": "สอบครั้งที่ 2",
-   "date_label": "ศ. 2 ต.ค. 2569 · 25 วิชา / 134 ข้อตาม OR_2.pdf",
+   "date_label": "ศ. 2 ต.ค. 2569 · 23 วิชา / 126 ข้อ (ตัด 2 วิชาที่อาจารย์แจ้งว่าไม่ออกสอบ)",
    "urlbase": "https://kttwatt.github.io/periop-mu55/slides/exam-02oct/",
    "subjects": [
     {
@@ -401,18 +401,6 @@
      "status": "ok"
     },
     {
-     "id": "surgery-in-neurology",
-     "num": 17,
-     "name": "Surgery in Neurology",
-     "lecturer": "ศ.นพ.บรรพต สิทธินามสุวรรณ",
-     "day": "23 ก.ย.",
-     "qrange": "",
-     "qcount": "4 ข้อ",
-     "exam": "exam2",
-     "docs": [],
-     "status": "pending"
-    },
-    {
      "id": "eras-concepts-how-to-implement",
      "num": 18,
      "name": "ERAS: Concepts & How to Implement",
@@ -547,18 +535,6 @@
       }
      ],
      "status": "ok"
-    },
-    {
-     "id": "craniomaxillofacial-surgery",
-     "num": 27,
-     "name": "Craniomaxillofacial & Surgery",
-     "lecturer": "ศ.คลินิกเกียรติคุณ นพ.อภิรักษ์ ช่วงสุวนิช",
-     "day": "28 ก.ย.",
-     "qrange": "",
-     "qcount": "4 ข้อ",
-     "exam": "exam2",
-     "docs": [],
-     "status": "pending"
     },
     {
      "id": "urogyne-pelvic-floor",
@@ -722,6 +698,18 @@
      "status": "ok"
     },
     {
+     "id": "surgery-in-neurology",
+     "num": 17,
+     "name": "Surgery in Neurology",
+     "lecturer": "ศ.นพ.บรรพต สิทธินามสุวรรณ",
+     "day": "23 ก.ย.",
+     "qrange": "",
+     "qcount": "4 ข้อ",
+     "exam": "other",
+     "docs": [],
+     "status": "pending"
+    },
+    {
      "id": "mews-pressure-injury-in-or",
      "num": 25,
      "name": "MEWS / Pressure Injury in OR",
@@ -737,6 +725,18 @@
       }
      ],
      "status": "ok"
+    },
+    {
+     "id": "craniomaxillofacial-surgery",
+     "num": 27,
+     "name": "Craniomaxillofacial & Surgery",
+     "lecturer": "ศ.คลินิกเกียรติคุณ นพ.อภิรักษ์ ช่วงสุวนิช",
+     "day": "28 ก.ย.",
+     "qrange": "",
+     "qcount": "4 ข้อ",
+     "exam": "other",
+     "docs": [],
+     "status": "pending"
     },
     {
      "id": "thoracic-system",

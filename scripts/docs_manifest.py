@@ -13,6 +13,10 @@ REPO = "/home/kttwatt/notes/pykhr627/periop-mu55"
 BASE = "https://kttwatt.github.io/periop-mu55"
 OUT = "/home/kttwatt/schedule-html/docs.json"
 
+# วิชาใน blueprint OR_2 ที่อาจารย์แจ้งภายหลังว่า "ไม่ออกสอบ" → ย้ายจากกลุ่มสอบครั้งที่ 2 ไปกลุ่ม "อื่น ๆ"
+# (Kit แจ้ง 1 ต.ค. 2569: ศ.นพ.อภิรักษ์ เสนอ Craniomaxillofacial · ศ.นพ.บรรพต ไม่มี Surgery in Neurology)
+EXAM2_CUT = {"Craniomaxillofacial & Surgery", "Surgery in Neurology"}
+
 BOARDS = [
     {"id": "exam1", "label": "สอบครั้งที่ 1", "date_label": "ศ. 18 ก.ย. 2569",
      "path": f"{REPO}/slides/exam-18sep/index.html", "urlbase": f"{BASE}/slides/exam-18sep/"},
@@ -102,12 +106,20 @@ def main():
             int(s["qcount"].split()[0]) for s in official
         ) != blueprint["total_questions"]:
             raise ValueError("Blueprint totals mismatch")
+        # อาจารย์แจ้งภายหลังว่าไม่ออกสอบ → ย้ายออกจากกลุ่มสอบครั้งที่ 2 (ไปอยู่ "อื่น ๆ" ไม่ลบเอกสาร)
+        cut = [s for s in official if s["name"] in EXAM2_CUT]
+        if {s["name"] for s in cut} != EXAM2_CUT:
+            raise ValueError(f'EXAM2_CUT not found on the board: {EXAM2_CUT - {s["name"] for s in cut}}')
+        official = [s for s in official if s["name"] not in EXAM2_CUT]
+        exam2_questions = sum(int(s["qcount"].split()[0]) for s in official)
         official_nums = {s["num"] for s in official}
         other = [s for s in subs if s["num"] not in official_nums]
         for s in other:
             s["exam"] = "other"
         out["exams"].append({
-            "id": "exam2", "label": "สอบครั้งที่ 2", "date_label": "ศ. 2 ต.ค. 2569 · 25 วิชา / 134 ข้อตาม OR_2.pdf",
+            "id": "exam2", "label": "สอบครั้งที่ 2",
+            "date_label": f'ศ. 2 ต.ค. 2569 · {len(official)} วิชา / {exam2_questions} ข้อ'
+                          + (f' (ตัด {len(cut)} วิชาที่อาจารย์แจ้งว่าไม่ออกสอบ)' if cut else ''),
             "urlbase": b["urlbase"], "subjects": official,
         })
         out["exams"].append({
