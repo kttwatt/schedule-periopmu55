@@ -1168,6 +1168,7 @@ DOCS_CSS = """
 }
 .main-tab {
   flex: 1 1 0; text-align: center;
+  display: flex; align-items: center; justify-content: center; gap: 6px;
   font-family: inherit; font-weight: 700; font-size: 0.92rem;
   padding: 10px 10px 12px;
   border: 1px solid var(--border); border-bottom: none;
@@ -1242,20 +1243,23 @@ body.docs-mode #fabToday { display: none; }
 CAL_CSS = """
 /* ===== ไอคอนปฏิทินบนแท็บ ตารางเรียน — โชว์วันที่ปัจจุบัน (แทนอิโมจิ 📅 ที่ตรึงวันที่ไว้) ===== */
 .cal-ico {
+  flex: 0 0 auto;
   display: inline-flex; flex-direction: column;
-  width: 19px; height: 19px; margin-right: 3px;
-  vertical-align: -4px; overflow: hidden;
-  border: 1px solid #9f1239; border-radius: 4px; background: #fff;
+  width: 1.15em; height: 1.15em;
+  overflow: hidden;
+  border: 1px solid #9f1239; border-radius: 3px; background: #fff;
   box-shadow: 0 1px 2px rgba(15, 23, 42, .18);
 }
 .cal-ico-head {
+  flex: 0 0 42%;
   background: #e11d48; color: #fff;
-  font-size: 7px; font-weight: 800; line-height: 1;
-  letter-spacing: .02em; text-align: center; padding: 2px 0 1px;
+  font-size: 0.45em; font-weight: 800; line-height: 1;
+  letter-spacing: .02em; text-align: center;
+  display: flex; align-items: center; justify-content: center;
 }
 .cal-ico-day {
   flex: 1 1 auto; display: flex; align-items: center; justify-content: center;
-  color: #111827; font-size: 11px; font-weight: 800; line-height: 1;
+  color: #111827; font-size: 0.68em; font-weight: 800; line-height: 1;
   font-variant-numeric: tabular-nums;
 }
 """
