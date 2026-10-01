@@ -1239,7 +1239,28 @@ body.docs-mode #fabToday { display: none; }
 .doc-btn:hover { filter: brightness(0.94); }
 """
 
-CSS = CSS + GRID_CSS + DOCS_CSS
+CAL_CSS = """
+/* ===== ไอคอนปฏิทินบนแท็บ ตารางเรียน — โชว์วันที่ปัจจุบัน (แทนอิโมจิ 📅 ที่ตรึงวันที่ไว้) ===== */
+.cal-ico {
+  display: inline-flex; flex-direction: column;
+  width: 19px; height: 19px; margin-right: 3px;
+  vertical-align: -4px; overflow: hidden;
+  border: 1px solid #9f1239; border-radius: 4px; background: #fff;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, .18);
+}
+.cal-ico-head {
+  background: #e11d48; color: #fff;
+  font-size: 7px; font-weight: 800; line-height: 1;
+  letter-spacing: .02em; text-align: center; padding: 2px 0 1px;
+}
+.cal-ico-day {
+  flex: 1 1 auto; display: flex; align-items: center; justify-content: center;
+  color: #111827; font-size: 11px; font-weight: 800; line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+"""
+
+CSS = CSS + GRID_CSS + DOCS_CSS + CAL_CSS
 
 JS = """
 (function () {
@@ -1548,6 +1569,16 @@ JS = """
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 })();
+
+(function () {
+  var headEl = document.getElementById('calIcoHead');
+  var dayEl = document.getElementById('calIcoDay');
+  if (!headEl || !dayEl) return;
+  var MONTHS = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+  var now = new Date();
+  headEl.textContent = MONTHS[now.getMonth()];
+  dayEl.textContent = String(now.getDate());
+})();
 """
 DOCS_JS = """
 (function () {
@@ -1732,7 +1763,7 @@ def build_html(course, sessions, homework, notes):
     </header>
 
     <div class="main-tabs">
-      <button type="button" class="main-tab active" data-main="schedule">📅 ตารางเรียน</button>
+      <button type="button" class="main-tab active" data-main="schedule"><span class="cal-ico" aria-hidden="true"><span class="cal-ico-head" id="calIcoHead">—</span><span class="cal-ico-day" id="calIcoDay">–</span></span> ตารางเรียน</button>
       <button type="button" class="main-tab" data-main="docs">📚 เอกสารรายวิชา</button>
     </div>
 
