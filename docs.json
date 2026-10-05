@@ -840,10 +840,6 @@
             {
               "label": "เอกสาร",
               "url": "https://kttwatt.github.io/periop-mu55/slides/exam-02oct/31-infection-control-in-or.pdf"
-            },
-            {
-              "label": "Handout",
-              "url": "https://kttwatt.github.io/periop-mu55/slides/exam-02oct/31-infection-control-in-or-handout.pdf"
             }
           ],
           "status": "ok"
@@ -859,6 +855,23 @@
           "exam": "other",
           "docs": [],
           "status": "pending"
+        },
+        {
+          "id": "quality-improvement-project",
+          "num": 52,
+          "name": "การจัดทำโครงการพัฒนาคุณภาพ",
+          "lecturer": "ดร.วรรณวิมล คงสุวรรณ",
+          "day": "5 ต.ค.",
+          "qrange": "",
+          "qcount": "",
+          "exam": "other",
+          "docs": [
+            {
+              "label": "Handout",
+              "url": "https://kttwatt.github.io/periop-mu55/slides/other/2026-10-05-quality-improvement-project-handout.pdf"
+            }
+          ],
+          "status": "ok"
         }
       ]
     }
