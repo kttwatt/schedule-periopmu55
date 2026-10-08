@@ -24,6 +24,38 @@ BOARDS = [
      "path": f"{REPO}/slides/exam-02oct/index.html", "urlbase": f"{BASE}/slides/exam-02oct/"},
 ]
 
+# Scheduled lecturer handouts that are not part of either exam board. Keep them
+# discoverable in the schedule site's "อื่น ๆ" documents group without changing exam scope.
+ADDITIONAL_OTHER_DOCS = [{
+    "id": "quality-improvement-project",
+    "num": 52,
+    "name": "การจัดทำโครงการพัฒนาคุณภาพ",
+    "lecturer": "ดร.วรรณวิมล คงสุวรรณ",
+    "day": "5 ต.ค.",
+    "qrange": "",
+    "qcount": "",
+    "exam": "other",
+    "docs": [{
+        "label": "Handout",
+        "url": f"{BASE}/slides/other/2026-10-05-quality-improvement-project-handout.pdf",
+    }],
+    "status": "ok",
+}, {
+    "id": "non-technical-skills-patient-safety",
+    "num": None,
+    "name": "Non-technical Skills for Patient Safety",
+    "lecturer": "ดร.วรรณวิมล คงสุวรรณ",
+    "day": "2 ต.ค.",
+    "qrange": "",
+    "qcount": "",
+    "exam": "other",
+    "docs": [{
+        "label": "เอกสาร",
+        "url": f"{BASE}/slides/exam-02oct/2026-10-02-non-technical-skills-patient-safety.pdf",
+    }],
+    "status": "ok",
+}]
+
 
 def slug(text, prefix):
     s = re.sub(r'[^a-z0-9]+', '-', text.lower()).strip('-')
@@ -116,6 +148,7 @@ def main():
         other = [s for s in subs if s["num"] not in official_nums]
         for s in other:
             s["exam"] = "other"
+        other.extend(ADDITIONAL_OTHER_DOCS)
         out["exams"].append({
             "id": "exam2", "label": "สอบครั้งที่ 2",
             "date_label": f'ศ. 2 ต.ค. 2569 · {len(official)} วิชา / {exam2_questions} ข้อ'
