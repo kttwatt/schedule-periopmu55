@@ -906,6 +906,23 @@
             }
           ],
           "status": "ok"
+        },
+        {
+          "id": "periop-nursing-management",
+          "num": 54,
+          "name": "หลักการบริหารและจัดการงานการพยาบาล",
+          "lecturer": "ดร.วรรณวิมล คงสุวรรณ",
+          "day": "9 ต.ค.",
+          "qrange": "",
+          "qcount": "",
+          "exam": "other",
+          "docs": [
+            {
+              "label": "สไลด์",
+              "url": "https://kttwatt.github.io/periop-mu55/slides/other/2026-10-09-periop-nursing-management.pdf"
+            }
+          ],
+          "status": "ok"
         }
       ]
     }
