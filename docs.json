@@ -891,6 +891,23 @@
           "status": "ok"
         },
         {
+          "id": "clinical-practice-orientation",
+          "num": 53,
+          "name": "Orientation การฝึกภาคปฏิบัติ",
+          "lecturer": "พว.วริศรา ตุวยานนท์",
+          "day": "9 ต.ค.",
+          "qrange": "",
+          "qcount": "",
+          "exam": "other",
+          "docs": [
+            {
+              "label": "สไลด์",
+              "url": "https://kttwatt.github.io/periop-mu55/slides/other/2026-10-09-clinical-practice-orientation.pdf"
+            }
+          ],
+          "status": "ok"
+        },
+        {
           "id": "periop-nursing-management",
           "num": 54,
           "name": "หลักการบริหารและจัดการงานการพยาบาล",
@@ -970,19 +987,19 @@
           "status": "ok"
         },
         {
-          "id": "seminar-group-6-orientation",
+          "id": "seminar-group-6-supervision-new-graduate-or-nurses",
           "num": 6,
-          "name": "Orientation: Clinical Practice · กลุ่ม 6",
+          "name": "รูปแบบการนิเทศงานพยาบาลจบใหม่ในห้องผ่าตัด · กลุ่ม 6",
           "lecturer": "",
-          "day": "9 ต.ค. 2569",
+          "day": "8 ต.ค. 2569",
           "qrange": "",
           "qcount": "",
           "exam": "seminar",
           "docs": [
             {
-              "label": "ปฐมนิเทศ",
-              "tracking": "2026-10-09-clinical-practice-orientation.pdf",
-              "url": "https://kttwatt.github.io/periop-mu55/slides/other/2026-10-09-clinical-practice-orientation.pdf"
+              "label": "เปิด PDF",
+              "tracking": "2026-10-08_group-6_supervision-new-graduate-OR-nurses.pdf",
+              "url": "https://kttwatt.github.io/periop-mu55/slides/seminar/2026-10-08_group-6_supervision-new-graduate-OR-nurses.pdf"
             },
             {
               "label": "PDF รูปภาพ",
