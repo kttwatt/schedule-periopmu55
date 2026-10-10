@@ -1637,7 +1637,8 @@ DOCS_JS = """
   function render() {
     var items = allSubjects().filter(match);
     var withDocs = items.filter(function (i) { return i.subj.status === 'ok'; }).length;
-    countEl.textContent = items.length + ' วิชา · มีเอกสาร ' + withDocs + ' วิชา';
+    var unit = state.exam === 'seminar' ? 'รายการ' : 'วิชา';
+    countEl.textContent = items.length + ' ' + unit + ' · มีเอกสาร ' + withDocs + ' ' + unit;
     var html = '';
     if (state.exam === 'all') {
       html = DOCS.exams.map(function (e) {
@@ -1676,7 +1677,7 @@ DOCS_JS = """
     }
     var parts = h.split('/');
     var ex = parts[1] || 'all';
-    state.exam = (ex === 'exam1' || ex === 'exam2' || ex === 'other') ? ex : 'all';
+    state.exam = (ex === 'exam1' || ex === 'exam2' || ex === 'other' || ex === 'seminar') ? ex : 'all';
     chips.forEach(function (c) { c.classList.toggle('active', c.getAttribute('data-exam') === state.exam); });
     render();
     showMain('docs', false);
@@ -1796,6 +1797,7 @@ def build_html(course, sessions, homework, notes):
           <button type="button" class="chip" data-exam="exam1">สอบครั้งที่ 1</button>
           <button type="button" class="chip" data-exam="exam2">สอบครั้งที่ 2</button>
           <button type="button" class="chip" data-exam="other">อื่น ๆ</button>
+          <button type="button" class="chip" data-exam="seminar">สัมมนา</button>
         </div>
         <input id="docsSearch" class="docs-search" type="search" placeholder="ค้นหาวิชา / วิทยากร…">
         <div class="docs-count" id="docsCount"></div>

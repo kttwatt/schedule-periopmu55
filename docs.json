@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-08",
+  "generated": "2026-10-10",
   "exams": [
     {
       "id": "exam1",
@@ -920,6 +920,31 @@
             {
               "label": "สไลด์",
               "url": "https://kttwatt.github.io/periop-mu55/slides/other/2026-10-09-periop-nursing-management.pdf"
+            }
+          ],
+          "status": "ok"
+        }
+      ]
+    },
+    {
+      "id": "seminar",
+      "label": "สัมมนา",
+      "date_label": "รวมเอกสารสัมมนา",
+      "urlbase": "https://kttwatt.github.io/carm-live/",
+      "subjects": [
+        {
+          "id": "seminar-group-4-c-arm-radiation-safety",
+          "num": 4,
+          "name": "C-Arm Radiation Safety · สัมมนากลุ่ม 4",
+          "lecturer": "",
+          "day": "7 ต.ค. 2569",
+          "qrange": "",
+          "qcount": "",
+          "exam": "seminar",
+          "docs": [
+            {
+              "label": "เอกสาร",
+              "url": "https://kttwatt.github.io/carm-live/slides"
             }
           ],
           "status": "ok"

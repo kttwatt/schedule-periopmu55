@@ -54,6 +54,50 @@ ADDITIONAL_OTHER_DOCS = [{
         "url": f"{BASE}/slides/exam-02oct/2026-10-02-non-technical-skills-patient-safety.pdf",
     }],
     "status": "ok",
+}, {
+    "id": "clinical-practice-orientation",
+    "num": 53,
+    "name": "Orientation การฝึกภาคปฏิบัติ",
+    "lecturer": "พว.วริศรา ตุวยานนท์",
+    "day": "9 ต.ค.",
+    "qrange": "",
+    "qcount": "",
+    "exam": "other",
+    "docs": [{
+        "label": "สไลด์",
+        "url": f"{BASE}/slides/other/2026-10-09-clinical-practice-orientation.pdf",
+    }],
+    "status": "ok",
+}, {
+    "id": "periop-nursing-management",
+    "num": 54,
+    "name": "หลักการบริหารและจัดการงานการพยาบาล",
+    "lecturer": "ดร.วรรณวิมล คงสุวรรณ",
+    "day": "9 ต.ค.",
+    "qrange": "",
+    "qcount": "",
+    "exam": "other",
+    "docs": [{
+        "label": "สไลด์",
+        "url": f"{BASE}/slides/other/2026-10-09-periop-nursing-management.pdf",
+    }],
+    "status": "ok",
+}]
+
+ADDITIONAL_SEMINAR_DOCS = [{
+    "id": "seminar-group-4-c-arm-radiation-safety",
+    "num": 4,
+    "name": "C-Arm Radiation Safety · สัมมนากลุ่ม 4",
+    "lecturer": "",
+    "day": "7 ต.ค. 2569",
+    "qrange": "",
+    "qcount": "",
+    "exam": "seminar",
+    "docs": [{
+        "label": "เอกสาร",
+        "url": "https://kttwatt.github.io/carm-live/slides",
+    }],
+    "status": "ok",
 }]
 
 
@@ -159,8 +203,12 @@ def main():
             "id": "other", "label": "อื่น ๆ", "date_label": "ยังไม่อยู่ในลิสต์ทางการ — เก็บไว้ดู",
             "urlbase": b["urlbase"], "subjects": other,
         })
+    out["exams"].append({
+        "id": "seminar", "label": "สัมมนา", "date_label": "รวมเอกสารสัมมนา",
+        "urlbase": "https://kttwatt.github.io/carm-live/", "subjects": ADDITIONAL_SEMINAR_DOCS,
+    })
     with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(out, f, ensure_ascii=False, indent=1)
+        json.dump(out, f, ensure_ascii=False, indent=2)
 
     for e in out["exams"]:
         ok = sum(1 for s in e["subjects"] if s["status"] == "ok")
@@ -173,9 +221,10 @@ def main():
     for e in out["exams"]:
         for s in e["subjects"]:
             for d in s["docs"]:
-                local = d["url"].replace("https://kttwatt.github.io/periop-mu55/", REPO + "/")
-                if not os.path.exists(local):
-                    missing.append(local)
+                if d["url"].startswith(BASE + "/"):
+                    local = d["url"].replace(BASE + "/", REPO + "/", 1)
+                    if not os.path.exists(local):
+                        missing.append(local)
     print("ไฟล์เอกสารที่หาไม่เจอ:", missing if missing else "ไม่มี (ครบทุกไฟล์)")
 
 
