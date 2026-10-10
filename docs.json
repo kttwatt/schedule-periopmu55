@@ -891,23 +891,6 @@
           "status": "ok"
         },
         {
-          "id": "clinical-practice-orientation",
-          "num": 53,
-          "name": "Orientation การฝึกภาคปฏิบัติ",
-          "lecturer": "พว.วริศรา ตุวยานนท์",
-          "day": "9 ต.ค.",
-          "qrange": "",
-          "qcount": "",
-          "exam": "other",
-          "docs": [
-            {
-              "label": "สไลด์",
-              "url": "https://kttwatt.github.io/periop-mu55/slides/other/2026-10-09-clinical-practice-orientation.pdf"
-            }
-          ],
-          "status": "ok"
-        },
-        {
           "id": "periop-nursing-management",
           "num": 54,
           "name": "หลักการบริหารและจัดการงานการพยาบาล",
@@ -933,21 +916,27 @@
       "urlbase": "https://kttwatt.github.io/carm-live/",
       "subjects": [
         {
-          "id": "seminar-group-3",
+          "id": "seminar-group-3-anti-fatigue",
           "num": 3,
-          "name": "สัมมนากลุ่ม 3",
+          "name": "Anti-Fatigue Floor Mat in Head & Neck Surgery · กลุ่ม 3",
           "lecturer": "",
           "day": "",
           "qrange": "",
           "qcount": "",
           "exam": "seminar",
-          "docs": [],
-          "status": "pending"
+          "docs": [
+            {
+              "label": "เปิด PDF",
+              "tracking": "group-3_anti-fatigue-floor-mat-study.pdf",
+              "url": "https://kttwatt.github.io/periop-mu55/slides/seminar/group-3_anti-fatigue-floor-mat-study.pdf"
+            }
+          ],
+          "status": "ok"
         },
         {
           "id": "seminar-group-4-c-arm-radiation-safety",
           "num": 4,
-          "name": "ความปลอดภัยทางรังสี (C-Arm Radiation Safety)",
+          "name": "C-Arm Radiation Safety · กลุ่ม 4",
           "lecturer": "",
           "day": "7 ต.ค. 2569",
           "qrange": "",
@@ -955,14 +944,9 @@
           "exam": "seminar",
           "docs": [
             {
-              "label": "PDF (Drive)",
+              "label": "เปิด PDF",
               "tracking": "2026-10-07_group-4_c-arm-radiation-safety.pdf",
-              "url": "https://drive.google.com/file/d/1C57fqIXyD3Dzum6EePqz8kecjbg8MBme/view"
-            },
-            {
-              "label": "สไลด์ออนไลน์",
-              "tracking": "group-4-c-arm-radiation-safety-slides",
-              "url": "https://kttwatt.github.io/carm-live/slides"
+              "url": "https://kttwatt.github.io/periop-mu55/slides/seminar/2026-10-07_group-4_c-arm-radiation-safety.pdf"
             }
           ],
           "status": "ok"
@@ -970,7 +954,7 @@
         {
           "id": "seminar-group-5-sharps-safety",
           "num": 5,
-          "name": "Sharps Safety",
+          "name": "Sharps Safety · กลุ่ม 5",
           "lecturer": "",
           "day": "",
           "qrange": "",
@@ -978,63 +962,27 @@
           "exam": "seminar",
           "docs": [
             {
-              "label": "PDF (Drive)",
-              "tracking": "งานสัมมนา กลุ่ม 5 Sharps safety.pdf",
-              "url": "https://drive.google.com/file/d/1tl9OyxDkC_WySD_Q_R8gx1CV48ay7T43/view"
+              "label": "เปิด PDF",
+              "tracking": "group-5_sharps-safety.pdf",
+              "url": "https://kttwatt.github.io/periop-mu55/slides/seminar/group-5_sharps-safety.pdf"
             }
           ],
           "status": "ok"
         },
         {
-          "id": "seminar-group-6-supervision-new-graduate-or-nurses",
+          "id": "seminar-group-6-orientation",
           "num": 6,
-          "name": "รูปแบบการนิเทศงานพยาบาลจบใหม่ในห้องผ่าตัด",
+          "name": "Orientation: Clinical Practice · กลุ่ม 6",
           "lecturer": "",
-          "day": "8 ต.ค. 2569",
+          "day": "9 ต.ค. 2569",
           "qrange": "",
           "qcount": "",
           "exam": "seminar",
           "docs": [
             {
-              "label": "PDF (Drive)",
-              "tracking": "2026-10-08_group-6_supervision-new-graduate-OR-nurses.pdf",
-              "url": "https://drive.google.com/file/d/1gCPSrdfwyVq4y5vw79PQpsVNc0F_iYD2/view"
-            }
-          ],
-          "status": "ok"
-        },
-        {
-          "id": "seminar-group-6-aorn-page-1",
-          "num": 6,
-          "name": "ภาพประกอบกลุ่ม 6 · AORN Periop 101 หน้า 1",
-          "lecturer": "",
-          "day": "",
-          "qrange": "",
-          "qcount": "",
-          "exam": "seminar",
-          "docs": [
-            {
-              "label": "เปิดภาพ",
-              "tracking": "AORN-Periop-101-package-page-1.jpeg",
-              "url": "https://drive.google.com/file/d/1FahAN2Zoyz_JotS5Oie8mPEZpvA45UFx/view"
-            }
-          ],
-          "status": "ok"
-        },
-        {
-          "id": "seminar-group-6-aorn-page-2",
-          "num": 6,
-          "name": "ภาพประกอบกลุ่ม 6 · AORN Periop 101 หน้า 2",
-          "lecturer": "",
-          "day": "",
-          "qrange": "",
-          "qcount": "",
-          "exam": "seminar",
-          "docs": [
-            {
-              "label": "เปิดภาพ",
-              "tracking": "AORN-Periop-101-package-page-2.jpeg",
-              "url": "https://drive.google.com/file/d/1TFyrIpcqZIQNBrtMDjDqxhR0u8K-HKYT/view"
+              "label": "เปิด PDF",
+              "tracking": "2026-10-09_group-6_orientation-and-aorn.pdf",
+              "url": "https://kttwatt.github.io/periop-mu55/slides/seminar/2026-10-09_group-6_orientation-and-aorn.pdf"
             }
           ],
           "status": "ok"
@@ -1042,7 +990,7 @@
         {
           "id": "seminar-group-7-surgical-smoke-safety",
           "num": 7,
-          "name": "Surgical Smoke Safety Protocols",
+          "name": "Surgical Smoke Safety Protocols · กลุ่ม 7",
           "lecturer": "",
           "day": "",
           "qrange": "",
@@ -1050,29 +998,17 @@
           "exam": "seminar",
           "docs": [
             {
-              "label": "PDF (Drive)",
-              "tracking": "กลุ่ม 7 Surgical Smoke Safety Protocols.pptx.pdf",
-              "url": "https://drive.google.com/file/d/1aHGwHfnTggPKjlhCB_Gq9PKEs2hMdkrZ/view"
+              "label": "เปิด PDF",
+              "tracking": "group-7_surgical-smoke-safety-protocols.pdf",
+              "url": "https://kttwatt.github.io/periop-mu55/slides/seminar/group-7_surgical-smoke-safety-protocols.pdf"
             }
           ],
           "status": "ok"
         },
         {
-          "id": "seminar-group-8",
+          "id": "seminar-group-8-rsi",
           "num": 8,
-          "name": "สัมมนากลุ่ม 8",
-          "lecturer": "",
-          "day": "",
-          "qrange": "",
-          "qcount": "",
-          "exam": "seminar",
-          "docs": [],
-          "status": "pending"
-        },
-        {
-          "id": "seminar-rsi",
-          "num": null,
-          "name": "RSI · ยังไม่ระบุกลุ่ม",
+          "name": "RSI · กลุ่ม 8",
           "lecturer": "",
           "day": "",
           "qrange": "",
@@ -1080,27 +1016,9 @@
           "exam": "seminar",
           "docs": [
             {
-              "label": "PDF (Drive)",
-              "tracking": "RSI.pdf",
-              "url": "https://drive.google.com/file/d/1yjDWzd0tHDXz3fUSnn3RwuFdA3OHRnmk/view"
-            }
-          ],
-          "status": "ok"
-        },
-        {
-          "id": "seminar-anti-fatigue-floor-mat-head-neck-surgery",
-          "num": null,
-          "name": "บทความประกอบ · Anti-Fatigue Floor Mat in Head & Neck Surgery",
-          "lecturer": "",
-          "day": "",
-          "qrange": "",
-          "qcount": "",
-          "exam": "seminar",
-          "docs": [
-            {
-              "label": "PDF (Drive)",
-              "tracking": "2025-anti-fatigue-floor-mat-head-neck-surgery.pdf",
-              "url": "https://drive.google.com/file/d/166QjfbCG_P74CpL0ElFt_oIKYcZ9b1IA/view"
+              "label": "เปิด PDF",
+              "tracking": "group-8_rsi.pdf",
+              "url": "https://kttwatt.github.io/periop-mu55/slides/seminar/group-8_rsi.pdf"
             }
           ],
           "status": "ok"
