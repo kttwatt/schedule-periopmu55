@@ -1623,7 +1623,7 @@ DOCS_JS = """
     var badge = '';
     var meta = [subj.day, subj.lecturer, subj.qrange, exam.id === 'exam2' ? subj.qcount : ''].filter(Boolean).join(' · ');
     var actions = subj.docs.map(function (d) {
-      var fname = d.url.split('/').pop();
+      var fname = d.tracking || d.url.split('/').pop();
       return '<a class="doc-btn" data-goatcounter-click="' + esc(fname) + '" href="' + esc(d.url) +
         '" target="_blank" rel="noopener">📄 ' + esc(d.label) + '</a>';
     }).join('');
@@ -1637,7 +1637,7 @@ DOCS_JS = """
   function render() {
     var items = allSubjects().filter(match);
     var withDocs = items.filter(function (i) { return i.subj.status === 'ok'; }).length;
-    var unit = state.exam === 'seminar' ? 'รายการ' : 'วิชา';
+    var unit = (state.exam === 'seminar' || state.exam === 'all') ? 'รายการ' : 'วิชา';
     countEl.textContent = items.length + ' ' + unit + ' · มีเอกสาร ' + withDocs + ' ' + unit;
     var html = '';
     if (state.exam === 'all') {
