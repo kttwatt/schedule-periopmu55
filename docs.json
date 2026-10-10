@@ -980,9 +980,14 @@
           "exam": "seminar",
           "docs": [
             {
-              "label": "เปิด PDF",
-              "tracking": "2026-10-09_group-6_orientation-and-aorn.pdf",
-              "url": "https://kttwatt.github.io/periop-mu55/slides/seminar/2026-10-09_group-6_orientation-and-aorn.pdf"
+              "label": "ปฐมนิเทศ",
+              "tracking": "2026-10-09-clinical-practice-orientation.pdf",
+              "url": "https://kttwatt.github.io/periop-mu55/slides/other/2026-10-09-clinical-practice-orientation.pdf"
+            },
+            {
+              "label": "PDF รูปภาพ",
+              "tracking": "group-6_aorn-images.pdf",
+              "url": "https://kttwatt.github.io/periop-mu55/slides/seminar/group-6_aorn-images.pdf"
             }
           ],
           "status": "ok"

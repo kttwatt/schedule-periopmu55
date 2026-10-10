@@ -125,9 +125,13 @@ ADDITIONAL_SEMINAR_DOCS = [{
     "qcount": "",
     "exam": "seminar",
     "docs": [{
-        "label": "เปิด PDF",
-        "tracking": "2026-10-09_group-6_orientation-and-aorn.pdf",
-        "url": f"{BASE}/slides/seminar/2026-10-09_group-6_orientation-and-aorn.pdf",
+        "label": "ปฐมนิเทศ",
+        "tracking": "2026-10-09-clinical-practice-orientation.pdf",
+        "url": f"{BASE}/slides/other/2026-10-09-clinical-practice-orientation.pdf",
+    }, {
+        "label": "PDF รูปภาพ",
+        "tracking": "group-6_aorn-images.pdf",
+        "url": f"{BASE}/slides/seminar/group-6_aorn-images.pdf",
     }],
     "status": "ok",
 }, {
