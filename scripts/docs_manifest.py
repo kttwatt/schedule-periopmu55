@@ -97,6 +97,10 @@ ADDITIONAL_SEMINAR_DOCS = [{
         "label": "PDF รูปภาพ",
         "tracking": "2026-10-07_group-3_msd-prevention-system.pdf",
         "url": f"{BASE}/slides/seminar/2026-10-07_group-3_msd-prevention-system.pdf",
+    }, {
+        "label": "Anti-Fatigue",
+        "tracking": "group-3_anti-fatigue-floor-mat-study.pdf",
+        "url": f"{BASE}/slides/seminar/group-3_anti-fatigue-floor-mat-study.pdf",
     }],
     "status": "ok",
 }, {
