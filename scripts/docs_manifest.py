@@ -85,18 +85,18 @@ ADDITIONAL_OTHER_DOCS = [{
 }]
 
 ADDITIONAL_SEMINAR_DOCS = [{
-    "id": "seminar-group-3-anti-fatigue",
+    "id": "seminar-group-3-msd-prevention",
     "num": 3,
-    "name": "Anti-Fatigue Floor Mat in Head & Neck Surgery · กลุ่ม 3",
+    "name": "จากอาการปวดสู่การป้องกัน: การจัดการ MSDs อย่างเป็นระบบ · กลุ่ม 3",
     "lecturer": "",
-    "day": "",
+    "day": "7 ต.ค. 2569",
     "qrange": "",
     "qcount": "",
     "exam": "seminar",
     "docs": [{
-        "label": "เปิด PDF",
-        "tracking": "group-3_anti-fatigue-floor-mat-study.pdf",
-        "url": f"{BASE}/slides/seminar/group-3_anti-fatigue-floor-mat-study.pdf",
+        "label": "PDF รูปภาพ",
+        "tracking": "2026-10-07_group-3_msd-prevention-system.pdf",
+        "url": f"{BASE}/slides/seminar/2026-10-07_group-3_msd-prevention-system.pdf",
     }],
     "status": "ok",
 }, {

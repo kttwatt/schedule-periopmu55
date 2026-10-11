@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-10",
+  "generated": "2026-10-11",
   "exams": [
     {
       "id": "exam1",
@@ -933,19 +933,19 @@
       "urlbase": "https://kttwatt.github.io/carm-live/",
       "subjects": [
         {
-          "id": "seminar-group-3-anti-fatigue",
+          "id": "seminar-group-3-msd-prevention",
           "num": 3,
-          "name": "Anti-Fatigue Floor Mat in Head & Neck Surgery · กลุ่ม 3",
+          "name": "จากอาการปวดสู่การป้องกัน: การจัดการ MSDs อย่างเป็นระบบ · กลุ่ม 3",
           "lecturer": "",
-          "day": "",
+          "day": "7 ต.ค. 2569",
           "qrange": "",
           "qcount": "",
           "exam": "seminar",
           "docs": [
             {
-              "label": "เปิด PDF",
-              "tracking": "group-3_anti-fatigue-floor-mat-study.pdf",
-              "url": "https://kttwatt.github.io/periop-mu55/slides/seminar/group-3_anti-fatigue-floor-mat-study.pdf"
+              "label": "PDF รูปภาพ",
+              "tracking": "2026-10-07_group-3_msd-prevention-system.pdf",
+              "url": "https://kttwatt.github.io/periop-mu55/slides/seminar/2026-10-07_group-3_msd-prevention-system.pdf"
             }
           ],
           "status": "ok"
