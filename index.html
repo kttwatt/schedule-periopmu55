@@ -584,6 +584,8 @@ body.docs-mode #fabToday { display: none; }
 .doc-main { flex: 1 1 auto; min-width: 0; }
 .doc-line { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
 .doc-name { font-weight: 700; font-size: 0.88rem; line-height: 1.35; }
+.doc-group { flex-shrink: 0; background: var(--docs-light); color: var(--docs); font-size: 0.68rem; font-weight: 700;
+  padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
 .doc-badge { flex-shrink: 0; background: var(--primary-light); color: var(--primary); font-size: 0.66rem; font-weight: 700;
   padding: 2px 8px; border-radius: 999px; white-space: nowrap; border: 1px solid var(--border); }
 .doc-badge.exam1 { background: #eef2ff; color: #3730a3; border-color: #c7d2fe; }
@@ -592,7 +594,20 @@ body.docs-mode #fabToday { display: none; }
 .doc-actions { display: flex; flex-wrap: nowrap; gap: 6px; flex: 0 0 auto; }
 .doc-btn { display: inline-flex; align-items: center; gap: 4px; background: var(--docs); color: #fff;
   font-size: 0.76rem; font-weight: 700; text-decoration: none; padding: 7px 11px; border-radius: 9px; white-space: nowrap; }
-@media (max-width: 520px) { .doc-name { font-size: 0.84rem; } .doc-btn { padding: 7px 9px; font-size: 0.72rem; } }
+@media (max-width: 520px) {
+  .docs-chips { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 4px; align-items: stretch; }
+  .docs-chips .chip { grid-column: span 2; width: 100%; min-width: 0; margin-bottom: 0; padding: 7px 3px 9px; text-align: center; font-size: 0.72rem; white-space: nowrap; }
+  .docs-chips .chip:nth-child(4) { grid-column: 1 / span 3; }
+  .docs-chips .chip:nth-child(5) { grid-column: 4 / span 3; }
+  .doc-row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 7px; align-items: start; padding: 11px 12px; }
+  .doc-main { width: 100%; }
+  .doc-line { align-items: flex-start; flex-wrap: nowrap; gap: 7px; }
+  .doc-name { flex: 1 1 auto; min-width: 0; font-size: 0.9rem; }
+  .doc-group { margin-top: 1px; font-size: 0.68rem; }
+  .doc-meta { margin-top: 3px; font-size: 0.77rem; }
+  .doc-actions { flex: 0 0 auto; flex-wrap: wrap; justify-content: flex-start; gap: 6px; }
+  .doc-btn { padding: 8px 10px; font-size: 0.75rem; }
+}
 .doc-btn:hover { filter: brightness(0.94); }
 
 /* ===== ไอคอนปฏิทินบนแท็บ ตารางเรียน — โชว์วันที่ปัจจุบัน (แทนอิโมจิ 📅 ที่ตรึงวันที่ไว้) ===== */
@@ -1695,6 +1710,10 @@ const DOCS = {"generated": "2026-10-11", "exams": [{"id": "exam1", "label": "ส
   function cardHtml(exam, subj) {
     // ไม่ติดป้ายครั้งที่สอบในแถวแล้ว — ข้อมูลช่วงข้อสอบย้ายไปอยู่ในบรรทัดข้อมูลย่อย
     var badge = '';
+    var displayName = subj.name;
+    var groupMatch = exam.id === 'seminar' ? subj.name.match(/\s*·\s*(กลุ่ม\s*\d+)$/) : null;
+    var group = groupMatch ? groupMatch[1] : '';
+    if (groupMatch) displayName = subj.name.slice(0, groupMatch.index).trim();
     var meta = [subj.day, subj.lecturer, subj.qrange, exam.id === 'exam2' ? subj.qcount : ''].filter(Boolean).join(' · ');
     var actions = subj.docs.map(function (d) {
       var fname = d.tracking || d.url.split('/').pop();
@@ -1703,7 +1722,8 @@ const DOCS = {"generated": "2026-10-11", "exams": [{"id": "exam1", "label": "ส
     }).join('');
     if (!actions) actions = '<span class="doc-meta">ยังไม่มีไฟล์เอกสาร</span>';
     return '<div class="doc-row' + (subj.status === 'ok' ? '' : ' pending') + '" id="doc-' + esc(exam.id + '-' + subj.id) + '">' +
-      '<div class="doc-main"><div class="doc-line"><span class="doc-name">' + esc(subj.name) + '</span>' + badge + '</div>' +
+      '<div class="doc-main"><div class="doc-line"><span class="doc-name">' + esc(displayName) + '</span>' +
+      (group ? '<span class="doc-group">' + esc(group) + '</span>' : '') + badge + '</div>' +
       (meta ? '<div class="doc-meta">' + esc(meta) + '</div>' : '') + '</div>' +
       '<div class="doc-actions">' + actions + '</div></div>';
   }
