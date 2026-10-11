@@ -116,6 +116,10 @@ ADDITIONAL_SEMINAR_DOCS = [{
         "label": "เปิด PDF",
         "tracking": "2026-10-07_group-4_c-arm-radiation-safety.pdf",
         "url": f"{BASE}/slides/seminar/2026-10-07_group-4_c-arm-radiation-safety.pdf",
+    }, {
+        "label": "Simulator",
+        "tracking": "carm-simulator",
+        "url": "https://kttwatt.github.io/carm-simulator/",
     }],
     "status": "ok",
 }, {
