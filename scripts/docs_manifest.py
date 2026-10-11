@@ -94,11 +94,11 @@ ADDITIONAL_SEMINAR_DOCS = [{
     "qcount": "",
     "exam": "seminar",
     "docs": [{
-        "label": "PDF รูปภาพ",
+        "label": "Slides",
         "tracking": "2026-10-07_group-3_msd-prevention-system.pdf",
         "url": f"{BASE}/slides/seminar/2026-10-07_group-3_msd-prevention-system.pdf",
     }, {
-        "label": "Anti-Fatigue",
+        "label": "เพิ่มเติม",
         "tracking": "group-3_anti-fatigue-floor-mat-study.pdf",
         "url": f"{BASE}/slides/seminar/group-3_anti-fatigue-floor-mat-study.pdf",
     }],
@@ -113,7 +113,7 @@ ADDITIONAL_SEMINAR_DOCS = [{
     "qcount": "",
     "exam": "seminar",
     "docs": [{
-        "label": "เปิด PDF",
+        "label": "Slides",
         "tracking": "2026-10-07_group-4_c-arm-radiation-safety.pdf",
         "url": f"{BASE}/slides/seminar/2026-10-07_group-4_c-arm-radiation-safety.pdf",
     }, {
@@ -132,7 +132,7 @@ ADDITIONAL_SEMINAR_DOCS = [{
     "qcount": "",
     "exam": "seminar",
     "docs": [{
-        "label": "เปิด PDF",
+        "label": "Slides",
         "tracking": "group-5_sharps-safety.pdf",
         "url": f"{BASE}/slides/seminar/group-5_sharps-safety.pdf",
     }],
@@ -147,11 +147,11 @@ ADDITIONAL_SEMINAR_DOCS = [{
     "qcount": "",
     "exam": "seminar",
     "docs": [{
-        "label": "เปิด PDF",
+        "label": "Slides",
         "tracking": "2026-10-08_group-6_supervision-new-graduate-OR-nurses.pdf",
         "url": f"{BASE}/slides/seminar/2026-10-08_group-6_supervision-new-graduate-OR-nurses.pdf",
     }, {
-        "label": "PDF รูปภาพ",
+        "label": "เพิ่มเติม",
         "tracking": "group-6_aorn-images.pdf",
         "url": f"{BASE}/slides/seminar/group-6_aorn-images.pdf",
     }],
@@ -166,7 +166,7 @@ ADDITIONAL_SEMINAR_DOCS = [{
     "qcount": "",
     "exam": "seminar",
     "docs": [{
-        "label": "เปิด PDF",
+        "label": "Slides",
         "tracking": "group-7_surgical-smoke-safety-protocols.pdf",
         "url": f"{BASE}/slides/seminar/group-7_surgical-smoke-safety-protocols.pdf",
     }],
@@ -181,7 +181,7 @@ ADDITIONAL_SEMINAR_DOCS = [{
     "qcount": "",
     "exam": "seminar",
     "docs": [{
-        "label": "เปิด PDF",
+        "label": "Slides",
         "tracking": "group-8_rsi.pdf",
         "url": f"{BASE}/slides/seminar/group-8_rsi.pdf",
     }],
