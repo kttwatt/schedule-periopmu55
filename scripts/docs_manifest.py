@@ -28,7 +28,7 @@ BOARDS = [
 ADDITIONAL_CQI_DOCS = [{
     "id": "cqi-redose-reminder",
     "num": 1,
-    "name": "นวัตกรรม Redose Reminder — ป้ายเตือนให้ยาปฏิชีวนะซ้ำระหว่างผ่าตัด",
+    "name": "นวัตกรรม Redose Reminder — ป้ายเตือนให้ยาปฏิชีวนะซ้ำระหว่างผ่าตัด · กลุ่ม 1",
     "lecturer": "",
     "day": "12 พ.ย. 2569",
     "qrange": "",
@@ -43,7 +43,7 @@ ADDITIONAL_CQI_DOCS = [{
 }, {
     "id": "cqi-uro-stone-trap",
     "num": 2,
-    "name": "นวัตกรรม URO stone trap — อุปกรณ์ดักเก็บเศษนิ่วจากระบบ suction (RIRS)",
+    "name": "นวัตกรรม URO stone trap — อุปกรณ์ดักเก็บเศษนิ่วจากระบบ suction (RIRS) · กลุ่ม 2",
     "lecturer": "",
     "day": "12 พ.ย. 2569",
     "qrange": "",
