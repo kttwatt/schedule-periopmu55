@@ -1116,6 +1116,42 @@
             }
           ],
           "status": "ok"
+        },
+        {
+          "id": "cqi-group-4-cotton-swab-count",
+          "num": 4,
+          "name": "นวัตกรรมสำลีซับนับครบ — ความปลอดภัยในการผ่าตัด · กลุ่ม 4",
+          "lecturer": "",
+          "day": "12 พ.ย. 2569",
+          "qrange": "",
+          "qcount": "",
+          "exam": "cqi",
+          "docs": [
+            {
+              "label": "Slides",
+              "tracking": "2026-11-12_cqi-group-4-cotton-swab-count.pdf",
+              "url": "https://kttwatt.github.io/periop-mu55/slides/cqi/2026-11-12_cqi-group-4-cotton-swab-count.pdf"
+            }
+          ],
+          "status": "ok"
+        },
+        {
+          "id": "cqi-group-6-pneumo-safe",
+          "num": 6,
+          "name": "นวัตกรรม Pneumo safe — สายรัดจัดระเบียบสายอุปกรณ์ IPC · กลุ่ม 6",
+          "lecturer": "",
+          "day": "12 พ.ย. 2569",
+          "qrange": "",
+          "qcount": "",
+          "exam": "cqi",
+          "docs": [
+            {
+              "label": "Slides",
+              "tracking": "2026-11-12_cqi-group-6-pneumo-safe.pdf",
+              "url": "https://kttwatt.github.io/periop-mu55/slides/cqi/2026-11-12_cqi-group-6-pneumo-safe.pdf"
+            }
+          ],
+          "status": "ok"
         }
       ]
     }

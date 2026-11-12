@@ -55,6 +55,51 @@ ADDITIONAL_CQI_DOCS = [{
         "url": f"{BASE}/slides/cqi/2026-11-12_cqi-uro-stone-trap.pdf",
     }],
     "status": "ok",
+}, {
+    "id": "cqi-group-3-scrub-easy",
+    "num": 3,
+    "name": "นวัตกรรม Scrub Easy — เบาะพยุงแขนและขาลดภาระการประคองอวัยวะระหว่างเตรียมผิวหนังก่อนผ่าตัด · กลุ่ม 3",
+    "lecturer": "",
+    "day": "12 พ.ย. 2569",
+    "qrange": "",
+    "qcount": "",
+    "exam": "cqi",
+    "docs": [{
+        "label": "Slides",
+        "tracking": "2026-11-12_cqi-group-3-scrub-easy.pdf",
+        "url": f"{BASE}/slides/cqi/2026-11-12_cqi-group-3-scrub-easy.pdf",
+    }],
+    "status": "ok",
+}, {
+    "id": "cqi-group-4-cotton-swab-count",
+    "num": 4,
+    "name": "นวัตกรรมสำลีซับนับครบ — ความปลอดภัยในการผ่าตัด · กลุ่ม 4",
+    "lecturer": "",
+    "day": "12 พ.ย. 2569",
+    "qrange": "",
+    "qcount": "",
+    "exam": "cqi",
+    "docs": [{
+        "label": "Slides",
+        "tracking": "2026-11-12_cqi-group-4-cotton-swab-count.pdf",
+        "url": f"{BASE}/slides/cqi/2026-11-12_cqi-group-4-cotton-swab-count.pdf",
+    }],
+    "status": "ok",
+}, {
+    "id": "cqi-group-6-pneumo-safe",
+    "num": 6,
+    "name": "นวัตกรรม Pneumo safe — สายรัดจัดระเบียบสายอุปกรณ์ IPC · กลุ่ม 6",
+    "lecturer": "",
+    "day": "12 พ.ย. 2569",
+    "qrange": "",
+    "qcount": "",
+    "exam": "cqi",
+    "docs": [{
+        "label": "Slides",
+        "tracking": "2026-11-12_cqi-group-6-pneumo-safe.pdf",
+        "url": f"{BASE}/slides/cqi/2026-11-12_cqi-group-6-pneumo-safe.pdf",
+    }],
+    "status": "ok",
 }]
 
 # Scheduled lecturer handouts that are not part of either exam board. Keep them
