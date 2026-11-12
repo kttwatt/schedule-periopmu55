@@ -24,6 +24,39 @@ BOARDS = [
      "path": f"{REPO}/slides/exam-02oct/index.html", "urlbase": f"{BASE}/slides/exam-02oct/"},
 ]
 
+# เอกสาร CQI / นวัตกรรมของรุ่น 55 (ไฟล์อยู่ที่ slides/cqi/ ใน repo periop-mu55)
+ADDITIONAL_CQI_DOCS = [{
+    "id": "cqi-redose-reminder",
+    "num": 1,
+    "name": "นวัตกรรม Redose Reminder — ป้ายเตือนให้ยาปฏิชีวนะซ้ำระหว่างผ่าตัด",
+    "lecturer": "",
+    "day": "12 พ.ย. 2569",
+    "qrange": "",
+    "qcount": "",
+    "exam": "cqi",
+    "docs": [{
+        "label": "Slides",
+        "tracking": "2026-11-12_cqi-redose-reminder-intraop-antibiotic.pdf",
+        "url": f"{BASE}/slides/cqi/2026-11-12_cqi-redose-reminder-intraop-antibiotic.pdf",
+    }],
+    "status": "ok",
+}, {
+    "id": "cqi-uro-stone-trap",
+    "num": 2,
+    "name": "นวัตกรรม URO stone trap — อุปกรณ์ดักเก็บเศษนิ่วจากระบบ suction (RIRS)",
+    "lecturer": "",
+    "day": "12 พ.ย. 2569",
+    "qrange": "",
+    "qcount": "",
+    "exam": "cqi",
+    "docs": [{
+        "label": "Slides",
+        "tracking": "2026-11-12_cqi-uro-stone-trap.pdf",
+        "url": f"{BASE}/slides/cqi/2026-11-12_cqi-uro-stone-trap.pdf",
+    }],
+    "status": "ok",
+}]
+
 # Scheduled lecturer handouts that are not part of either exam board. Keep them
 # discoverable in the schedule site's "อื่น ๆ" documents group without changing exam scope.
 ADDITIONAL_OTHER_DOCS = [{
@@ -296,12 +329,16 @@ def main():
         "id": "seminar", "label": "สัมมนา", "date_label": "รวมเอกสารสัมมนา",
         "urlbase": "https://kttwatt.github.io/carm-live/", "subjects": ADDITIONAL_SEMINAR_DOCS,
     })
+    out["exams"].append({
+        "id": "cqi", "label": "CQI", "date_label": "นวัตกรรม / CQI รุ่น 55",
+        "urlbase": f"{BASE}/slides/cqi/", "subjects": ADDITIONAL_CQI_DOCS,
+    })
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=2)
 
     for e in out["exams"]:
         ok = sum(1 for s in e["subjects"] if s["status"] == "ok")
-        unit = "รายการ" if e["id"] == "seminar" else "วิชา"
+        unit = "รายการ" if e["id"] in ("seminar", "cqi") else "วิชา"
         print(f'{e["label"]}: {len(e["subjects"])} {unit} · มีเอกสาร {ok} · รอเอกสาร {len(e["subjects"])-ok}')
         for s in e["subjects"][:3]:
             print(f'   - [{s["num"]}] {s["name"]} | {s["lecturer"]} | {s["day"]} | {s["qrange"]} | {len(s["docs"])} doc')

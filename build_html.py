@@ -1241,8 +1241,6 @@ body.docs-mode #fabToday { display: none; }
 @media (max-width: 520px) {
   .docs-chips { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 4px; align-items: stretch; }
   .docs-chips .chip { grid-column: span 2; width: 100%; min-width: 0; margin-bottom: 0; padding: 7px 3px 9px; text-align: center; font-size: 0.72rem; white-space: nowrap; }
-  .docs-chips .chip:nth-child(4) { grid-column: 1 / span 3; }
-  .docs-chips .chip:nth-child(5) { grid-column: 4 / span 3; }
   .doc-row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 7px; align-items: start; padding: 11px 12px; }
   .doc-main { width: 100%; }
   .doc-line { align-items: flex-start; flex-wrap: nowrap; gap: 7px; }
@@ -1657,14 +1655,15 @@ DOCS_JS = """
   function render() {
     var items = allSubjects().filter(match);
     var withDocs = items.filter(function (i) { return i.subj.status === 'ok'; }).length;
-    var unit = (state.exam === 'seminar' || state.exam === 'all') ? 'รายการ' : 'วิชา';
+    var unit = (state.exam === 'seminar' || state.exam === 'cqi' || state.exam === 'all') ? 'รายการ' : 'วิชา';
     countEl.textContent = items.length + ' ' + unit + ' · มีเอกสาร ' + withDocs + ' ' + unit;
     var html = '';
     if (state.exam === 'all') {
       html = DOCS.exams.map(function (e) {
         var sub = items.filter(function (i) { return i.exam.id === e.id; });
         if (!sub.length) return '';
-        return '<div class="docs-group-title">' + esc(e.label + ' · ' + e.date_label + ' — ' + sub.length + ' วิชา') + '</div>' +
+        var gUnit = (e.id === 'seminar' || e.id === 'cqi') ? 'รายการ' : 'วิชา';
+        return '<div class="docs-group-title">' + esc(e.label + ' · ' + e.date_label + ' — ' + sub.length + ' ' + gUnit) + '</div>' +
           '<div class="docs-list">' + sub.map(function (i) { return cardHtml(e, i.subj); }).join('') + '</div>';
       }).join('');
     } else {
@@ -1697,7 +1696,7 @@ DOCS_JS = """
     }
     var parts = h.split('/');
     var ex = parts[1] || 'all';
-    state.exam = (ex === 'exam1' || ex === 'exam2' || ex === 'other' || ex === 'seminar') ? ex : 'all';
+    state.exam = (ex === 'exam1' || ex === 'exam2' || ex === 'other' || ex === 'seminar' || ex === 'cqi') ? ex : 'all';
     chips.forEach(function (c) { c.classList.toggle('active', c.getAttribute('data-exam') === state.exam); });
     render();
     showMain('docs', false);
@@ -1818,6 +1817,7 @@ def build_html(course, sessions, homework, notes):
           <button type="button" class="chip" data-exam="exam2">สอบครั้งที่ 2</button>
           <button type="button" class="chip" data-exam="other">อื่น ๆ</button>
           <button type="button" class="chip" data-exam="seminar">สัมมนา</button>
+          <button type="button" class="chip" data-exam="cqi">CQI</button>
         </div>
         <input id="docsSearch" class="docs-search" type="search" placeholder="ค้นหาวิชา / วิทยากร…">
         <div class="docs-count" id="docsCount"></div>

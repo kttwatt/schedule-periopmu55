@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-11",
+  "generated": "2026-11-12",
   "exams": [
     {
       "id": "exam1",
@@ -1051,6 +1051,50 @@
               "label": "Slides",
               "tracking": "group-8_rsi.pdf",
               "url": "https://kttwatt.github.io/periop-mu55/slides/seminar/group-8_rsi.pdf"
+            }
+          ],
+          "status": "ok"
+        }
+      ]
+    },
+    {
+      "id": "cqi",
+      "label": "CQI",
+      "date_label": "นวัตกรรม / CQI รุ่น 55",
+      "urlbase": "https://kttwatt.github.io/periop-mu55/slides/cqi/",
+      "subjects": [
+        {
+          "id": "cqi-redose-reminder",
+          "num": 1,
+          "name": "นวัตกรรม Redose Reminder — ป้ายเตือนให้ยาปฏิชีวนะซ้ำระหว่างผ่าตัด",
+          "lecturer": "",
+          "day": "12 พ.ย. 2569",
+          "qrange": "",
+          "qcount": "",
+          "exam": "cqi",
+          "docs": [
+            {
+              "label": "Slides",
+              "tracking": "2026-11-12_cqi-redose-reminder-intraop-antibiotic.pdf",
+              "url": "https://kttwatt.github.io/periop-mu55/slides/cqi/2026-11-12_cqi-redose-reminder-intraop-antibiotic.pdf"
+            }
+          ],
+          "status": "ok"
+        },
+        {
+          "id": "cqi-uro-stone-trap",
+          "num": 2,
+          "name": "นวัตกรรม URO stone trap — อุปกรณ์ดักเก็บเศษนิ่วจากระบบ suction (RIRS)",
+          "lecturer": "",
+          "day": "12 พ.ย. 2569",
+          "qrange": "",
+          "qcount": "",
+          "exam": "cqi",
+          "docs": [
+            {
+              "label": "Slides",
+              "tracking": "2026-11-12_cqi-uro-stone-trap.pdf",
+              "url": "https://kttwatt.github.io/periop-mu55/slides/cqi/2026-11-12_cqi-uro-stone-trap.pdf"
             }
           ],
           "status": "ok"
