@@ -1098,6 +1098,24 @@
             }
           ],
           "status": "ok"
+        },
+        {
+          "id": "cqi-group-3-scrub-easy",
+          "num": 3,
+          "name": "นวัตกรรม Scrub Easy — เบาะพยุงแขนและขาลดภาระการประคองอวัยวะระหว่างเตรียมผิวหนังก่อนผ่าตัด · กลุ่ม 3",
+          "lecturer": "",
+          "day": "12 พ.ย. 2569 · รอบเช้า",
+          "qrange": "",
+          "qcount": "",
+          "exam": "cqi",
+          "docs": [
+            {
+              "label": "Slides",
+              "tracking": "2026-11-12_cqi-group-3-scrub-easy.pdf",
+              "url": "https://kttwatt.github.io/periop-mu55/slides/cqi/2026-11-12_cqi-group-3-scrub-easy.pdf"
+            }
+          ],
+          "status": "ok"
         }
       ]
     }

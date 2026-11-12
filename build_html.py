@@ -1635,7 +1635,7 @@ DOCS_JS = """
     // ไม่ติดป้ายครั้งที่สอบในแถวแล้ว — ข้อมูลช่วงข้อสอบย้ายไปอยู่ในบรรทัดข้อมูลย่อย
     var badge = '';
     var displayName = subj.name;
-    var groupMatch = exam.id === 'seminar' ? subj.name.match(/\\s*·\\s*(กลุ่ม\\s*\\d+)$/) : null;
+    var groupMatch = (exam.id === 'seminar' || exam.id === 'cqi') ? subj.name.match(/\\s*·\\s*(กลุ่ม\\s*\\d+)$/) : null;
     var group = groupMatch ? groupMatch[1] : '';
     if (groupMatch) displayName = subj.name.slice(0, groupMatch.index).trim();
     var meta = [subj.day, subj.lecturer, subj.qrange, exam.id === 'exam2' ? subj.qcount : ''].filter(Boolean).join(' · ');
