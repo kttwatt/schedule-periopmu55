@@ -1064,28 +1064,10 @@
       "urlbase": "https://kttwatt.github.io/periop-mu55/slides/cqi/",
       "subjects": [
         {
-          "id": "cqi-redose-reminder",
+          "id": "cqi-group-1-uro-stone-trap",
           "num": 1,
-          "name": "นวัตกรรม Redose Reminder — ป้ายเตือนให้ยาปฏิชีวนะซ้ำระหว่างผ่าตัด · กลุ่ม 1",
-          "lecturer": "",
-          "day": "12 พ.ย. 2569",
-          "qrange": "",
-          "qcount": "",
-          "exam": "cqi",
-          "docs": [
-            {
-              "label": "Slides",
-              "tracking": "2026-11-12_cqi-redose-reminder-intraop-antibiotic.pdf",
-              "url": "https://kttwatt.github.io/periop-mu55/slides/cqi/2026-11-12_cqi-redose-reminder-intraop-antibiotic.pdf"
-            }
-          ],
-          "status": "ok"
-        },
-        {
-          "id": "cqi-uro-stone-trap",
-          "num": 2,
-          "name": "นวัตกรรม URO stone trap — อุปกรณ์ดักเก็บเศษนิ่วจากระบบ suction (RIRS) · กลุ่ม 2",
-          "lecturer": "",
+          "name": "นวัตกรรม URO stone trap — อุปกรณ์ดักเก็บเศษนิ่วจากระบบ suction (RIRS) · กลุ่ม 1",
+          "lecturer": "พว.ญาณนันท์ รัตนธีรวิเชียร, พว.ชนกานต์ กำจรกิตติคุณ",
           "day": "12 พ.ย. 2569",
           "qrange": "",
           "qcount": "",
@@ -1100,10 +1082,28 @@
           "status": "ok"
         },
         {
-          "id": "cqi-group-3-scrub-easy",
+          "id": "cqi-group-2-redose-reminder",
+          "num": 2,
+          "name": "นวัตกรรม Re-dose reminder — ป้ายเตือนให้ยาปฏิชีวนะซ้ำระหว่างผ่าตัด · กลุ่ม 2",
+          "lecturer": "พว.เบญจมาภรณ์ ศรีแจ่ม, พว.สุนันทา ดิษฐประเสริฐ",
+          "day": "12 พ.ย. 2569",
+          "qrange": "",
+          "qcount": "",
+          "exam": "cqi",
+          "docs": [
+            {
+              "label": "Slides",
+              "tracking": "2026-11-12_cqi-redose-reminder-intraop-antibiotic.pdf",
+              "url": "https://kttwatt.github.io/periop-mu55/slides/cqi/2026-11-12_cqi-redose-reminder-intraop-antibiotic.pdf"
+            }
+          ],
+          "status": "ok"
+        },
+        {
+          "id": "cqi-group-3-หมอนเบาใจ",
           "num": 3,
-          "name": "นวัตกรรม Scrub Easy — เบาะพยุงแขนและขาลดภาระการประคองอวัยวะระหว่างเตรียมผิวหนังก่อนผ่าตัด · กลุ่ม 3",
-          "lecturer": "",
+          "name": "นวัตกรรมหมอนเบาใจ — เบาะพยุงแขนและขาลดภาระการประคองอวัยวะระหว่างเตรียมผิวหนังก่อนผ่าตัด · กลุ่ม 3",
+          "lecturer": "พว.ลักษมี ประสิทธิสุวรรณ, พว.อุชุดา เรืองวิญญูเวช",
           "day": "12 พ.ย. 2569",
           "qrange": "",
           "qcount": "",
@@ -1118,10 +1118,10 @@
           "status": "ok"
         },
         {
-          "id": "cqi-group-4-cotton-swab-count",
+          "id": "cqi-group-4-safety-oto-packing",
           "num": 4,
-          "name": "นวัตกรรมสำลีซับนับครบ — ความปลอดภัยในการผ่าตัด · กลุ่ม 4",
-          "lecturer": "",
+          "name": "นวัตกรรม Safety Oto packing — สำลีซับนับครบ · กลุ่ม 4",
+          "lecturer": "พว.กร อังสุวรรณเขต",
           "day": "12 พ.ย. 2569",
           "qrange": "",
           "qcount": "",
@@ -1136,10 +1136,22 @@
           "status": "ok"
         },
         {
-          "id": "cqi-group-6-pneumo-safe",
+          "id": "cqi-group-5-iol-safety-check",
+          "num": 5,
+          "name": "นวัตกรรม IOL safety check — มั่นใจทุกเลนส์ ปลอดภัยทุกดวงตา · กลุ่ม 5",
+          "lecturer": "พว.กัญญาภัค ศรีสุขโภคสิน, พว.อัจฉราวดี สุบรรณเสณี",
+          "day": "12 พ.ย. 2569",
+          "qrange": "",
+          "qcount": "",
+          "exam": "cqi",
+          "docs": [],
+          "status": "pending"
+        },
+        {
+          "id": "cqi-group-6-pneumo-buddy",
           "num": 6,
-          "name": "นวัตกรรม Pneumo safe — สายรัดจัดระเบียบสายอุปกรณ์ IPC · กลุ่ม 6",
-          "lecturer": "",
+          "name": "นวัตกรรม Pneumo Buddy — สายรัดจัดระเบียบสายอุปกรณ์ IPC · กลุ่ม 6",
+          "lecturer": "พว.สุภกฤตา ทองธานี, พว.ฐิติยา วายุภักตร์",
           "day": "12 พ.ย. 2569",
           "qrange": "",
           "qcount": "",
@@ -1154,10 +1166,10 @@
           "status": "ok"
         },
         {
-          "id": "cqi-hip-block-ultra-smooth",
+          "id": "cqi-group-7-hip-block",
           "num": 7,
           "name": "นวัตกรรม Hip B(Lock) Ultra Smooth — หมอนกางขาป้องกันข้อสะโพกเทียมเคลื่อนหลุด · กลุ่ม 7",
-          "lecturer": "",
+          "lecturer": "พว.อัณชลี ศรีสุข",
           "day": "13 พ.ย. 2569",
           "qrange": "",
           "qcount": "",
@@ -1175,6 +1187,30 @@
             }
           ],
           "status": "ok"
+        },
+        {
+          "id": "cqi-group-8-easy-bag",
+          "num": 8,
+          "name": "นวัตกรรม Easy bag — ถุงดูใจใส่สะดวก · กลุ่ม 8",
+          "lecturer": "พว.วิไลวรรณ อมรเดชเทวินทร์, พว.จิระพันธุ์ รักษาชาติ",
+          "day": "13 พ.ย. 2569",
+          "qrange": "",
+          "qcount": "",
+          "exam": "cqi",
+          "docs": [],
+          "status": "pending"
+        },
+        {
+          "id": "cqi-group-9-ipc-check-and-go",
+          "num": 9,
+          "name": "นวัตกรรม IPC Check & Go · กลุ่ม 9",
+          "lecturer": "พว.ธนพรรณ กุณาละสิริ",
+          "day": "13 พ.ย. 2569",
+          "qrange": "",
+          "qcount": "",
+          "exam": "cqi",
+          "docs": [],
+          "status": "pending"
         }
       ]
     }

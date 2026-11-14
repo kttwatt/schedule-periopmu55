@@ -24,102 +24,55 @@ BOARDS = [
      "path": f"{REPO}/slides/exam-02oct/index.html", "urlbase": f"{BASE}/slides/exam-02oct/"},
 ]
 
-# เอกสาร CQI / นวัตกรรมของรุ่น 55 (ไฟล์อยู่ที่ slides/cqi/ ใน repo periop-mu55)
-ADDITIONAL_CQI_DOCS = [{
-    "id": "cqi-redose-reminder",
-    "num": 1,
-    "name": "นวัตกรรม Redose Reminder — ป้ายเตือนให้ยาปฏิชีวนะซ้ำระหว่างผ่าตัด · กลุ่ม 1",
-    "lecturer": "",
-    "day": "12 พ.ย. 2569",
-    "qrange": "",
-    "qcount": "",
-    "exam": "cqi",
-    "docs": [{
-        "label": "Slides",
-        "tracking": "2026-11-12_cqi-redose-reminder-intraop-antibiotic.pdf",
-        "url": f"{BASE}/slides/cqi/2026-11-12_cqi-redose-reminder-intraop-antibiotic.pdf",
-    }],
-    "status": "ok",
-}, {
-    "id": "cqi-uro-stone-trap",
-    "num": 2,
-    "name": "นวัตกรรม URO stone trap — อุปกรณ์ดักเก็บเศษนิ่วจากระบบ suction (RIRS) · กลุ่ม 2",
-    "lecturer": "",
-    "day": "12 พ.ย. 2569",
-    "qrange": "",
-    "qcount": "",
-    "exam": "cqi",
-    "docs": [{
-        "label": "Slides",
-        "tracking": "2026-11-12_cqi-uro-stone-trap.pdf",
-        "url": f"{BASE}/slides/cqi/2026-11-12_cqi-uro-stone-trap.pdf",
-    }],
-    "status": "ok",
-}, {
-    "id": "cqi-group-3-scrub-easy",
-    "num": 3,
-    "name": "นวัตกรรม Scrub Easy — เบาะพยุงแขนและขาลดภาระการประคองอวัยวะระหว่างเตรียมผิวหนังก่อนผ่าตัด · กลุ่ม 3",
-    "lecturer": "",
-    "day": "12 พ.ย. 2569",
-    "qrange": "",
-    "qcount": "",
-    "exam": "cqi",
-    "docs": [{
-        "label": "Slides",
-        "tracking": "2026-11-12_cqi-group-3-scrub-easy.pdf",
-        "url": f"{BASE}/slides/cqi/2026-11-12_cqi-group-3-scrub-easy.pdf",
-    }],
-    "status": "ok",
-}, {
-    "id": "cqi-group-4-cotton-swab-count",
-    "num": 4,
-    "name": "นวัตกรรมสำลีซับนับครบ — ความปลอดภัยในการผ่าตัด · กลุ่ม 4",
-    "lecturer": "",
-    "day": "12 พ.ย. 2569",
-    "qrange": "",
-    "qcount": "",
-    "exam": "cqi",
-    "docs": [{
-        "label": "Slides",
-        "tracking": "2026-11-12_cqi-group-4-cotton-swab-count.pdf",
-        "url": f"{BASE}/slides/cqi/2026-11-12_cqi-group-4-cotton-swab-count.pdf",
-    }],
-    "status": "ok",
-}, {
-    "id": "cqi-group-6-pneumo-safe",
-    "num": 6,
-    "name": "นวัตกรรม Pneumo safe — สายรัดจัดระเบียบสายอุปกรณ์ IPC · กลุ่ม 6",
-    "lecturer": "",
-    "day": "12 พ.ย. 2569",
-    "qrange": "",
-    "qcount": "",
-    "exam": "cqi",
-    "docs": [{
-        "label": "Slides",
-        "tracking": "2026-11-12_cqi-group-6-pneumo-safe.pdf",
-        "url": f"{BASE}/slides/cqi/2026-11-12_cqi-group-6-pneumo-safe.pdf",
-    }],
-    "status": "ok",
-}, {
-    "id": "cqi-hip-block-ultra-smooth",
-    "num": 7,
-    "name": "นวัตกรรม Hip B(Lock) Ultra Smooth — หมอนกางขาป้องกันข้อสะโพกเทียมเคลื่อนหลุด · กลุ่ม 7",
-    "lecturer": "",
-    "day": "13 พ.ย. 2569",
-    "qrange": "",
-    "qcount": "",
-    "exam": "cqi",
-    "docs": [{
-        "label": "Slides (PDF)",
-        "tracking": "2026-11-13_cqi-hip-block-ultra-smooth.pdf",
-        "url": f"{BASE}/slides/cqi/2026-11-13_cqi-hip-block-ultra-smooth.pdf",
-    }, {
-        "label": "Slide",
-        "tracking": "cqi-hipblock-web",
-        "url": "https://kttwatt.github.io/cqi-hipblock/",
-    }],
-    "status": "ok",
-}]
+# เอกสาร CQI / นวัตกรรมของรุ่น 55 — เรียงตามตารางนำเสนอ 12-13 พ.ย. 2569 (ห้อง 508)
+def _cqi(sub_id, num, name, day, lecturer, docs):
+    return {"id": sub_id, "num": num, "name": name, "lecturer": lecturer, "day": day,
+            "qrange": "", "qcount": "", "exam": "cqi", "docs": docs,
+            "status": "ok" if docs else "pending"}
+
+
+def _cqi_pdf(fname, label="Slides"):
+    return {"label": label, "tracking": fname, "url": f"{BASE}/slides/cqi/{fname}"}
+
+
+ADDITIONAL_CQI_DOCS = [
+    _cqi("cqi-group-1-uro-stone-trap", 1,
+         "นวัตกรรม URO stone trap — อุปกรณ์ดักเก็บเศษนิ่วจากระบบ suction (RIRS) · กลุ่ม 1",
+         "12 พ.ย. 2569", "พว.ญาณนันท์ รัตนธีรวิเชียร, พว.ชนกานต์ กำจรกิตติคุณ",
+         [_cqi_pdf("2026-11-12_cqi-uro-stone-trap.pdf")]),
+    _cqi("cqi-group-2-redose-reminder", 2,
+         "นวัตกรรม Re-dose reminder — ป้ายเตือนให้ยาปฏิชีวนะซ้ำระหว่างผ่าตัด · กลุ่ม 2",
+         "12 พ.ย. 2569", "พว.เบญจมาภรณ์ ศรีแจ่ม, พว.สุนันทา ดิษฐประเสริฐ",
+         [_cqi_pdf("2026-11-12_cqi-redose-reminder-intraop-antibiotic.pdf")]),
+    _cqi("cqi-group-3-หมอนเบาใจ", 3,
+         "นวัตกรรมหมอนเบาใจ — เบาะพยุงแขนและขาลดภาระการประคองอวัยวะระหว่างเตรียมผิวหนังก่อนผ่าตัด · กลุ่ม 3",
+         "12 พ.ย. 2569", "พว.ลักษมี ประสิทธิสุวรรณ, พว.อุชุดา เรืองวิญญูเวช",
+         [_cqi_pdf("2026-11-12_cqi-group-3-scrub-easy.pdf")]),
+    _cqi("cqi-group-4-safety-oto-packing", 4,
+         "นวัตกรรม Safety Oto packing — สำลีซับนับครบ · กลุ่ม 4",
+         "12 พ.ย. 2569", "พว.กร อังสุวรรณเขต",
+         [_cqi_pdf("2026-11-12_cqi-group-4-cotton-swab-count.pdf")]),
+    _cqi("cqi-group-5-iol-safety-check", 5,
+         "นวัตกรรม IOL safety check — มั่นใจทุกเลนส์ ปลอดภัยทุกดวงตา · กลุ่ม 5",
+         "12 พ.ย. 2569", "พว.กัญญาภัค ศรีสุขโภคสิน, พว.อัจฉราวดี สุบรรณเสณี", []),
+    _cqi("cqi-group-6-pneumo-buddy", 6,
+         "นวัตกรรม Pneumo Buddy — สายรัดจัดระเบียบสายอุปกรณ์ IPC · กลุ่ม 6",
+         "12 พ.ย. 2569", "พว.สุภกฤตา ทองธานี, พว.ฐิติยา วายุภักตร์",
+         [_cqi_pdf("2026-11-12_cqi-group-6-pneumo-safe.pdf")]),
+    _cqi("cqi-group-7-hip-block", 7,
+         "นวัตกรรม Hip B(Lock) Ultra Smooth — หมอนกางขาป้องกันข้อสะโพกเทียมเคลื่อนหลุด · กลุ่ม 7",
+         "13 พ.ย. 2569", "พว.อัณชลี ศรีสุข", [
+             _cqi_pdf("2026-11-13_cqi-hip-block-ultra-smooth.pdf", "Slides (PDF)"),
+             {"label": "Slide", "tracking": "cqi-hipblock-web",
+              "url": "https://kttwatt.github.io/cqi-hipblock/"},
+         ]),
+    _cqi("cqi-group-8-easy-bag", 8,
+         "นวัตกรรม Easy bag — ถุงดูใจใส่สะดวก · กลุ่ม 8",
+         "13 พ.ย. 2569", "พว.วิไลวรรณ อมรเดชเทวินทร์, พว.จิระพันธุ์ รักษาชาติ", []),
+    _cqi("cqi-group-9-ipc-check-and-go", 9,
+         "นวัตกรรม IPC Check & Go · กลุ่ม 9",
+         "13 พ.ย. 2569", "พว.ธนพรรณ กุณาละสิริ", []),
+]
 
 # Scheduled lecturer handouts that are not part of either exam board. Keep them
 # discoverable in the schedule site's "อื่น ๆ" documents group without changing exam scope.
