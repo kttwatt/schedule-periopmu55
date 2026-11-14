@@ -1948,7 +1948,7 @@ def build_html(course, sessions, homework, notes):
           <button type="button" class="wg-modal-close" id="docGateClose" aria-label="ปิด">✕</button>
           <h3 class="wg-modal-topic" style="font-size:1.05rem;margin:0 0 6px">รหัสนักศึกษา</h3>
           <p class="doc-meta" style="margin:0 0 12px">เอกสาร CQI รุ่น 55 — กรอกรหัสนักศึกษา 7 หลักเพื่อเปิดไฟล์</p>
-          <input id="docGateInput" type="password" class="docs-search" autocomplete="off" placeholder="6911801" style="width:100%;margin:0 0 10px">
+          <input id="docGateInput" type="password" class="docs-search" autocomplete="off" placeholder="รหัสนักศึกษา" style="width:100%;margin:0 0 10px">
           <div style="display:flex;justify-content:flex-end;gap:8px">
             <button type="button" class="doc-btn" id="docGateOk" style="border:0;cursor:pointer">เปิดเอกสาร</button>
           </div>
