@@ -5,6 +5,7 @@
   cqi-code/<รหัส>              = ปลดล็อกด้วยรหัสนี้
   cqi-open/<รหัส>/<ไฟล์>        = เปิดไฟล์จริง
 
+รายงานแยกเป็น 2 ส่วน: [1] ตามรหัสนักศึกษา   [2] ตามไฟล์
 ใช้งาน:  python3 scripts/cqi_stats.py [วันย้อนหลัง]   (ค่าเริ่มต้น 30)
 """
 import os
@@ -40,56 +41,68 @@ def fetch_hits(days):
 
 def main():
     days = int(sys.argv[1]) if len(sys.argv) > 1 else 30
-    data = fetch_hits(days)
-    hits = data.get("hits", [])
+    start = (date.today() - timedelta(days=days)).isoformat()
+    hits = fetch_hits(days).get("hits", [])
 
-    codes = {}     # รหัส -> จำนวนครั้งที่ปลดล็อก
-    opens = {}     # รหัส -> {ไฟล์: จำนวน}
-    per_file = {}  # ไฟล์ -> {รหัส...}
-    untagged = 0
+    unlocks = {}   # รหัส -> จำนวนครั้งที่ปลดล็อก
+    per_code = {}  # รหัส -> {ไฟล์: จำนวนครั้ง}
+    per_file = {}  # ไฟล์ -> {รหัส: จำนวนครั้ง}
+    legacy = {}    # ไฟล์ -> จำนวนครั้ง (เปิดตอนยังไม่มีระบบรหัส)
 
     for h in hits:
         path = h.get("path", "").lstrip("/")
         n = h.get("count", 0)
         if path.startswith("cqi-code/"):
             code = path.split("/", 1)[1].strip("/")
-            codes[code] = codes.get(code, 0) + n
+            unlocks[code] = unlocks.get(code, 0) + n
         elif path.startswith("cqi-open/"):
             parts = path.split("/")
             if len(parts) >= 3:
                 code, fname = parts[1], "/".join(parts[2:])
             else:
                 code, fname = "nocode", parts[-1]
-            opens.setdefault(code, {})
-            opens[code][fname] = opens[code].get(fname, 0) + n
-            per_file.setdefault(fname, set()).add(code)
+            per_code.setdefault(code, {})
+            per_code[code][fname] = per_code[code].get(fname, 0) + n
+            per_file.setdefault(fname, {})
+            per_file[fname][code] = per_file[fname].get(code, 0) + n
         elif path.endswith(".pdf"):
-            # ปุ่มไฟล์แบบเก่า (ก่อนมีระบบรหัส) — กดเปิดแต่ไม่รู้ว่าใคร
-            untagged += n
-            per_file.setdefault(path, set())
+            legacy[path] = legacy.get(path, 0) + n
 
-    total_opens = sum(sum(v.values()) for v in opens.values())
-    print(f"สถิติเอกสาร CQI · {days} วันล่าสุด (ตั้งแต่ {(date.today() - timedelta(days=days)).isoformat()})")
-    print(f"เปิดเอกสารทั้งหมด: {total_opens} ครั้ง · จากรหัส {len(opens)} คน · ปลดล็อก {sum(codes.values())} ครั้ง\n")
+    total_opens = sum(sum(f.values()) for f in per_code.values())
+    print(f"═══ สถิติเอกสาร CQI · {days} วัน (ตั้งแต่ {start}) ═══")
+    print(f"รวม: เปิดไฟล์ {total_opens} ครั้ง · {len(per_code)} รหัส · ปลดล็อก {sum(unlocks.values())} ครั้ง\n")
 
-    if not opens and not codes and not untagged:
-        print("ยังไม่มีข้อมูล — ต้องมีคนเข้าเว็บจริงและกดเปิดไฟล์ (event จะเข้าระบบภายใน ~1 นาที)")
-        return
+    # ── [1] ตามรหัส
+    print("[1] ตามรหัสนักศึกษา")
+    if not per_code and not unlocks:
+        print("    — ยังไม่มีข้อมูล")
+    for code in sorted(set(per_code) | set(unlocks),
+                       key=lambda c: (-sum(per_code.get(c, {}).values()), c)):
+        files = per_code.get(code, {})
+        print(f"    {code}: เปิด {sum(files.values())} ครั้ง · {len(files)} ไฟล์ · ปลดล็อก {unlocks.get(code, 0)} ครั้ง")
+        for fname, n in sorted(files.items(), key=lambda kv: -kv[1]):
+            print(f"        - {fname} × {n}")
+    idle = [c for c in unlocks if c not in per_code]
+    if idle:
+        print(f"    (ปลดล็อกแต่ยังไม่เปิดไฟล์: {', '.join(idle)})")
 
-    print("รายคน (เรียงตามจำนวนเปิด):")
-    for code, files in sorted(opens.items(), key=lambda kv: -sum(kv[1].values())):
-        kinds = len(files)
-        print(f"  {code}: {sum(files.values())} ครั้ง · {kinds} ไฟล์ · ปลดล็อก {codes.get(code, 0)} ครั้ง")
-    missing = sorted({c for c in codes} - {c for c in opens})
-    if missing:
-        print(f"  (ปลดล็อกแต่ยังไม่เปิดไฟล์: {', '.join(missing)})")
+    # ── [2] ตามไฟล์
+    print("\n[2] ตามไฟล์")
+    if not per_file:
+        print("    — ยังไม่มีข้อมูล")
+    for fname in sorted(per_file, key=lambda f: -sum(per_file[f].values())):
+        who = per_file[fname]
+        print(f"    {fname}: เปิด {sum(who.values())} ครั้ง · {len(who)} รหัส")
+        for code, n in sorted(who.items(), key=lambda kv: -kv[1]):
+            print(f"        - {code} × {n}")
 
-    print("\nรายไฟล์:")
-    for fname, who in sorted(per_file.items(), key=lambda kv: -len(kv[1])):
-        print(f"  {fname}: {len(who)} คน")
+    if legacy:
+        print("\n(ข้อมูลเก่าก่อนมีระบบรหัส — ไม่รู้ว่าใครเปิด)")
+        for fname, n in sorted(legacy.items(), key=lambda kv: -kv[1]):
+            print(f"    {fname}: {n} ครั้ง")
 
-    if untagged:
-        print(f"\nเปิดไฟล์ก่อนมีระบบรหัส/ไม่ระบุตัวตน: {untagged} ครั้ง")
+    if not (per_code or unlocks or legacy):
+        print("\nยังไม่มีข้อมูล — ต้องมีคนเข้าเว็บจริงและกดเปิดไฟล์ (event เข้าระบบภายใน ~1 นาที)")
 
 
 if __name__ == "__main__":
