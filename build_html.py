@@ -1688,7 +1688,10 @@ DOCS_JS = """
       gcTrack('cqi-code/' + entered);
       closeGate();
       render();
-      if (pendingHref) window.open(pendingHref, '_blank', 'noopener');
+      if (pendingHref) {
+        trackOpen(pendingHref.split('/').pop());
+        window.open(pendingHref, '_blank', 'noopener');
+      }
       pendingHref = '';
     } else if (gateErr) {
       gateErr.style.display = 'block';
