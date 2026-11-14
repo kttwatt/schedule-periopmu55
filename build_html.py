@@ -1248,9 +1248,10 @@ body.docs-mode #fabToday { display: none; }
 @media (max-width: 520px) {
   .docs-toolbar { display: block; }
   .docs-search { width: 100%; }
-  .docs-chips { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 4px; align-items: stretch; width: 100%; }
-  .docs-chips .chip { grid-column: span 2; width: 100%; min-width: 0; margin-bottom: 0; padding: 7px 3px 9px; text-align: center; font-size: 0.72rem; white-space: nowrap; }
-  .docs-chips .chip:nth-child(7) { grid-column: 3 / span 2; }
+  /* 7 ชิป → เต็ม 2 แถว: แถวบน 4 ตัว (span 3) แถวล่าง 3 ตัว (span 4) บนกริด 12 คอลัมน์ */
+  .docs-chips { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 4px; align-items: stretch; width: 100%; }
+  .docs-chips .chip { grid-column: span 3; width: 100%; min-width: 0; margin-bottom: 0; padding: 7px 2px 9px; text-align: center; font-size: 0.68rem; white-space: nowrap; }
+  .docs-chips .chip:nth-child(n+5) { grid-column: span 4; }
   .doc-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 10px; align-items: center; padding: 10px 12px; }
   .doc-row.pending { display: flex; align-items: center; gap: 10px; padding: 8px 12px; }
   .doc-row.pending .doc-main { flex: 1 1 auto; width: auto; }
