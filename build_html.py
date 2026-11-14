@@ -1250,6 +1250,8 @@ body.docs-mode #fabToday { display: none; }
 .doc-row.slot-row .doc-line { align-items: center; gap: 10px; }
 .doc-row.pending .doc-main { display: flex; align-items: center; gap: 10px; }
 .doc-actions { display: flex; flex-wrap: nowrap; gap: 6px; flex: 0 0 auto; }
+.doc-btn.locked { background: #64748b; }
+.doc-btn.locked:hover { background: #475569; }
 .doc-btn { display: inline-flex; align-items: center; gap: 4px; background: var(--docs); color: #fff;
   font-size: 0.76rem; font-weight: 700; text-decoration: none; padding: 7px 11px; border-radius: 9px; white-space: nowrap; }
 @media (max-width: 520px) {
@@ -1631,6 +1633,37 @@ DOCS_JS = """
   if (!listEl || !docsMain || !scheduleMain || typeof DOCS === 'undefined') return;
 
   var state = { exam: 'all', q: '' };
+  var DOCS_CODE = 'cqi55';
+  var unlocked = false;
+  try { unlocked = sessionStorage.getItem('docUnlocked') === '1'; } catch (err) { unlocked = false; }
+  var gateEl = document.getElementById('docGate');
+  var gateInput = document.getElementById('docGateInput');
+  var gateErr = document.getElementById('docGateErr');
+  var pendingHref = '';
+
+  function openGate(href) {
+    pendingHref = href;
+    if (gateErr) gateErr.style.display = 'none';
+    if (gateInput) gateInput.value = '';
+    if (gateEl) gateEl.classList.add('show');
+    if (gateInput) setTimeout(function () { gateInput.focus(); }, 60);
+  }
+
+  function closeGate() { if (gateEl) gateEl.classList.remove('show'); }
+
+  function tryUnlock() {
+    if (!gateInput) return;
+    if (gateInput.value.trim() === DOCS_CODE) {
+      unlocked = true;
+      try { sessionStorage.setItem('docUnlocked', '1'); } catch (err) {}
+      closeGate();
+      render();
+      if (pendingHref) window.open(pendingHref, '_blank', 'noopener');
+      pendingHref = '';
+    } else if (gateErr) {
+      gateErr.style.display = 'block';
+    }
+  }
 
   function esc(v) {
     return String(v == null ? '' : v)
@@ -1667,8 +1700,13 @@ DOCS_JS = """
     if (isCqi && subj.desc) extraBits += '<div class="doc-extra-desc">' + esc(subj.desc) + '</div>';
     if (isCqi && subj.lecturer) extraBits += '<div><span class="doc-extra-label">ที่ปรึกษา</span> ' + esc(subj.lecturer) + '</div>';
     var extra = extraBits ? '<div class="doc-extra">' + extraBits + '</div>' : '';
+    var needCode = (exam.id === 'cqi' || exam.id === 'case') && !unlocked;
     var actions = subj.docs.map(function (d) {
       var fname = d.tracking || d.url.split('/').pop();
+      if (needCode) {
+        return '<a class="doc-btn locked" data-goatcounter-click="' + esc(fname) + '" data-href="' + esc(d.url) +
+          '" href="#" rel="noopener">🔒 ' + esc(d.label) + '</a>';
+      }
       return '<a class="doc-btn" data-goatcounter-click="' + esc(fname) + '" href="' + esc(d.url) +
         '" target="_blank" rel="noopener">📄 ' + esc(d.label) + '</a>';
     }).join('');
@@ -1761,11 +1799,18 @@ DOCS_JS = """
   });
 
   listEl.addEventListener('click', function (e) {
+    var locked = e.target.closest('a.doc-btn.locked');
+    if (locked) { e.preventDefault(); openGate(locked.getAttribute('data-href')); return; }
     if (e.target.closest('a')) return;
     var row = e.target.closest('.doc-row.expandable');
     if (!row) return;
     row.classList.toggle('open');
   });
+
+  if (document.getElementById('docGateOk')) document.getElementById('docGateOk').addEventListener('click', tryUnlock);
+  if (document.getElementById('docGateClose')) document.getElementById('docGateClose').addEventListener('click', closeGate);
+  if (gateInput) gateInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); tryUnlock(); } });
+  if (gateEl) gateEl.addEventListener('click', function (e) { if (e.target === gateEl) closeGate(); });
 
   searchEl.addEventListener('input', function () { state.q = searchEl.value; render(); });
   window.addEventListener('hashchange', applyHash);
@@ -1867,6 +1912,18 @@ def build_html(course, sessions, homework, notes):
         <div class="docs-count" id="docsCount"></div>
       </div>
       <div id="docsList"></div>
+      <div class="wg-modal-backdrop" id="docGate">
+        <div class="wg-modal-card">
+          <button type="button" class="wg-modal-close" id="docGateClose" aria-label="ปิด">✕</button>
+          <h3 class="wg-modal-topic" style="font-size:1.05rem;margin:0 0 6px">ใส่รหัสเพื่อเปิดเอกสาร</h3>
+          <p class="doc-meta" style="margin:0 0 12px">เอกสาร CQI ของรุ่น 55 — ใส่รหัสที่ได้รับจากตัวแทนกลุ่ม</p>
+          <input id="docGateInput" type="password" class="docs-search" autocomplete="off" placeholder="รหัส" style="width:100%;margin:0 0 10px">
+          <div style="display:flex;justify-content:flex-end;gap:8px">
+            <button type="button" class="doc-btn" id="docGateOk" style="border:0;cursor:pointer">เปิดเอกสาร</button>
+          </div>
+          <div class="doc-meta" id="docGateErr" style="color:#b91c1c;margin:8px 0 0;display:none">รหัสไม่ถูกต้อง ลองอีกครั้ง</div>
+        </div>
+      </div>
     </div>
 
     <footer class="page-footer">
