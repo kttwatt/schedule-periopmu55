@@ -65,7 +65,8 @@ ADDITIONAL_CQI_DOCS = [
          "13 พ.ย. 2569", "พว.วิไลวรรณ อมรเดชเทวินทร์, พว.จิระพันธุ์ รักษาชาติ",
          [_cqi_pdf(8, "easy-bag")]),
     _cqi("cqi-group-9-ipc-check-and-go", 9, "IPC Check & Go · กลุ่ม 9",
-         "13 พ.ย. 2569", "พว.ธนพรรณ กุณาละสิริ", []),
+         "13 พ.ย. 2569", "พว.ธนพรรณ กุณาละสิริ",
+         [_cqi_pdf(9, "ipc-check-and-go")]),
 ]
 
 # Scheduled lecturer handouts that are not part of either exam board. Keep them

@@ -1215,8 +1215,14 @@
           "qrange": "",
           "qcount": "",
           "exam": "cqi",
-          "docs": [],
-          "status": "pending"
+          "docs": [
+            {
+              "label": "Slides",
+              "tracking": "09-ipc-check-and-go.pdf",
+              "url": "https://kttwatt.github.io/periop-mu55/slides/cqi/09-ipc-check-and-go.pdf"
+            }
+          ],
+          "status": "ok"
         }
       ]
     }
