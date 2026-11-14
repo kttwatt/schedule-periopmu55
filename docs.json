@@ -1191,14 +1191,20 @@
         {
           "id": "cqi-group-8-easy-bag",
           "num": 8,
-          "name": "นวัตกรรม Easy bag — ถุงดูใจใส่สะดวก · กลุ่ม 8",
+          "name": "นวัตกรรม Easy Bag — ถุงรองรับกระบอกน้ำอุ่นสำหรับล้างหน้าเลนส์กล้องผ่าตัด · กลุ่ม 8",
           "lecturer": "พว.วิไลวรรณ อมรเดชเทวินทร์, พว.จิระพันธุ์ รักษาชาติ",
           "day": "13 พ.ย. 2569",
           "qrange": "",
           "qcount": "",
           "exam": "cqi",
-          "docs": [],
-          "status": "pending"
+          "docs": [
+            {
+              "label": "Slides",
+              "tracking": "2026-11-13_cqi-group-8-easy-bag.pdf",
+              "url": "https://kttwatt.github.io/periop-mu55/slides/cqi/2026-11-13_cqi-group-8-easy-bag.pdf"
+            }
+          ],
+          "status": "ok"
         },
         {
           "id": "cqi-group-9-ipc-check-and-go",
