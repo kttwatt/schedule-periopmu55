@@ -100,6 +100,25 @@ ADDITIONAL_CQI_DOCS = [{
         "url": f"{BASE}/slides/cqi/2026-11-12_cqi-group-6-pneumo-safe.pdf",
     }],
     "status": "ok",
+}, {
+    "id": "cqi-hip-block-ultra-smooth",
+    "num": 7,
+    "name": "นวัตกรรม Hip B(Lock) Ultra Smooth — หมอนกางขาป้องกันข้อสะโพกเทียมเคลื่อนหลุด · ออร์โธปิดิกส์",
+    "lecturer": "",
+    "day": "13 พ.ย. 2569",
+    "qrange": "",
+    "qcount": "",
+    "exam": "cqi",
+    "docs": [{
+        "label": "Slides (PDF)",
+        "tracking": "2026-11-13_cqi-hip-block-ultra-smooth.pdf",
+        "url": f"{BASE}/slides/cqi/2026-11-13_cqi-hip-block-ultra-smooth.pdf",
+    }, {
+        "label": "Slide",
+        "tracking": "cqi-hipblock-web",
+        "url": "https://kttwatt.github.io/cqi-hipblock/",
+    }],
+    "status": "ok",
 }]
 
 # Scheduled lecturer handouts that are not part of either exam board. Keep them
