@@ -1633,9 +1633,31 @@ DOCS_JS = """
   if (!listEl || !docsMain || !scheduleMain || typeof DOCS === 'undefined') return;
 
   var state = { exam: 'all', q: '' };
-  var DOCS_CODE = 'cqi55';
-  var unlocked = false;
-  try { unlocked = sessionStorage.getItem('docUnlocked') === '1'; } catch (err) { unlocked = false; }
+  var CODE_MIN = 6911801, CODE_MAX = 6911848;   // รหัสนักศึกษา รุ่น 55
+  var unlocked = false, docsUser = '';
+  try {
+    unlocked = sessionStorage.getItem('docUnlocked') === '1';
+    docsUser = sessionStorage.getItem('docUser') || '';
+  } catch (err) { unlocked = false; docsUser = ''; }
+
+  function validCode(v) {
+    v = String(v || '').replace(/[^0-9]/g, '');
+    if (v.length !== 7) return false;
+    var n = parseInt(v, 10);
+    return n >= CODE_MIN && n <= CODE_MAX;
+  }
+
+  function gcTrack(path) {
+    try {
+      if (window.goatcounter && typeof window.goatcounter.count === 'function') {
+        window.goatcounter.count({ path: path, title: path, event: true });
+      }
+    } catch (err) {}
+  }
+
+  function trackOpen(slug) {
+    gcTrack('cqi-open/' + (docsUser || 'nocode') + '/' + slug);
+  }
   var gateEl = document.getElementById('docGate');
   var gateInput = document.getElementById('docGateInput');
   var gateErr = document.getElementById('docGateErr');
@@ -1653,9 +1675,12 @@ DOCS_JS = """
 
   function tryUnlock() {
     if (!gateInput) return;
-    if (gateInput.value.trim() === DOCS_CODE) {
+    var entered = String(gateInput.value || '').replace(/[^0-9]/g, '');
+    if (validCode(entered)) {
       unlocked = true;
-      try { sessionStorage.setItem('docUnlocked', '1'); } catch (err) {}
+      docsUser = entered;
+      try { sessionStorage.setItem('docUnlocked', '1'); sessionStorage.setItem('docUser', entered); } catch (err) {}
+      gcTrack('cqi-code/' + entered);
       closeGate();
       render();
       if (pendingHref) window.open(pendingHref, '_blank', 'noopener');
@@ -1700,12 +1725,16 @@ DOCS_JS = """
     if (isCqi && subj.desc) extraBits += '<div class="doc-extra-desc">' + esc(subj.desc) + '</div>';
     if (isCqi && subj.lecturer) extraBits += '<div><span class="doc-extra-label">ที่ปรึกษา</span> ' + esc(subj.lecturer) + '</div>';
     var extra = extraBits ? '<div class="doc-extra">' + extraBits + '</div>' : '';
-    var needCode = (exam.id === 'cqi' || exam.id === 'case') && !unlocked;
+    var gated = (exam.id === 'cqi' || exam.id === 'case');
     var actions = subj.docs.map(function (d) {
       var fname = d.tracking || d.url.split('/').pop();
-      if (needCode) {
-        return '<a class="doc-btn locked" data-goatcounter-click="' + esc(fname) + '" data-href="' + esc(d.url) +
-          '" href="#" rel="noopener">🔒 ' + esc(d.label) + '</a>';
+      if (gated) {
+        if (!unlocked) {
+          return '<a class="doc-btn locked" data-file="' + esc(fname) + '" data-href="' + esc(d.url) +
+            '" href="#" rel="noopener">🔒 ' + esc(d.label) + '</a>';
+        }
+        return '<a class="doc-btn" data-file="' + esc(fname) + '" href="' + esc(d.url) +
+          '" target="_blank" rel="noopener">📄 ' + esc(d.label) + '</a>';
       }
       return '<a class="doc-btn" data-goatcounter-click="' + esc(fname) + '" href="' + esc(d.url) +
         '" target="_blank" rel="noopener">📄 ' + esc(d.label) + '</a>';
@@ -1801,6 +1830,8 @@ DOCS_JS = """
   listEl.addEventListener('click', function (e) {
     var locked = e.target.closest('a.doc-btn.locked');
     if (locked) { e.preventDefault(); openGate(locked.getAttribute('data-href')); return; }
+    var opened = e.target.closest('a.doc-btn[data-file]');
+    if (opened) { trackOpen(opened.getAttribute('data-file')); }
     if (e.target.closest('a')) return;
     var row = e.target.closest('.doc-row.expandable');
     if (!row) return;
