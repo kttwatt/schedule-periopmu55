@@ -69,6 +69,13 @@ ADDITIONAL_CQI_DOCS = [
          [_cqi_pdf(9, "ipc-check-and-go")]),
 ]
 
+# Case Study — 48 ช่อง เรียงตามเลขที่ ยังไม่มีเอกสาร/ชื่อ (Kit สั่ง 14 พ.ย. 2569)
+ADDITIONAL_CASE_DOCS = [
+    {"id": f"case-{i:02d}", "num": i, "name": str(i), "lecturer": "", "day": "",
+     "qrange": "", "qcount": "", "exam": "case", "docs": [], "status": "pending"}
+    for i in range(1, 49)
+]
+
 # Scheduled lecturer handouts that are not part of either exam board. Keep them
 # discoverable in the schedule site's "อื่น ๆ" documents group without changing exam scope.
 ADDITIONAL_OTHER_DOCS = [{
@@ -345,12 +352,16 @@ def main():
         "id": "cqi", "label": "CQI", "date_label": "นวัตกรรม / CQI รุ่น 55",
         "urlbase": f"{BASE}/slides/cqi/", "subjects": ADDITIONAL_CQI_DOCS,
     })
+    out["exams"].append({
+        "id": "case", "label": "Case Study", "date_label": "เรียงตามเลขที่ 1–48 · รอเอกสาร",
+        "urlbase": f"{BASE}/slides/case/", "subjects": ADDITIONAL_CASE_DOCS,
+    })
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=2)
 
     for e in out["exams"]:
         ok = sum(1 for s in e["subjects"] if s["status"] == "ok")
-        unit = "รายการ" if e["id"] in ("seminar", "cqi") else "วิชา"
+        unit = "รายการ" if e["id"] in ("seminar", "cqi", "case") else "วิชา"
         print(f'{e["label"]}: {len(e["subjects"])} {unit} · มีเอกสาร {ok} · รอเอกสาร {len(e["subjects"])-ok}')
         for s in e["subjects"][:3]:
             print(f'   - [{s["num"]}] {s["name"]} | {s["lecturer"]} | {s["day"]} | {s["qrange"]} | {len(s["docs"])} doc')
