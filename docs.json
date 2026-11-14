@@ -1066,7 +1066,7 @@
         {
           "id": "cqi-group-1-uro-stone-trap",
           "num": 1,
-          "name": "นวัตกรรม URO stone trap — อุปกรณ์ดักเก็บเศษนิ่วจากระบบ suction (RIRS) · กลุ่ม 1",
+          "name": "URO stone trap · กลุ่ม 1",
           "lecturer": "พว.ญาณนันท์ รัตนธีรวิเชียร, พว.ชนกานต์ กำจรกิตติคุณ",
           "day": "12 พ.ย. 2569",
           "qrange": "",
@@ -1075,8 +1075,8 @@
           "docs": [
             {
               "label": "Slides",
-              "tracking": "2026-11-12_cqi-uro-stone-trap.pdf",
-              "url": "https://kttwatt.github.io/periop-mu55/slides/cqi/2026-11-12_cqi-uro-stone-trap.pdf"
+              "tracking": "01-uro-stone-trap.pdf",
+              "url": "https://kttwatt.github.io/periop-mu55/slides/cqi/01-uro-stone-trap.pdf"
             }
           ],
           "status": "ok"
@@ -1084,7 +1084,7 @@
         {
           "id": "cqi-group-2-redose-reminder",
           "num": 2,
-          "name": "นวัตกรรม Re-dose reminder — ป้ายเตือนให้ยาปฏิชีวนะซ้ำระหว่างผ่าตัด · กลุ่ม 2",
+          "name": "Re-dose reminder · กลุ่ม 2",
           "lecturer": "พว.เบญจมาภรณ์ ศรีแจ่ม, พว.สุนันทา ดิษฐประเสริฐ",
           "day": "12 พ.ย. 2569",
           "qrange": "",
@@ -1093,8 +1093,8 @@
           "docs": [
             {
               "label": "Slides",
-              "tracking": "2026-11-12_cqi-redose-reminder-intraop-antibiotic.pdf",
-              "url": "https://kttwatt.github.io/periop-mu55/slides/cqi/2026-11-12_cqi-redose-reminder-intraop-antibiotic.pdf"
+              "tracking": "02-redose-reminder.pdf",
+              "url": "https://kttwatt.github.io/periop-mu55/slides/cqi/02-redose-reminder.pdf"
             }
           ],
           "status": "ok"
@@ -1102,7 +1102,7 @@
         {
           "id": "cqi-group-3-scrub-easy",
           "num": 3,
-          "name": "นวัตกรรม Scrub Easy — เบาะพยุงแขนและขาลดภาระการประคองอวัยวะระหว่างเตรียมผิวหนังก่อนผ่าตัด · กลุ่ม 3",
+          "name": "Scrub Easy · กลุ่ม 3",
           "lecturer": "พว.ลักษมี ประสิทธิสุวรรณ, พว.อุชุดา เรืองวิญญูเวช",
           "day": "12 พ.ย. 2569",
           "qrange": "",
@@ -1111,8 +1111,8 @@
           "docs": [
             {
               "label": "Slides",
-              "tracking": "2026-11-12_cqi-group-3-scrub-easy.pdf",
-              "url": "https://kttwatt.github.io/periop-mu55/slides/cqi/2026-11-12_cqi-group-3-scrub-easy.pdf"
+              "tracking": "03-scrub-easy.pdf",
+              "url": "https://kttwatt.github.io/periop-mu55/slides/cqi/03-scrub-easy.pdf"
             }
           ],
           "status": "ok"
@@ -1120,7 +1120,7 @@
         {
           "id": "cqi-group-4-safety-oto-packing",
           "num": 4,
-          "name": "นวัตกรรม Safety Oto packing — สำลีซับนับครบ · กลุ่ม 4",
+          "name": "Safety Oto packing · กลุ่ม 4",
           "lecturer": "พว.กร อังสุวรรณเขต",
           "day": "12 พ.ย. 2569",
           "qrange": "",
@@ -1129,8 +1129,8 @@
           "docs": [
             {
               "label": "Slides",
-              "tracking": "2026-11-12_cqi-group-4-cotton-swab-count.pdf",
-              "url": "https://kttwatt.github.io/periop-mu55/slides/cqi/2026-11-12_cqi-group-4-cotton-swab-count.pdf"
+              "tracking": "04-safety-oto-packing.pdf",
+              "url": "https://kttwatt.github.io/periop-mu55/slides/cqi/04-safety-oto-packing.pdf"
             }
           ],
           "status": "ok"
@@ -1138,7 +1138,7 @@
         {
           "id": "cqi-group-5-iol-safety-check",
           "num": 5,
-          "name": "นวัตกรรม IOL safety check — มั่นใจทุกเลนส์ ปลอดภัยทุกดวงตา · กลุ่ม 5",
+          "name": "IOL safety check · กลุ่ม 5",
           "lecturer": "พว.กัญญาภัค ศรีสุขโภคสิน, พว.อัจฉราวดี สุบรรณเสณี",
           "day": "12 พ.ย. 2569",
           "qrange": "",
@@ -1148,9 +1148,9 @@
           "status": "pending"
         },
         {
-          "id": "cqi-group-6-pneumo-buddy",
+          "id": "cqi-group-6-pneumo-safe",
           "num": 6,
-          "name": "นวัตกรรม Pneumo Safe — สายรัดจัดระเบียบสายอุปกรณ์ IPC · กลุ่ม 6",
+          "name": "Pneumo Safe · กลุ่ม 6",
           "lecturer": "พว.สุภกฤตา ทองธานี, พว.ฐิติยา วายุภักตร์",
           "day": "12 พ.ย. 2569",
           "qrange": "",
@@ -1159,8 +1159,8 @@
           "docs": [
             {
               "label": "Slides",
-              "tracking": "2026-11-12_cqi-group-6-pneumo-safe.pdf",
-              "url": "https://kttwatt.github.io/periop-mu55/slides/cqi/2026-11-12_cqi-group-6-pneumo-safe.pdf"
+              "tracking": "06-pneumo-safe.pdf",
+              "url": "https://kttwatt.github.io/periop-mu55/slides/cqi/06-pneumo-safe.pdf"
             }
           ],
           "status": "ok"
@@ -1168,7 +1168,7 @@
         {
           "id": "cqi-group-7-hip-block",
           "num": 7,
-          "name": "นวัตกรรม Hip B(Lock) Ultra Smooth — หมอนกางขาป้องกันข้อสะโพกเทียมเคลื่อนหลุด · กลุ่ม 7",
+          "name": "Hip B(Lock) Ultra Smooth · กลุ่ม 7",
           "lecturer": "พว.อัณชลี ศรีสุข",
           "day": "13 พ.ย. 2569",
           "qrange": "",
@@ -1177,8 +1177,8 @@
           "docs": [
             {
               "label": "Slides (PDF)",
-              "tracking": "2026-11-13_cqi-hip-block-ultra-smooth.pdf",
-              "url": "https://kttwatt.github.io/periop-mu55/slides/cqi/2026-11-13_cqi-hip-block-ultra-smooth.pdf"
+              "tracking": "07-hip-block-ultra-smooth.pdf",
+              "url": "https://kttwatt.github.io/periop-mu55/slides/cqi/07-hip-block-ultra-smooth.pdf"
             },
             {
               "label": "Slide",
@@ -1191,7 +1191,7 @@
         {
           "id": "cqi-group-8-easy-bag",
           "num": 8,
-          "name": "นวัตกรรม Easy Bag — ถุงรองรับกระบอกน้ำอุ่นสำหรับล้างหน้าเลนส์กล้องผ่าตัด · กลุ่ม 8",
+          "name": "Easy Bag · กลุ่ม 8",
           "lecturer": "พว.วิไลวรรณ อมรเดชเทวินทร์, พว.จิระพันธุ์ รักษาชาติ",
           "day": "13 พ.ย. 2569",
           "qrange": "",
@@ -1200,8 +1200,8 @@
           "docs": [
             {
               "label": "Slides",
-              "tracking": "2026-11-13_cqi-group-8-easy-bag.pdf",
-              "url": "https://kttwatt.github.io/periop-mu55/slides/cqi/2026-11-13_cqi-group-8-easy-bag.pdf"
+              "tracking": "08-easy-bag.pdf",
+              "url": "https://kttwatt.github.io/periop-mu55/slides/cqi/08-easy-bag.pdf"
             }
           ],
           "status": "ok"
@@ -1209,7 +1209,7 @@
         {
           "id": "cqi-group-9-ipc-check-and-go",
           "num": 9,
-          "name": "นวัตกรรม IPC Check & Go · กลุ่ม 9",
+          "name": "IPC Check & Go · กลุ่ม 9",
           "lecturer": "พว.ธนพรรณ กุณาละสิริ",
           "day": "13 พ.ย. 2569",
           "qrange": "",
