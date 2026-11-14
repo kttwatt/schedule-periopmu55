@@ -49,7 +49,7 @@ def main():
     untagged = 0
 
     for h in hits:
-        path = h.get("path", "")
+        path = h.get("path", "").lstrip("/")
         n = h.get("count", 0)
         if path.startswith("cqi-code/"):
             code = path.split("/", 1)[1].strip("/")
@@ -63,14 +63,16 @@ def main():
             opens.setdefault(code, {})
             opens[code][fname] = opens[code].get(fname, 0) + n
             per_file.setdefault(fname, set()).add(code)
-        else:
+        elif path.endswith(".pdf"):
+            # ปุ่มไฟล์แบบเก่า (ก่อนมีระบบรหัส) — กดเปิดแต่ไม่รู้ว่าใคร
             untagged += n
+            per_file.setdefault(path, set())
 
     total_opens = sum(sum(v.values()) for v in opens.values())
     print(f"สถิติเอกสาร CQI · {days} วันล่าสุด (ตั้งแต่ {(date.today() - timedelta(days=days)).isoformat()})")
     print(f"เปิดเอกสารทั้งหมด: {total_opens} ครั้ง · จากรหัส {len(opens)} คน · ปลดล็อก {sum(codes.values())} ครั้ง\n")
 
-    if not opens and not codes:
+    if not opens and not codes and not untagged:
         print("ยังไม่มีข้อมูล — ต้องมีคนเข้าเว็บจริงและกดเปิดไฟล์ (event จะเข้าระบบภายใน ~1 นาที)")
         return
 
@@ -87,7 +89,7 @@ def main():
         print(f"  {fname}: {len(who)} คน")
 
     if untagged:
-        print(f"\n(มี event อื่นในระบบ {untagged} ครั้ง — ไม่เกี่ยวกับ CQI)")
+        print(f"\nเปิดไฟล์ก่อนมีระบบรหัส/ไม่ระบุตัวตน: {untagged} ครั้ง")
 
 
 if __name__ == "__main__":
