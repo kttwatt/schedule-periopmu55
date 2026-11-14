@@ -25,10 +25,10 @@ BOARDS = [
 ]
 
 # เอกสาร CQI / นวัตกรรมของรุ่น 55 — เรียงตามตารางนำเสนอ 12-13 พ.ย. 2569 (ห้อง 508)
-# ไฟล์อยู่ที่ slides/cqi/NN-<ชื่อนวัตกรรม>.pdf (NN = เลขกลุ่ม)
-def _cqi(sub_id, num, name, day, lecturer, docs):
-    return {"id": sub_id, "num": num, "name": name, "lecturer": lecturer, "day": day,
-            "qrange": "", "qcount": "", "exam": "cqi", "docs": docs,
+# name = ชื่อภาษาอังกฤษบนหัวแถว, desc = คำอธิบายภาษาไทย (ซ่อนในการ์ดพับ), ไฟล์อยู่ที่ slides/cqi/NN-<slug>.pdf
+def _cqi(sub_id, num, name, day, lecturer, docs, desc=""):
+    return {"id": sub_id, "num": num, "name": name, "desc": desc, "lecturer": lecturer,
+            "day": day, "qrange": "", "qcount": "", "exam": "cqi", "docs": docs,
             "status": "ok" if docs else "pending"}
 
 
@@ -38,35 +38,44 @@ def _cqi_pdf(num, slug, label="Slides"):
 
 
 ADDITIONAL_CQI_DOCS = [
-    _cqi("cqi-group-1-uro-stone-trap", 1, "นวัตกรรม URO stone trap — อุปกรณ์ดักเก็บเศษนิ่วจากระบบ suction (RIRS) · กลุ่ม 1",
+    _cqi("cqi-group-1-uro-stone-trap", 1, "URO stone trap · กลุ่ม 1",
          "12 พ.ย. 2569", "พว.ญาณนันท์ รัตนธีรวิเชียร, พว.ชนกานต์ กำจรกิตติคุณ",
-         [_cqi_pdf(1, "uro-stone-trap")]),
-    _cqi("cqi-group-2-redose-reminder", 2, "นวัตกรรม Re-dose reminder — ป้ายเตือนให้ยาปฏิชีวนะซ้ำระหว่างผ่าตัด · กลุ่ม 2",
+         [_cqi_pdf(1, "uro-stone-trap")],
+         desc="อุปกรณ์ดักเก็บเศษนิ่วจากระบบ suction (RIRS)"),
+    _cqi("cqi-group-2-redose-reminder", 2, "Re-dose reminder · กลุ่ม 2",
          "12 พ.ย. 2569", "พว.เบญจมาภรณ์ ศรีแจ่ม, พว.สุนันทา ดิษฐประเสริฐ",
-         [_cqi_pdf(2, "redose-reminder")]),
-    _cqi("cqi-group-3-scrub-easy", 3, "นวัตกรรม Scrub Easy — เบาะพยุงแขนและขาลดภาระการประคองอวัยวะระหว่างเตรียมผิวหนังก่อนผ่าตัด · กลุ่ม 3",
+         [_cqi_pdf(2, "redose-reminder")],
+         desc="ป้ายเตือนให้ยาปฏิชีวนะซ้ำระหว่างผ่าตัด"),
+    _cqi("cqi-group-3-scrub-easy", 3, "Scrub Easy · กลุ่ม 3",
          "12 พ.ย. 2569", "พว.ลักษมี ประสิทธิสุวรรณ, พว.อุชุดา เรืองวิญญูเวช",
-         [_cqi_pdf(3, "scrub-easy")]),
-    _cqi("cqi-group-4-safety-oto-packing", 4, "นวัตกรรม Safety Oto packing — สำลีซับนับครบ (ความปลอดภัยในการผ่าตัด) · กลุ่ม 4",
+         [_cqi_pdf(3, "scrub-easy")],
+         desc="เบาะพยุงแขนและขาลดภาระการประคองอวัยวะระหว่างเตรียมผิวหนังก่อนผ่าตัด"),
+    _cqi("cqi-group-4-safety-oto-packing", 4, "Safety Oto packing · กลุ่ม 4",
          "12 พ.ย. 2569", "พว.กร อังสุวรรณเขต",
-         [_cqi_pdf(4, "safety-oto-packing")]),
-    _cqi("cqi-group-5-iol-safety-check", 5, "นวัตกรรม IOL safety check — มั่นใจทุกเลนส์ ปลอดภัยทุกดวงตา · กลุ่ม 5",
-         "12 พ.ย. 2569", "พว.กัญญาภัค ศรีสุขโภคสิน, พว.อัจฉราวดี สุบรรณเสณี", []),
-    _cqi("cqi-group-6-pneumo-safe", 6, "นวัตกรรม Pneumo Safe — สายรัดจัดระเบียบสายอุปกรณ์ IPC · กลุ่ม 6",
+         [_cqi_pdf(4, "safety-oto-packing")],
+         desc="สำลีซับนับครบ (ความปลอดภัยในการผ่าตัด)"),
+    _cqi("cqi-group-5-iol-safety-check", 5, "IOL safety check · กลุ่ม 5",
+         "12 พ.ย. 2569", "พว.กัญญาภัค ศรีสุขโภคสิน, พว.อัจฉราวดี สุบรรณเสณี", [],
+         desc="มั่นใจทุกเลนส์ ปลอดภัยทุกดวงตา"),
+    _cqi("cqi-group-6-pneumo-safe", 6, "Pneumo Safe · กลุ่ม 6",
          "12 พ.ย. 2569", "พว.สุภกฤตา ทองธานี, พว.ฐิติยา วายุภักตร์",
-         [_cqi_pdf(6, "pneumo-safe")]),
-    _cqi("cqi-group-7-hip-block", 7, "นวัตกรรม Hip B(Lock) Ultra Smooth — หมอนกางขาป้องกันข้อสะโพกเทียมเคลื่อนหลุด · กลุ่ม 7",
+         [_cqi_pdf(6, "pneumo-safe")],
+         desc="สายรัดจัดระเบียบสายอุปกรณ์ IPC"),
+    _cqi("cqi-group-7-hip-block", 7, "Hip B(Lock) Ultra Smooth · กลุ่ม 7",
          "13 พ.ย. 2569", "พว.อัณชลี ศรีสุข", [
              _cqi_pdf(7, "hip-block-ultra-smooth", "Slides (PDF)"),
              {"label": "Slide", "tracking": "cqi-hipblock-web",
               "url": "https://kttwatt.github.io/cqi-hipblock/"},
-         ]),
-    _cqi("cqi-group-8-easy-bag", 8, "นวัตกรรม Easy Bag — ถุงรองรับกระบอกน้ำอุ่นสำหรับล้างหน้าเลนส์กล้องผ่าตัด · กลุ่ม 8",
+         ],
+         desc="หมอนกางขาป้องกันข้อสะโพกเทียมเคลื่อนหลุด"),
+    _cqi("cqi-group-8-easy-bag", 8, "Easy Bag · กลุ่ม 8",
          "13 พ.ย. 2569", "พว.วิไลวรรณ อมรเดชเทวินทร์, พว.จิระพันธุ์ รักษาชาติ",
-         [_cqi_pdf(8, "easy-bag")]),
-    _cqi("cqi-group-9-ipc-check-and-go", 9, "นวัตกรรม IPC Check & Go — ป้องกัน DVT/PE ในผ่าตัดระบบประสาท · กลุ่ม 9",
+         [_cqi_pdf(8, "easy-bag")],
+         desc="ถุงรองรับกระบอกน้ำอุ่นสำหรับล้างหน้าเลนส์กล้องผ่าตัด"),
+    _cqi("cqi-group-9-ipc-check-and-go", 9, "IPC Check & Go · กลุ่ม 9",
          "13 พ.ย. 2569", "พว.ธนพรรณ กุณาละสิริ",
-         [_cqi_pdf(9, "ipc-check-and-go")]),
+         [_cqi_pdf(9, "ipc-check-and-go")],
+         desc="ป้องกัน DVT/PE ในผ่าตัดระบบประสาท"),
 ]
 
 # Case Study — 48 ช่อง เรียงตามเลขที่ ยังไม่มีเอกสาร/ชื่อ (Kit สั่ง 14 พ.ย. 2569)
@@ -349,7 +358,7 @@ def main():
         "urlbase": "https://kttwatt.github.io/carm-live/", "subjects": ADDITIONAL_SEMINAR_DOCS,
     })
     out["exams"].append({
-        "id": "cqi", "label": "CQI", "date_label": "นวัตกรรม / CQI รุ่น 55",
+        "id": "cqi", "label": "CQI", "date_label": "รุ่น 55 · ตามตารางนำเสนอ 12–13 พ.ย. 2569",
         "urlbase": f"{BASE}/slides/cqi/", "subjects": ADDITIONAL_CQI_DOCS,
     })
     out["exams"].append({

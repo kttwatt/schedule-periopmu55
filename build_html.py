@@ -1246,6 +1246,7 @@ body.docs-mode #fabToday { display: none; }
 .doc-extra { display: none; margin-top: 5px; font-size: 0.76rem; color: var(--muted); line-height: 1.45; }
 .doc-row.open .doc-extra { display: block; }
 .doc-extra-label { color: var(--docs); font-weight: 700; }
+.doc-extra-desc { color: var(--text); margin-bottom: 3px; }
 .doc-row.slot-row .doc-line { align-items: center; gap: 10px; }
 .doc-row.pending .doc-main { display: flex; align-items: center; gap: 10px; }
 .doc-actions { display: flex; flex-wrap: nowrap; gap: 6px; flex: 0 0 auto; }
@@ -1662,9 +1663,10 @@ DOCS_JS = """
     var isCqi = exam.id === 'cqi';
     var metaSrc = isCqi ? [subj.day] : [subj.day, subj.lecturer, subj.qrange, exam.id === 'exam2' ? subj.qcount : ''];
     var meta = metaSrc.filter(Boolean).join(' · ');
-    var extra = (isCqi && subj.lecturer)
-      ? '<div class="doc-extra"><span class="doc-extra-label">ที่ปรึกษาภาคปฏิบัติ</span> ' + esc(subj.lecturer) + '</div>'
-      : '';
+    var extraBits = '';
+    if (isCqi && subj.desc) extraBits += '<div class="doc-extra-desc">' + esc(subj.desc) + '</div>';
+    if (isCqi && subj.lecturer) extraBits += '<div><span class="doc-extra-label">ที่ปรึกษา</span> ' + esc(subj.lecturer) + '</div>';
+    var extra = extraBits ? '<div class="doc-extra">' + extraBits + '</div>' : '';
     var actions = subj.docs.map(function (d) {
       var fname = d.tracking || d.url.split('/').pop();
       return '<a class="doc-btn" data-goatcounter-click="' + esc(fname) + '" href="' + esc(d.url) +
