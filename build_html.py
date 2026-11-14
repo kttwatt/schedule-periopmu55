@@ -1240,6 +1240,12 @@ body.docs-mode #fabToday { display: none; }
   width: 26px; height: 26px; border-radius: 999px; background: var(--docs-light); color: var(--docs);
   font-size: 0.78rem; font-weight: 800; font-variant-numeric: tabular-nums; }
 .doc-row.slot-row { padding: 7px 12px; }
+.doc-row.expandable { cursor: pointer; }
+.doc-caret { flex: none; color: var(--docs); font-size: 0.62rem; transition: transform .2s ease; }
+.doc-row.open .doc-caret { transform: rotate(180deg); }
+.doc-extra { display: none; margin-top: 5px; font-size: 0.76rem; color: var(--muted); line-height: 1.45; }
+.doc-row.open .doc-extra { display: block; }
+.doc-extra-label { color: var(--docs); font-weight: 700; }
 .doc-row.slot-row .doc-line { align-items: center; gap: 10px; }
 .doc-row.pending .doc-main { display: flex; align-items: center; gap: 10px; }
 .doc-actions { display: flex; flex-wrap: nowrap; gap: 6px; flex: 0 0 auto; }
@@ -1653,7 +1659,12 @@ DOCS_JS = """
     var groupMatch = (exam.id === 'seminar' || exam.id === 'cqi') ? subj.name.match(/\\s*·\\s*(กลุ่ม\\s*\\d+)$/) : null;
     var group = groupMatch ? groupMatch[1] : '';
     if (groupMatch) displayName = subj.name.slice(0, groupMatch.index).trim();
-    var meta = [subj.day, subj.lecturer, subj.qrange, exam.id === 'exam2' ? subj.qcount : ''].filter(Boolean).join(' · ');
+    var isCqi = exam.id === 'cqi';
+    var metaSrc = isCqi ? [subj.day] : [subj.day, subj.lecturer, subj.qrange, exam.id === 'exam2' ? subj.qcount : ''];
+    var meta = metaSrc.filter(Boolean).join(' · ');
+    var extra = (isCqi && subj.lecturer)
+      ? '<div class="doc-extra"><span class="doc-extra-label">ที่ปรึกษาภาคปฏิบัติ</span> ' + esc(subj.lecturer) + '</div>'
+      : '';
     var actions = subj.docs.map(function (d) {
       var fname = d.tracking || d.url.split('/').pop();
       return '<a class="doc-btn" data-goatcounter-click="' + esc(fname) + '" href="' + esc(d.url) +
@@ -1664,10 +1675,11 @@ DOCS_JS = """
     var nameHtml = isSlot
       ? '<span class="doc-slot">' + esc(displayName) + '</span>'
       : '<span class="doc-name">' + esc(displayName) + '</span>';
-    return '<div class="doc-row' + (subj.status === 'ok' ? '' : ' pending') + (isSlot ? ' slot-row' : '') + '" id="doc-' + esc(exam.id + '-' + subj.id) + '">' +
+    var caret = isCqi ? '<span class="doc-caret" aria-hidden="true">▾</span>' : '';
+    return '<div class="doc-row' + (subj.status === 'ok' ? '' : ' pending') + (isSlot ? ' slot-row' : '') + (isCqi ? ' expandable' : '') + '" id="doc-' + esc(exam.id + '-' + subj.id) + '">' +
       '<div class="doc-main"><div class="doc-line">' + nameHtml +
-      (group ? '<span class="doc-group">' + esc(group) + '</span>' : '') + badge + '</div>' +
-      (meta ? '<div class="doc-meta">' + esc(meta) + '</div>' : '') + '</div>' +
+      (group ? '<span class="doc-group">' + esc(group) + '</span>' : '') + badge + caret + '</div>' +
+      (meta ? '<div class="doc-meta">' + esc(meta) + '</div>' : '') + extra + '</div>' +
       '<div class="doc-actions">' + actions + '</div></div>';
   }
 
@@ -1744,6 +1756,13 @@ DOCS_JS = """
       render();
       showMain('docs', true);
     });
+  });
+
+  listEl.addEventListener('click', function (e) {
+    if (e.target.closest('a')) return;
+    var row = e.target.closest('.doc-row.expandable');
+    if (!row) return;
+    row.classList.toggle('open');
   });
 
   searchEl.addEventListener('input', function () { state.q = searchEl.value; render(); });
