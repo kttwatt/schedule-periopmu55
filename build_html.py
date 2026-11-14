@@ -1247,6 +1247,11 @@ body.docs-mode #fabToday { display: none; }
 .doc-row.open .doc-extra { display: block; }
 .doc-extra-label { color: var(--docs); font-weight: 700; }
 .doc-extra-desc { color: var(--text); margin-bottom: 3px; }
+#docGate .wg-modal-card { text-align: center; }
+#docGate h3 { text-align: center; }
+#docGate .doc-meta { text-align: center; }
+#docGateInput { text-align: center; }
+#docGate .doc-gate-actions { justify-content: center; }
 .doc-row.slot-row .doc-line { align-items: center; gap: 10px; }
 .doc-row.pending .doc-main { display: flex; align-items: center; gap: 10px; }
 .doc-actions { display: flex; flex-wrap: nowrap; gap: 6px; flex: 0 0 auto; }
@@ -1949,7 +1954,7 @@ def build_html(course, sessions, homework, notes):
           <h3 class="wg-modal-topic" style="font-size:1.05rem;margin:0 0 6px">รหัสนักศึกษา</h3>
           <p class="doc-meta" style="margin:0 0 12px">เอกสาร CQI รุ่น 55 — กรอกรหัสนักศึกษา 7 หลักเพื่อเปิดไฟล์</p>
           <input id="docGateInput" type="password" class="docs-search" autocomplete="off" placeholder="รหัสนักศึกษา" style="width:100%;margin:0 0 10px">
-          <div style="display:flex;justify-content:flex-end;gap:8px">
+          <div class="doc-gate-actions" style="display:flex;justify-content:center;gap:8px">
             <button type="button" class="doc-btn" id="docGateOk" style="border:0;cursor:pointer">เปิดเอกสาร</button>
           </div>
           <div class="doc-meta" id="docGateErr" style="color:#b91c1c;margin:8px 0 0;display:none">รหัสนักศึกษาไม่ถูกต้อง</div>
