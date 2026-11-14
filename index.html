@@ -557,6 +557,7 @@ body.docs-mode #fabToday { display: none; }
 .docs-toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 14px; }
 .docs-chips {
   display: flex; gap: 6px; flex-wrap: wrap; align-items: flex-end;
+  flex: 1 1 100%;
   border-bottom: 1px solid var(--border);
 }
 /* ชิปกรอง (ทั้งหมด / สอบครั้งที่ 1 / สอบครั้งที่ 2) — ทรงที่คั่นหนังสือเช่นกัน */
@@ -591,16 +592,28 @@ body.docs-mode #fabToday { display: none; }
 .doc-badge.exam1 { background: #eef2ff; color: #3730a3; border-color: #c7d2fe; }
 .doc-badge.exam2 { background: var(--exam-light); color: var(--exam); border-color: #fca5a5; }
 .doc-meta { font-size: 0.74rem; color: var(--muted); }
+.doc-slot { display: inline-flex; align-items: center; justify-content: center; flex: none;
+  width: 26px; height: 26px; border-radius: 999px; background: var(--docs-light); color: var(--docs);
+  font-size: 0.78rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+.doc-row.slot-row { padding: 7px 12px; }
+.doc-row.slot-row .doc-line { align-items: center; gap: 10px; }
+.doc-row.pending .doc-main { display: flex; align-items: center; gap: 10px; }
 .doc-actions { display: flex; flex-wrap: nowrap; gap: 6px; flex: 0 0 auto; }
 .doc-btn { display: inline-flex; align-items: center; gap: 4px; background: var(--docs); color: #fff;
   font-size: 0.76rem; font-weight: 700; text-decoration: none; padding: 7px 11px; border-radius: 9px; white-space: nowrap; }
 @media (max-width: 520px) {
-  .docs-chips { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 4px; align-items: stretch; }
+  .docs-toolbar { display: block; }
+  .docs-search { width: 100%; }
+  .docs-chips { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 4px; align-items: stretch; width: 100%; }
   .docs-chips .chip { grid-column: span 2; width: 100%; min-width: 0; margin-bottom: 0; padding: 7px 3px 9px; text-align: center; font-size: 0.72rem; white-space: nowrap; }
   .docs-chips .chip:nth-child(7) { grid-column: 3 / span 2; }
-  .doc-row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 7px; align-items: start; padding: 11px 12px; }
+  .doc-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 10px; align-items: center; padding: 10px 12px; }
+  .doc-row.pending { display: flex; align-items: center; gap: 10px; padding: 8px 12px; }
+  .doc-row.pending .doc-main { flex: 1 1 auto; width: auto; }
+  .doc-row.pending .doc-actions { flex: 0 0 auto; justify-self: end; }
+  .doc-row.slot-row { padding: 7px 12px; }
   .doc-main { width: 100%; }
-  .doc-line { align-items: flex-start; flex-wrap: nowrap; gap: 7px; }
+  .doc-line { align-items: baseline; flex-wrap: wrap; gap: 6px; }
   .doc-name { flex: 1 1 auto; min-width: 0; font-size: 0.9rem; }
   .doc-group { margin-top: 1px; font-size: 0.68rem; }
   .doc-meta { margin-top: 3px; font-size: 0.77rem; }
@@ -1722,8 +1735,12 @@ const DOCS = {"generated": "2026-11-14", "exams": [{"id": "exam1", "label": "ส
         '" target="_blank" rel="noopener">📄 ' + esc(d.label) + '</a>';
     }).join('');
     if (!actions) actions = '<span class="doc-meta">ยังไม่มีไฟล์เอกสาร</span>';
-    return '<div class="doc-row' + (subj.status === 'ok' ? '' : ' pending') + '" id="doc-' + esc(exam.id + '-' + subj.id) + '">' +
-      '<div class="doc-main"><div class="doc-line"><span class="doc-name">' + esc(displayName) + '</span>' +
+    var isSlot = /^\d+$/.test(displayName) && !(subj.docs && subj.docs.length);
+    var nameHtml = isSlot
+      ? '<span class="doc-slot">' + esc(displayName) + '</span>'
+      : '<span class="doc-name">' + esc(displayName) + '</span>';
+    return '<div class="doc-row' + (subj.status === 'ok' ? '' : ' pending') + (isSlot ? ' slot-row' : '') + '" id="doc-' + esc(exam.id + '-' + subj.id) + '">' +
+      '<div class="doc-main"><div class="doc-line">' + nameHtml +
       (group ? '<span class="doc-group">' + esc(group) + '</span>' : '') + badge + '</div>' +
       (meta ? '<div class="doc-meta">' + esc(meta) + '</div>' : '') + '</div>' +
       '<div class="doc-actions">' + actions + '</div></div>';
@@ -1733,7 +1750,10 @@ const DOCS = {"generated": "2026-11-14", "exams": [{"id": "exam1", "label": "ส
     var items = allSubjects().filter(match);
     var withDocs = items.filter(function (i) { return i.subj.status === 'ok'; }).length;
     var unit = (state.exam === 'seminar' || state.exam === 'cqi' || state.exam === 'case' || state.exam === 'all') ? 'รายการ' : 'วิชา';
-    countEl.textContent = items.length + ' ' + unit + ' · มีเอกสาร ' + withDocs + ' ' + unit;
+    if (!items.length) countEl.textContent = 'ไม่พบรายการ';
+    else if (!withDocs) countEl.textContent = items.length + ' ' + unit + ' · ยังไม่มีเอกสาร';
+    else if (withDocs === items.length) countEl.textContent = items.length + ' ' + unit + ' · มีเอกสารครบ';
+    else countEl.textContent = items.length + ' ' + unit + ' · มีเอกสาร ' + withDocs;
     var html = '';
     if (state.exam === 'all') {
       html = DOCS.exams.map(function (e) {
