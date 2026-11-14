@@ -103,7 +103,7 @@ ADDITIONAL_CQI_DOCS = [{
 }, {
     "id": "cqi-hip-block-ultra-smooth",
     "num": 7,
-    "name": "นวัตกรรม Hip B(Lock) Ultra Smooth — หมอนกางขาป้องกันข้อสะโพกเทียมเคลื่อนหลุด · ออร์โธปิดิกส์",
+    "name": "นวัตกรรม Hip B(Lock) Ultra Smooth — หมอนกางขาป้องกันข้อสะโพกเทียมเคลื่อนหลุด · กลุ่ม 7",
     "lecturer": "",
     "day": "13 พ.ย. 2569",
     "qrange": "",
