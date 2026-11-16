@@ -1836,6 +1836,7 @@ def build_html(course, sessions, homework, notes):
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
 <title>{esc(title)}</title>
 <script data-goatcounter="https://periopmu55.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <style>{CSS}</style>
