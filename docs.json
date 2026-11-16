@@ -1149,8 +1149,14 @@
           "qrange": "",
           "qcount": "",
           "exam": "cqi",
-          "docs": [],
-          "status": "pending"
+          "docs": [
+            {
+              "label": "Slides",
+              "tracking": "05-iol-safety-check.pdf",
+              "url": "https://kttwatt.github.io/periop-mu55/slides/cqi/05-iol-safety-check.pdf"
+            }
+          ],
+          "status": "ok"
         },
         {
           "id": "cqi-group-6-pneumo-safe",
