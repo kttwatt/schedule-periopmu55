@@ -51,7 +51,7 @@ ADDITIONAL_CQI_DOCS = [
          [_cqi_pdf(3, "scrub-easy")],
          desc="เบาะพยุงแขนและขาลดภาระการประคองอวัยวะระหว่างเตรียมผิวหนังก่อนผ่าตัด"),
     _cqi("cqi-group-4-safety-oto-packing", 4, "Safety Oto packing · กลุ่ม 4",
-         "12 พ.ย. 2569", "พว.กร อังสุวรรณเขต",
+         "12 พ.ย. 2569", "พว.กร อังสุวรรณณเขต, ดร.สุทธินี ทองทิพย์",
          [_cqi_pdf(4, "safety-oto-packing")],
          desc="สำลีซับนับครบ (ความปลอดภัยในการผ่าตัด)"),
     _cqi("cqi-group-5-iol-safety-check", 5, "IOL safety check · กลุ่ม 5",
