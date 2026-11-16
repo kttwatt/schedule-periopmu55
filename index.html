@@ -603,16 +603,9 @@ body.docs-mode #fabToday { display: none; }
 .doc-row.open .doc-extra { display: block; }
 .doc-extra-label { color: var(--docs); font-weight: 700; }
 .doc-extra-desc { color: var(--text); margin-bottom: 3px; }
-#docGate .wg-modal-card { text-align: center; }
-#docGate h3 { text-align: center; }
-#docGate .doc-meta { text-align: center; }
-#docGateInput { text-align: center; }
-#docGate .doc-gate-actions { justify-content: center; }
 .doc-row.slot-row .doc-line { align-items: center; gap: 10px; }
 .doc-row.pending .doc-main { display: flex; align-items: center; gap: 10px; }
 .doc-actions { display: flex; flex-wrap: nowrap; gap: 6px; flex: 0 0 auto; }
-.doc-btn.locked { background: #64748b; }
-.doc-btn.locked:hover { background: #475569; }
 .doc-btn { display: inline-flex; align-items: center; gap: 4px; background: var(--docs); color: #fff;
   font-size: 0.76rem; font-weight: 700; text-decoration: none; padding: 7px 11px; border-radius: 9px; white-space: nowrap; }
 @media (max-width: 520px) {
@@ -1359,17 +1352,7 @@ body.docs-mode #fabToday { display: none; }
         <div class="docs-count" id="docsCount"></div>
       </div>
       <div id="docsList"></div>
-      <div class="wg-modal-backdrop" id="docGate">
-        <div class="wg-modal-card">
-          <button type="button" class="wg-modal-close" id="docGateClose" aria-label="ปิด">✕</button>
-          <h3 class="wg-modal-topic" style="font-size:1.05rem;margin:0 0 6px">รหัสนักศึกษา</h3>
-          <p class="doc-meta" style="margin:0 0 12px">เอกสาร CQI รุ่น 55 — กรอกรหัสนักศึกษา 7 หลักเพื่อเปิดไฟล์</p>
-          <input id="docGateInput" type="password" class="docs-search" autocomplete="off" placeholder="รหัสนักศึกษา" style="width:100%;margin:0 0 10px">
-          <div class="doc-gate-actions" style="display:flex;justify-content:center;gap:8px">
-            <button type="button" class="doc-btn" id="docGateOk" style="border:0;cursor:pointer">เปิดเอกสาร</button>
-          </div>
-          <div class="doc-meta" id="docGateErr" style="color:#b91c1c;margin:8px 0 0;display:none">รหัสนักศึกษาไม่ถูกต้อง</div>
-        </div>
+    </div>
       </div>
     </div>
 
@@ -1726,20 +1709,6 @@ const DOCS = {"generated": "2026-11-16", "exams": [{"id": "exam1", "label": "ส
   if (!listEl || !docsMain || !scheduleMain || typeof DOCS === 'undefined') return;
 
   var state = { exam: 'all', q: '' };
-  var CODE_MIN = 6911801, CODE_MAX = 6911848;   // รหัสนักศึกษา รุ่น 55
-  var unlocked = false, docsUser = '';
-  try {
-    unlocked = sessionStorage.getItem('docUnlocked') === '1';
-    docsUser = sessionStorage.getItem('docUser') || '';
-  } catch (err) { unlocked = false; docsUser = ''; }
-
-  function validCode(v) {
-    v = String(v || '').replace(/[^0-9]/g, '');
-    if (v.length !== 7) return false;
-    var n = parseInt(v, 10);
-    return n >= CODE_MIN && n <= CODE_MAX;
-  }
-
   function gcTrack(path) {
     try {
       if (window.goatcounter && typeof window.goatcounter.count === 'function') {
@@ -1749,41 +1718,7 @@ const DOCS = {"generated": "2026-11-16", "exams": [{"id": "exam1", "label": "ส
   }
 
   function trackOpen(slug) {
-    gcTrack('cqi-open/' + (docsUser || 'nocode') + '/' + slug);
-  }
-  var gateEl = document.getElementById('docGate');
-  var gateInput = document.getElementById('docGateInput');
-  var gateErr = document.getElementById('docGateErr');
-  var pendingHref = '';
-
-  function openGate(href) {
-    pendingHref = href;
-    if (gateErr) gateErr.style.display = 'none';
-    if (gateInput) gateInput.value = '';
-    if (gateEl) gateEl.classList.add('show');
-    if (gateInput) setTimeout(function () { gateInput.focus(); }, 60);
-  }
-
-  function closeGate() { if (gateEl) gateEl.classList.remove('show'); }
-
-  function tryUnlock() {
-    if (!gateInput) return;
-    var entered = String(gateInput.value || '').replace(/[^0-9]/g, '');
-    if (validCode(entered)) {
-      unlocked = true;
-      docsUser = entered;
-      try { sessionStorage.setItem('docUnlocked', '1'); sessionStorage.setItem('docUser', entered); } catch (err) {}
-      gcTrack('cqi-code/' + entered);
-      closeGate();
-      render();
-      if (pendingHref) {
-        trackOpen(pendingHref.split('/').pop());
-        window.open(pendingHref, '_blank', 'noopener');
-      }
-      pendingHref = '';
-    } else if (gateErr) {
-      gateErr.style.display = 'block';
-    }
+    gcTrack('cqi-open/' + slug);
   }
 
   function esc(v) {
@@ -1821,14 +1756,10 @@ const DOCS = {"generated": "2026-11-16", "exams": [{"id": "exam1", "label": "ส
     if (isCqi && subj.desc) extraBits += '<div class="doc-extra-desc">' + esc(subj.desc) + '</div>';
     if (isCqi && subj.lecturer) extraBits += '<div><span class="doc-extra-label">ที่ปรึกษา</span> ' + esc(subj.lecturer) + '</div>';
     var extra = extraBits ? '<div class="doc-extra">' + extraBits + '</div>' : '';
-    var gated = (exam.id === 'cqi' || exam.id === 'case');
+    var tracked = (exam.id === 'cqi' || exam.id === 'case');
     var actions = subj.docs.map(function (d) {
       var fname = d.tracking || d.url.split('/').pop();
-      if (gated) {
-        if (!unlocked) {
-          return '<a class="doc-btn locked" data-file="' + esc(fname) + '" data-href="' + esc(d.url) +
-            '" href="#" rel="noopener">🔒 ' + esc(d.label) + '</a>';
-        }
+      if (tracked) {
         return '<a class="doc-btn" data-file="' + esc(fname) + '" href="' + esc(d.url) +
           '" target="_blank" rel="noopener">📄 ' + esc(d.label) + '</a>';
       }
@@ -1924,8 +1855,6 @@ const DOCS = {"generated": "2026-11-16", "exams": [{"id": "exam1", "label": "ส
   });
 
   listEl.addEventListener('click', function (e) {
-    var locked = e.target.closest('a.doc-btn.locked');
-    if (locked) { e.preventDefault(); openGate(locked.getAttribute('data-href')); return; }
     var opened = e.target.closest('a.doc-btn[data-file]');
     if (opened) { trackOpen(opened.getAttribute('data-file')); }
     if (e.target.closest('a')) return;
@@ -1933,11 +1862,6 @@ const DOCS = {"generated": "2026-11-16", "exams": [{"id": "exam1", "label": "ส
     if (!row) return;
     row.classList.toggle('open');
   });
-
-  if (document.getElementById('docGateOk')) document.getElementById('docGateOk').addEventListener('click', tryUnlock);
-  if (document.getElementById('docGateClose')) document.getElementById('docGateClose').addEventListener('click', closeGate);
-  if (gateInput) gateInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); tryUnlock(); } });
-  if (gateEl) gateEl.addEventListener('click', function (e) { if (e.target === gateEl) closeGate(); });
 
   searchEl.addEventListener('input', function () { state.q = searchEl.value; render(); });
   window.addEventListener('hashchange', applyHash);
