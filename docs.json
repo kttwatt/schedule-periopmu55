@@ -1189,12 +1189,12 @@
           "exam": "cqi",
           "docs": [
             {
-              "label": "Slides (PDF)",
+              "label": "Slides",
               "tracking": "07-hip-block-ultra-smooth.pdf",
               "url": "https://kttwatt.github.io/periop-mu55/slides/cqi/07-hip-block-ultra-smooth.pdf"
             },
             {
-              "label": "Slide",
+              "label": "Link",
               "tracking": "cqi-hipblock-web",
               "url": "https://kttwatt.github.io/cqi-hipblock/"
             }

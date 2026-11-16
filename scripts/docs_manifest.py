@@ -64,8 +64,8 @@ ADDITIONAL_CQI_DOCS = [
          desc="สายรัดจัดระเบียบสายอุปกรณ์ IPC"),
     _cqi("cqi-group-7-hip-block", 7, "Hip B(Lock) Ultra Smooth · กลุ่ม 7",
          "13 พ.ย. 2569", "พว.อัณชลี ศรีสุข", [
-             _cqi_pdf(7, "hip-block-ultra-smooth", "Slides (PDF)"),
-             {"label": "Slide", "tracking": "cqi-hipblock-web",
+             _cqi_pdf(7, "hip-block-ultra-smooth", "Slides"),
+             {"label": "Link", "tracking": "cqi-hipblock-web",
               "url": "https://kttwatt.github.io/cqi-hipblock/"},
          ],
          desc="หมอนกางขาป้องกันข้อสะโพกเทียมเคลื่อนหลุด"),
