@@ -94,6 +94,14 @@ def sdel(text):
     return re.sub(r"~~([^~]*?)~~", r"<s>\1</s>", text)
 
 
+DEPT_RE = re.compile(r"\b(ORTHO|OBGYN|NEURO|GEN|EYE|CVT|ENT|URO)\b")
+
+
+def emphasize_dept(escaped_text):
+    """Bold + colour the department tag (ORTHO/GEN/EYE/…) in an already-escaped topic."""
+    return DEPT_RE.sub(lambda m: f'<b class="dept">{m.group(0)}</b>', escaped_text)
+
+
 def render_inline(text):
     """Minimal markdown -> HTML: [text](url), **bold**, bare URLs."""
     if not text:
@@ -331,7 +339,7 @@ def render_session_row(s):
     if s["unit"] and s["unit"] != "-":
         unit_html = f'<span class="unit">{esc(s["unit"])}</span>'
 
-    topic_html = f'<span class="topic">{unit_html}{sdel(esc(s["topic"]))}</span>'
+    topic_html = f'<span class="topic">{unit_html}{emphasize_dept(sdel(esc(s["topic"])))}</span>'
 
     who_html = f'<span class="who">{esc(s["lecturer"])}</span>' if s["lecturer"] and s["lecturer"] != "-" else ""
 
@@ -351,7 +359,7 @@ def render_session_row(s):
     return f'<div class="{" ".join(classes)}">{row_main_html}</div>'
 
 
-def render_day(day, prev_week, open_default=False):
+def render_day(day, prev_week):
     week_html = ""
     if day["week"] and day["week"] != prev_week:
         week_html = f'<div class="week-div">{esc(day["week"])}</div>'
@@ -369,13 +377,10 @@ def render_day(day, prev_week, open_default=False):
             f'<button type="button" class="day-week-link" data-date="{esc(day["date_iso"])}">'
             f"ดูรายสัปดาห์</button>"
         )
-    # accordion: holiday rows stay open (single line), class days collapse unless they
-    # are the day the page opens on (today / next class day).
-    is_open = " open" if (open_default or not day.get("sessions")) else ""
-    return week_html + f"""<details{cls}{date_attr}{is_open}>
-  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">{esc(expand_day_abbrev(head_text))}</span>{week_link_html}</summary>
-  <div class="day-body">{rows_html}</div>
-</details>"""
+    return week_html + f"""<section{cls}{date_attr}>
+  <div class="day-head"><span class="day-head-text">{esc(expand_day_abbrev(head_text))}</span>{week_link_html}</div>
+  {rows_html}
+</section>"""
 
 
 DAY_FULL = {
@@ -510,7 +515,7 @@ def render_grid_session(start_slot, end_slot, row, s, weekday_class):
         f'data-cancelled="{"1" if s["cancelled"] else "0"}"'
     )
     return (f'<div class="{" ".join(classes)}" style="{style}" title="{esc(title)}" {data_attrs}>'
-            f'<div class="wg-topic">{esc(topic)}</div>{meta_html}</div>')
+            f'<div class="wg-topic">{emphasize_dept(esc(topic))}</div>{meta_html}</div>')
 
 
 def render_grid_free(start_slot, end_slot, row):
@@ -668,6 +673,14 @@ header.course-header .period { font-size: 1.25rem; font-weight: 600; color: var(
 .week-div:first-child { margin-top: 0; }
 
 .day { margin-bottom: 4px; }
+/* department tag inside a site-visit topic (ORTHO / GEN / EYE / …) */
+.dept {
+  color: var(--sitevisit);
+  font-weight: 800;
+  letter-spacing: .02em;
+  white-space: nowrap;
+}
+.wg-topic .dept { text-decoration: underline; text-underline-offset: 2px; }
 .day.holiday .day-head {
   color: var(--muted);
   font-weight: 600;
@@ -693,17 +706,6 @@ header.course-header .period { font-size: 1.25rem; font-weight: 600; color: var(
   position: sticky; top: 0;
   border: 1px solid var(--border);
 }
-/* accordion: day blocks are <details>/<summary> */
-.day > summary { list-style: none; cursor: pointer; }
-.day > summary::-webkit-details-marker { display: none; }
-.day-caret {
-  flex: 0 0 auto; display: inline-block; margin-right: 4px;
-  font-size: .8rem; color: var(--muted);
-  transition: transform .15s ease;
-}
-.day[open] > summary .day-caret { transform: rotate(90deg); }
-.day-head-text { flex: 1 1 auto; min-width: 0; }
-.day-body { padding-bottom: 2px; }
 .day-week-link {
   flex: 0 0 auto;
   font-family: inherit;
@@ -1353,7 +1355,6 @@ JS = """
     // else 'ถัดไป' (next class, e.g. weekend/holiday)
     var label = exact ? 'วันนี้' : 'ถัดไป';
     target.classList.add('today');
-    if (target.tagName === 'DETAILS') { target.open = true; }
     var head = target.querySelector('.day-head-text') || target.querySelector('.day-head');
     if (head && !head.querySelector('.today-badge')) {
       var badge = document.createElement('span');
@@ -1514,9 +1515,7 @@ JS = """
   });
 
   links.forEach(function (link) {
-    link.addEventListener('click', function (ev) {
-      // the button lives inside <summary> — don't let it toggle the accordion
-      if (ev) { ev.preventDefault(); ev.stopPropagation(); }
+    link.addEventListener('click', function () {
       var gridTab = document.querySelector('.view-tab[data-view="grid"]');
       if (gridTab) gridTab.click();
 
@@ -1827,20 +1826,8 @@ def build_html(course, sessions, homework, notes):
     days = with_weekends_holidays(group_by_day(sessions))
     prev_week = ""
     day_blocks = []
-
-    # accordion default state: open the day the page should land on (today if it has
-    # sessions, else the next class day). Everything else starts collapsed.
-    today_iso = datetime.now().strftime("%Y-%m-%d")
-    dated = [d["date_iso"] for d in days if d.get("date_iso") and d.get("sessions")]
-    open_iso = ""
-    if today_iso in dated:
-        open_iso = today_iso
-    else:
-        future = [d for d in dated if d >= today_iso]
-        open_iso = min(future) if future else (max(dated) if dated else "")
-
     for d in days:
-        day_blocks.append(render_day(d, prev_week, open_default=(d.get("date_iso") == open_iso)))
+        day_blocks.append(render_day(d, prev_week))
         if d.get("week"):
             prev_week = d["week"]
     days_html = "\n".join(day_blocks)
