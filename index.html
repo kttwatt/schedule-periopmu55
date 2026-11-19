@@ -103,6 +103,17 @@ header.course-header .period { font-size: 1.25rem; font-weight: 600; color: var(
   position: sticky; top: 0;
   border: 1px solid var(--border);
 }
+/* accordion: day blocks are <details>/<summary> */
+.day > summary { list-style: none; cursor: pointer; }
+.day > summary::-webkit-details-marker { display: none; }
+.day-caret {
+  flex: 0 0 auto; display: inline-block; margin-right: 4px;
+  font-size: .8rem; color: var(--muted);
+  transition: transform .15s ease;
+}
+.day[open] > summary .day-caret { transform: rotate(90deg); }
+.day-head-text { flex: 1 1 auto; min-width: 0; }
+.day-body { padding-bottom: 2px; }
 .day-week-link {
   flex: 0 0 auto;
   font-family: inherit;
@@ -778,584 +789,584 @@ body.docs-mode #fabToday { display: none; }
       </div>
       <div id="listView" class="view-panel">
         <main>
-          <div class="week-div">สัปดาห์ที่ 1</div><section class="day" data-date="2026-08-17">
-  <div class="day-head"><span class="day-head-text">วันจันทร์ 17 ส.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-08-17">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">09.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">การปฐมนิเทศหลักสูตรฯ</span><span class="pill fmt-onsite">508</span></div><span class="who">อาจารย์ประจำสาขา</span></div></div></div>
+          <div class="week-div">สัปดาห์ที่ 1</div><details class="day" data-date="2026-08-17">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันจันทร์ 17 ส.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-08-17">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">09.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">การปฐมนิเทศหลักสูตรฯ</span><span class="pill fmt-onsite">508</span></div><span class="who">อาจารย์ประจำสาขา</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">10.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">แนะนำคณะกรรมการประจำหลักสูตรและแนะนำการศึกษาอบรม / กิจกรรมสัมพันธ์ประจำสาขา</span><span class="pill fmt-onsite">508</span></div><span class="who">ศ.ดร. อุษาวดี อัศดรวิเศษ (อาจารย์ประจำสาขา)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–14.00</span><div class="row-body"><div class="topic-line"><span class="topic">แนะนำระบบสารสนเทศเพื่อการเรียนการสอน</span><span class="pill fmt-hybrid">Hybrid</span></div><span class="who">นายมารุต คล่องแคล่ว (งานเทคโนโลยีสารสนเทศ)</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">14.00–15.00</span><div class="row-body"><div class="topic-line"><span class="topic">แนะนำการใช้ห้องสมุดคณะพยาบาลศาสตร์</span><span class="pill fmt-hybrid">Hybrid</span></div><span class="who">นางสาวนิภาพร เดชะ (งานห้องสมุด)</span></div></div></div>
-</section>
-<section class="day" data-date="2026-08-18">
-  <div class="day-head"><span class="day-head-text">วันอังคาร 18 ส.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-08-18">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">09.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">ปฐมนิเทศวิชา พยคร 627 นโยบายสุขภาพกับภาวะผู้นำ</span><span class="pill fmt-hybrid">Hybrid</span></div><span class="who">ผศ.ดร.เกศศิริ วงษ์คงคำ (หัวหน้าวิชา/ภาควิชาการพยาบาลศัลยศาสตร์)</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">14.00–15.00</span><div class="row-body"><div class="topic-line"><span class="topic">แนะนำการใช้ห้องสมุดคณะพยาบาลศาสตร์</span><span class="pill fmt-hybrid">Hybrid</span></div><span class="who">นางสาวนิภาพร เดชะ (งานห้องสมุด)</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-08-18">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอังคาร 18 ส.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-08-18">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">09.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">ปฐมนิเทศวิชา พยคร 627 นโยบายสุขภาพกับภาวะผู้นำ</span><span class="pill fmt-hybrid">Hybrid</span></div><span class="who">ผศ.ดร.เกศศิริ วงษ์คงคำ (หัวหน้าวิชา/ภาควิชาการพยาบาลศัลยศาสตร์)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">10.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic"><span class="unit">หน่วย 2</span>แนวคิด หลักการ และกระบวนการพัฒนาภาวะผู้นำทางการพยาบาล / การใช้หลักฐานเชิงประจักษ์ในกระบวนการดูแลอย่างต่อเนื่อง</span><span class="pill fmt-hybrid">Hybrid</span></div><span class="who">ผศ.ดร.เกศศิริ วงษ์คงคำ (หัวหน้าวิชา/ภาควิชาการพยาบาลศัลยศาสตร์)</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic"><span class="unit">หน่วย 1</span>ระบบสุขภาพ นโยบายสุขภาพของประเทศ แผนพัฒนาสุขภาพแห่งชาติ ฉบับปัจจุบัน</span><span class="pill fmt-hybrid">Hybrid</span></div><span class="who">ผศ.ดร.ฐิติพงษ์ ตันคำปวน (รองคณบดีฝ่ายวิจัย) / อ.ดร.สุรัสวดี เครือหงส์ (ภาควิชาการพยาบาลศัลยศาสตร์) / อ.ดร.ชิดชนก เบ็ญจสิริสรรค์ (ภาควิชาการพยาบาลอายุรศาสตร์)</span></div></div></div>
-</section>
-<section class="day" data-date="2026-08-19">
-  <div class="day-head"><span class="day-head-text">วันพุธ 19 ส.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-08-19">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic"><span class="unit">หน่วย 2</span>ทฤษฎีและแนวคิดเกี่ยวกับผู้นำ: ความหมายและแนวคิดเกี่ยวกับผู้นำ / ทฤษฎีผู้นำ (leadership theories) / พฤติกรรมและกลยุทธ์ของผู้นำทางการพยาบาลในระบบสุขภาพ: ผู้นำกับการพัฒนาองค์กรด้วยระบบประกันคุณภาพและการบริหารความเสี่ยง</span><span class="pill fmt-hybrid">Hybrid</span></div><span class="who">ผศ.ดร.รัตติมา ศิริโหราชัย (หัวหน้าภาควิชาการพยาบาลศัลยศาสตร์)</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic"><span class="unit">หน่วย 2</span>จริยธรรมของผู้นำทางการพยาบาลและกฎหมายวิชาชีพการพยาบาลและการผดุงครรภ์ที่เกี่ยวข้อง</span><span class="pill fmt-hybrid">Hybrid</span></div><span class="who">รศ.ดร.ปรางทิพย์ ฉายพุทธ (เกษียณอายุราชการ)</span></div></div></div>
-</section>
-<section class="day" data-date="2026-08-20">
-  <div class="day-head"><span class="day-head-text">วันพฤหัสบดี 20 ส.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-08-20">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">09.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic"><span class="unit">หน่วย 1</span>แผนยุทธศาสตร์กำลังคนด้านสุขภาพ และปัญหากำลังคนสาขาพยาบาลศาสตร์</span><span class="pill fmt-hybrid">Hybrid</span></div><span class="who">ผศ.ดร.ฐิติพงษ์ ตันคำปวน (รองคณบดีฝ่ายวิจัย) / อ.ดร.สุรัสวดี เครือหงส์ (ภาควิชาการพยาบาลศัลยศาสตร์) / อ.ดร.ชิดชนก เบ็ญจสิริสรรค์ (ภาควิชาการพยาบาลอายุรศาสตร์)</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">13.00–17.00</span><div class="row-body"><div class="topic-line"><span class="topic"><span class="unit">หน่วย 2</span>การพัฒนาสมรรถนะผู้นำ พฤติกรรม กลยุทธ์ของผู้นำทางการพยาบาลในระบบสุขภาพ การสื่อสาร การสร้างและกระบวนการทำงานเป็นทีม</span><span class="pill fmt-hybrid">Hybrid</span></div><span class="who">รศ.ดร.อัจฉริยา พ่วงแก้ว (ภาควิชาการพยาบาลอายุรศาสตร์)</span></div></div></div>
-</section>
-<div class="week-div">สัปดาห์ที่ 2</div><section class="day" data-date="2026-08-21">
-  <div class="day-head"><span class="day-head-text">วันศุกร์ 21 ส.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-08-21">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic"><span class="unit">หน่วย 1</span>เศรษฐศาสตร์ระบบสุขภาพและการประเมินความคุ้มค่าของมาตรการทางสุขภาพ / ระบบการเงินการคลังและการเบิกจ่ายในระบบสุขภาพ</span><span class="pill fmt-hybrid">Hybrid</span></div><span class="who">ผศ.พิเชต วงรอต (รองคณบดีฝ่ายบริการวิชาการและขับเคลื่อนนโยบายชี้นำสังคม)</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">การประเมินภาวะจิตใจ อารมณ์ สังคมและจิตวิญญาณในผู้ป่วยที่ได้รับการผ่าตัด</span><span class="pill fmt-onsite">508</span></div><span class="who">อ.ดร.ภาศิษฏา อ่อนดี</span></div></div></div>
-</section>
-<section class="day holiday" data-date="2026-08-22">
-  <div class="day-head"><span class="day-head-text">วันเสาร์ 22 ส.ค. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day holiday" data-date="2026-08-23">
-  <div class="day-head"><span class="day-head-text">วันอาทิตย์ 23 ส.ค. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day" data-date="2026-08-24">
-  <div class="day-head"><span class="day-head-text">วันจันทร์ 24 ส.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-08-24">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">แนวคิดและหลักการประเมินภาวะสุขภาพ</span><span class="pill fmt-onsite">508</span></div><span class="who">ผศ.พรสินี เต็งพานิชกุล</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic"><span class="unit">หน่วย 1</span>ระบบสุขภาพ นโยบายสุขภาพของประเทศ แผนพัฒนาสุขภาพแห่งชาติ ฉบับปัจจุบัน</span><span class="pill fmt-hybrid">Hybrid</span></div><span class="who">ผศ.ดร.ฐิติพงษ์ ตันคำปวน (รองคณบดีฝ่ายวิจัย) / อ.ดร.สุรัสวดี เครือหงส์ (ภาควิชาการพยาบาลศัลยศาสตร์) / อ.ดร.ชิดชนก เบ็ญจสิริสรรค์ (ภาควิชาการพยาบาลอายุรศาสตร์)</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-08-19">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพุธ 19 ส.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-08-19">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic"><span class="unit">หน่วย 2</span>ทฤษฎีและแนวคิดเกี่ยวกับผู้นำ: ความหมายและแนวคิดเกี่ยวกับผู้นำ / ทฤษฎีผู้นำ (leadership theories) / พฤติกรรมและกลยุทธ์ของผู้นำทางการพยาบาลในระบบสุขภาพ: ผู้นำกับการพัฒนาองค์กรด้วยระบบประกันคุณภาพและการบริหารความเสี่ยง</span><span class="pill fmt-hybrid">Hybrid</span></div><span class="who">ผศ.ดร.รัตติมา ศิริโหราชัย (หัวหน้าภาควิชาการพยาบาลศัลยศาสตร์)</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic"><span class="unit">หน่วย 2</span>จริยธรรมของผู้นำทางการพยาบาลและกฎหมายวิชาชีพการพยาบาลและการผดุงครรภ์ที่เกี่ยวข้อง</span><span class="pill fmt-hybrid">Hybrid</span></div><span class="who">รศ.ดร.ปรางทิพย์ ฉายพุทธ (เกษียณอายุราชการ)</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-08-20">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพฤหัสบดี 20 ส.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-08-20">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">09.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic"><span class="unit">หน่วย 1</span>แผนยุทธศาสตร์กำลังคนด้านสุขภาพ และปัญหากำลังคนสาขาพยาบาลศาสตร์</span><span class="pill fmt-hybrid">Hybrid</span></div><span class="who">ผศ.ดร.ฐิติพงษ์ ตันคำปวน (รองคณบดีฝ่ายวิจัย) / อ.ดร.สุรัสวดี เครือหงส์ (ภาควิชาการพยาบาลศัลยศาสตร์) / อ.ดร.ชิดชนก เบ็ญจสิริสรรค์ (ภาควิชาการพยาบาลอายุรศาสตร์)</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">13.00–17.00</span><div class="row-body"><div class="topic-line"><span class="topic"><span class="unit">หน่วย 2</span>การพัฒนาสมรรถนะผู้นำ พฤติกรรม กลยุทธ์ของผู้นำทางการพยาบาลในระบบสุขภาพ การสื่อสาร การสร้างและกระบวนการทำงานเป็นทีม</span><span class="pill fmt-hybrid">Hybrid</span></div><span class="who">รศ.ดร.อัจฉริยา พ่วงแก้ว (ภาควิชาการพยาบาลอายุรศาสตร์)</span></div></div></div></div>
+</details>
+<div class="week-div">สัปดาห์ที่ 2</div><details class="day" data-date="2026-08-21">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันศุกร์ 21 ส.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-08-21">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic"><span class="unit">หน่วย 1</span>เศรษฐศาสตร์ระบบสุขภาพและการประเมินความคุ้มค่าของมาตรการทางสุขภาพ / ระบบการเงินการคลังและการเบิกจ่ายในระบบสุขภาพ</span><span class="pill fmt-hybrid">Hybrid</span></div><span class="who">ผศ.พิเชต วงรอต (รองคณบดีฝ่ายบริการวิชาการและขับเคลื่อนนโยบายชี้นำสังคม)</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">การประเมินภาวะจิตใจ อารมณ์ สังคมและจิตวิญญาณในผู้ป่วยที่ได้รับการผ่าตัด</span><span class="pill fmt-onsite">508</span></div><span class="who">อ.ดร.ภาศิษฏา อ่อนดี</span></div></div></div></div>
+</details>
+<details class="day holiday" data-date="2026-08-22" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันเสาร์ 22 ส.ค. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day holiday" data-date="2026-08-23" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอาทิตย์ 23 ส.ค. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day" data-date="2026-08-24">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันจันทร์ 24 ส.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-08-24">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">แนวคิดและหลักการประเมินภาวะสุขภาพ</span><span class="pill fmt-onsite">508</span></div><span class="who">ผศ.พรสินี เต็งพานิชกุล</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">10.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">การประเมินร่างกายระบบ: Head, Face, Neck, Skin and Lymphatic System</span><span class="pill fmt-onsite">508</span></div><span class="who">ผศ.พรสินี เต็งพานิชกุล</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic"><span class="unit">หน่วย 3</span>มโนทัศน์ทางการพยาบาลปริศัลยกรรม (Perioperative Nursing Concepts)</span><span class="pill fmt-onsite">508</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ</span></div></div></div>
-</section>
-<section class="day" data-date="2026-08-25">
-  <div class="day-head"><span class="day-head-text">วันอังคาร 25 ส.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-08-25">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">09.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">ประชุมพิจารณาหัวข้อสัมมนา</span><span class="pill fmt-onsite">508</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic"><span class="unit">หน่วย 3</span>มโนทัศน์ทางการพยาบาลปริศัลยกรรม (Perioperative Nursing Concepts)</span><span class="pill fmt-onsite">508</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-08-25">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอังคาร 25 ส.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-08-25">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">09.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">ประชุมพิจารณาหัวข้อสัมมนา</span><span class="pill fmt-onsite">508</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">10.30–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
-<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
-</section>
-<section class="day" data-date="2026-08-26">
-  <div class="day-head"><span class="day-head-text">วันพุธ 26 ส.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-08-26">ดูรายสัปดาห์</button></div>
-  <div class="row cancelled"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic"><span class="unit">หน่วย 3</span>การพัฒนาคุณภาพองค์กรในระบบสุขภาพ/การพัฒนาคุณภาพการรักษาพยาบาลในการพยาบาลปริศัลยกรรม/การประเมินผลลัพธ์ทางการพยาบาลเฉพาะสาขาปริศัลยกรรม ครั้งที่ 2 (เลื่อน 26/08)</span><span class="pill fmt-cancelled">เลื่อน</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div></div>
+</details>
+<details class="day" data-date="2026-08-26">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพุธ 26 ส.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-08-26">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row cancelled"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic"><span class="unit">หน่วย 3</span>การพัฒนาคุณภาพองค์กรในระบบสุขภาพ/การพัฒนาคุณภาพการรักษาพยาบาลในการพยาบาลปริศัลยกรรม/การประเมินผลลัพธ์ทางการพยาบาลเฉพาะสาขาปริศัลยกรรม ครั้งที่ 2 (เลื่อน 26/08)</span><span class="pill fmt-cancelled">เลื่อน</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–15.00</span><div class="row-body"><div class="topic-line"><span class="topic">การรับรองคุณภาพโรงพยาบาลและการรับรองเฉพาะโรค</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.วรารัตน์ บุญณสะ (ภาควิชาศัลยศาสตร์ออร์โธปิดิคส์และกายภาพบำบัด)</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
-</section>
-<section class="day" data-date="2026-08-27">
-  <div class="day-head"><span class="day-head-text">วันพฤหัสบดี 27 ส.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-08-27">ดูรายสัปดาห์</button></div>
-  <div class="row cancelled"><div class="row-main"><span class="time">09.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">มโนมติทางการพยาบาลปริศัลยกรรม (เลื่อน 27/08) → ย้ายไป 4 ก.ย. 13–15</span><span class="pill fmt-cancelled">เลื่อน</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ / อ.นลินทิพย์ นิรันดร์ทวีชัย</span></div></div></div>
-<div class="row cancelled"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic"><span class="unit">หน่วย 3</span>Orientation for Seminar in Perioperative Nursing แบ่งกลุ่มประเด็นและแนวโน้ม ประชุมครั้งที่ 1 → ย้ายไป 15 ก.ย. 13–15</span><span class="pill fmt-cancelled">เลื่อน</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ / อ.นลินทิพย์ นิรันดร์ทวีชัย</span></div></div></div>
-</section>
-<div class="week-div">สัปดาห์ที่ 3</div><section class="day" data-date="2026-08-28">
-  <div class="day-head"><span class="day-head-text">วันศุกร์ 28 ส.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-08-28">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–09.00</span><div class="row-body"><div class="topic-line"><span class="topic">Cost Analysis in OR</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.กุลวรา คุปรัตน์ (งานการพยาบาลผ่าตัด)</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div></div>
+</details>
+<details class="day" data-date="2026-08-27">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพฤหัสบดี 27 ส.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-08-27">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row cancelled"><div class="row-main"><span class="time">09.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">มโนมติทางการพยาบาลปริศัลยกรรม (เลื่อน 27/08) → ย้ายไป 4 ก.ย. 13–15</span><span class="pill fmt-cancelled">เลื่อน</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ / อ.นลินทิพย์ นิรันดร์ทวีชัย</span></div></div></div>
+<div class="row cancelled"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic"><span class="unit">หน่วย 3</span>Orientation for Seminar in Perioperative Nursing แบ่งกลุ่มประเด็นและแนวโน้ม ประชุมครั้งที่ 1 → ย้ายไป 15 ก.ย. 13–15</span><span class="pill fmt-cancelled">เลื่อน</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ / อ.นลินทิพย์ นิรันดร์ทวีชัย</span></div></div></div></div>
+</details>
+<div class="week-div">สัปดาห์ที่ 3</div><details class="day" data-date="2026-08-28">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันศุกร์ 28 ส.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-08-28">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–09.00</span><div class="row-body"><div class="topic-line"><span class="topic">Cost Analysis in OR</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.กุลวรา คุปรัตน์ (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">09.00–11.00</span><div class="row-body"><div class="topic-line"><span class="topic">Competency in OR</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.ธนพรรณ กุณาละสิริ (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">11.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">Care for One Day Surgery (ODS) Patients</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.วราลักษณ์ บุญชัย (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–15.00</span><div class="row-body"><div class="topic-line"><span class="topic">การบริหารจัดการความเสี่ยงในห้องผ่าตัด</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.น้องนุช ภูมิสนธิ์</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
-</section>
-<section class="day holiday" data-date="2026-08-29">
-  <div class="day-head"><span class="day-head-text">วันเสาร์ 29 ส.ค. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day holiday" data-date="2026-08-30">
-  <div class="day-head"><span class="day-head-text">วันอาทิตย์ 30 ส.ค. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day" data-date="2026-08-31">
-  <div class="day-head"><span class="day-head-text">วันจันทร์ 31 ส.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-08-31">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.30–09.00</span><div class="row-body"><div class="topic-line"><span class="topic">สอบ หัวข้อของ ผศ.พิเชต วงรอต (เศรษฐศาสตร์ระบบสุขภาพและการประเมินความคุ้มค่าของมาตรการทางสุขภาพ / ระบบการเงินการคลังและการเบิกจ่ายในระบบสุขภาพ)</span><span class="pill fmt-exam">สอบ</span></div><span class="who">อาจารย์ประจำสาขา (ควบคุมสอบ)</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div></div>
+</details>
+<details class="day holiday" data-date="2026-08-29" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันเสาร์ 29 ส.ค. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day holiday" data-date="2026-08-30" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอาทิตย์ 30 ส.ค. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day" data-date="2026-08-31">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันจันทร์ 31 ส.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-08-31">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.30–09.00</span><div class="row-body"><div class="topic-line"><span class="topic">สอบ หัวข้อของ ผศ.พิเชต วงรอต (เศรษฐศาสตร์ระบบสุขภาพและการประเมินความคุ้มค่าของมาตรการทางสุขภาพ / ระบบการเงินการคลังและการเบิกจ่ายในระบบสุขภาพ)</span><span class="pill fmt-exam">สอบ</span></div><span class="who">อาจารย์ประจำสาขา (ควบคุมสอบ)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">10.00–10.30</span><div class="row-body"><div class="topic-line"><span class="topic">การประเมินร่างกายตามระบบ: เต้านม (Breast) (ย้ายมาจาก 25 ส.ค.69 + คาบบ่ายรวมเช้า)</span><span class="pill fmt-onsite">508</span></div><span class="who">ผศ.ดร.รัตติมา ศิริโหราชัย</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">10.30–11.00</span><div class="row-body"><div class="topic-line"><span class="topic">การประเมินร่างกายตามระบบ: ช่องท้อง ระบบอวัยวะสืบพันธุ์ภายนอกและทวารหนัก (Abdomen/Genitalia) (ย้ายมาจาก 25 ส.ค.69)</span><span class="pill fmt-onsite">508</span></div><span class="who">ผศ.ดร.รัตติมา ศิริโหราชัย</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">11.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">การประเมินร่างกาย: Musculoskeletal และ Nervous System</span><span class="pill fmt-onsite">508</span></div><span class="who">ผศ.ดร.รัตติมา ศิริโหราชัย</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
-</section>
-<section class="day" data-date="2026-09-01">
-  <div class="day-head"><span class="day-head-text">วันอังคาร 1 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-01">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">09.00–11.00</span><div class="row-body"><div class="topic-line"><span class="topic">การประเมินร่างกายตามระบบ: Thorax lung and Cardiovascular system</span><span class="pill fmt-onsite">508</span></div><span class="who">ผศ.พรสินี เต็งพานิชกุล</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div></div>
+</details>
+<details class="day" data-date="2026-09-01">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอังคาร 1 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-01">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">09.00–11.00</span><div class="row-body"><div class="topic-line"><span class="topic">การประเมินร่างกายตามระบบ: Thorax lung and Cardiovascular system</span><span class="pill fmt-onsite">508</span></div><span class="who">ผศ.พรสินี เต็งพานิชกุล</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">11.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">การตรวจทางห้องปฏิบัติการและการตรวจพิเศษที่จำเป็นสำหรับผู้ป่วยที่มารับการผ่าตัด การบันทึกทางการพยาบาลปริศัลยกรรม</span><span class="pill fmt-onsite">508</span></div><span class="who">ผศ.พรสินี เต็งพานิชกุล</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–14.00</span><div class="row-body"><div class="topic-line"><span class="topic">Men&#x27;s Health</span><span class="pill fmt-onsite">508</span></div><span class="who">อ.นพ.ธวัชชัย มั่นคงศรีสุข</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">14.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Anatomy, physiology and urology surgery</span><span class="pill fmt-onsite">508</span></div><span class="who">อ.พญ.สรรพพร บุญวงศ์</span></div></div></div>
-</section>
-<section class="day" data-date="2026-09-02">
-  <div class="day-head"><span class="day-head-text">วันพุธ 2 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-02">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–09.00</span><div class="row-body"><div class="topic-line"><span class="topic">Perioperative Nursing Care in GI surgery: Surgical Staple</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.วทัญญู ตาเวียรชัย</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">14.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Anatomy, physiology and urology surgery</span><span class="pill fmt-onsite">508</span></div><span class="who">อ.พญ.สรรพพร บุญวงศ์</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-09-02">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพุธ 2 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-02">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–09.00</span><div class="row-body"><div class="topic-line"><span class="topic">Perioperative Nursing Care in GI surgery: Surgical Staple</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.วทัญญู ตาเวียรชัย</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">09.00–11.00</span><div class="row-body"><div class="topic-line"><span class="topic">Beyond Routine: Evidence-Based Perioperative Nursing in the Era of MIS</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.วริศรา ตุวยานนท์ (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">11.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">Perioperative nursing care in URO surgery</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.ญาณนันท์ รัตนธีรวิเชียร (ภาควิชาศัลยศาสตร์)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–15.00</span><div class="row-body"><div class="topic-line"><span class="topic">congenital heart disease surgery</span><span class="pill fmt-onsite">508</span></div><span class="who">รศ.นพ.เกรียงไกร ตันติวงศ์โกสีย์ (ภาควิชาศัลยศาสตร์)</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
-</section>
-<section class="day" data-date="2026-09-03">
-  <div class="day-head"><span class="day-head-text">วันพฤหัสบดี 3 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-03">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–09.00</span><div class="row-body"><div class="topic-line"><span class="topic">Role of Perioperative Nurse in Organ Transplantation (Donor Phase)</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.กมลทิพย์ สกุลกันบัณฑิต (งานการพยาบาลผ่าตัด)</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div></div>
+</details>
+<details class="day" data-date="2026-09-03">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพฤหัสบดี 3 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-03">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–09.00</span><div class="row-body"><div class="topic-line"><span class="topic">Role of Perioperative Nurse in Organ Transplantation (Donor Phase)</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.กมลทิพย์ สกุลกันบัณฑิต (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">09.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">Role of Perioperative Nurse in Organ Transplantation (Recipient Phase)</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.กมลทิพย์ สกุลกันบัณฑิต (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">10.00–11.00</span><div class="row-body"><div class="topic-line"><span class="topic">Role of Transplant Coordinator Nurse in Organ Donation</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.พีรา ปานพรม (งานเปลี่ยนอวัยวะศิริราช)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">11.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
-<div class="row"><div class="row-main"><span class="time">14.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Anatomy, physiology and surgery in Upper Extremity</span><span class="pill fmt-onsite">508</span></div><span class="who">ผศ.นพ.ปณัย เลาหประสิทธิพร (ภาควิชาศัลยศาสตร์ออร์โธปิดิคส์)</span></div></div></div>
-</section>
-<div class="week-div">สัปดาห์ที่ 4</div><section class="day" data-date="2026-09-04">
-  <div class="day-head"><span class="day-head-text">วันศุกร์ 4 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-04">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">Anatomy, physiology and surgery in Lower Extremity</span><span class="pill fmt-onsite">508</span></div><span class="who">รศ.นพ.ทศหาญ รุ่งโรจน์ (ภาควิชาศัลยศาสตร์ออร์โธปิดิคส์)</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">14.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Anatomy, physiology and surgery in Upper Extremity</span><span class="pill fmt-onsite">508</span></div><span class="who">ผศ.นพ.ปณัย เลาหประสิทธิพร (ภาควิชาศัลยศาสตร์ออร์โธปิดิคส์)</span></div></div></div></div>
+</details>
+<div class="week-div">สัปดาห์ที่ 4</div><details class="day" data-date="2026-09-04">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันศุกร์ 4 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-04">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">Anatomy, physiology and surgery in Lower Extremity</span><span class="pill fmt-onsite">508</span></div><span class="who">รศ.นพ.ทศหาญ รุ่งโรจน์ (ภาควิชาศัลยศาสตร์ออร์โธปิดิคส์)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">10.00–11.00</span><div class="row-body"><div class="topic-line"><span class="topic">Perioperative nursing care in cardiothoracic surgery</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.วิไลวรรณ อมรเดชเทวินทร์ (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">11.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">Perioperative Nursing Care in Orthopaedic: การพยาบาลผู้ป่วยผ่าตัดเปลี่ยนข้อสะโพกเทียม</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.มนันพัทธ์ ทองบุญเกื้อ (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–15.00</span><div class="row-body"><div class="topic-line"><span class="topic">มโนมติทางการพยาบาลปริศัลยกรรม (เลื่อนมาจาก 27/08 เช้า)</span><span class="pill fmt-onsite">508</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ / อ.นลินทิพย์ นิรันดร์ทวีชัย</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Perioperative Nursing Care in Orthopaedic: การพยาบาลผู้ป่วยผ่าตัดเปลี่ยนข้อเข่าเทียม</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.ศิริชล เนตรสว่าง (งานการพยาบาลผ่าตัด)</span></div></div></div>
-</section>
-<section class="day holiday" data-date="2026-09-05">
-  <div class="day-head"><span class="day-head-text">วันเสาร์ 5 ก.ย. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day holiday" data-date="2026-09-06">
-  <div class="day-head"><span class="day-head-text">วันอาทิตย์ 6 ก.ย. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day" data-date="2026-09-07">
-  <div class="day-head"><span class="day-head-text">วันจันทร์ 7 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-07">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">การพยาบาลผู้ป่วยที่ได้รับการส่องกล้องระบบทางเดินอาหาร</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.ปฐมพร บุนนาค (งานการพยาบาลผ่าตัด)</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Perioperative Nursing Care in Orthopaedic: การพยาบาลผู้ป่วยผ่าตัดเปลี่ยนข้อเข่าเทียม</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.ศิริชล เนตรสว่าง (งานการพยาบาลผ่าตัด)</span></div></div></div></div>
+</details>
+<details class="day holiday" data-date="2026-09-05" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันเสาร์ 5 ก.ย. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day holiday" data-date="2026-09-06" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอาทิตย์ 6 ก.ย. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day" data-date="2026-09-07">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันจันทร์ 7 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-07">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">การพยาบาลผู้ป่วยที่ได้รับการส่องกล้องระบบทางเดินอาหาร</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.ปฐมพร บุนนาค (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">10.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">Anesthesia and perioperative surgery</span><span class="pill fmt-onsite">508</span></div><span class="who">รศ.นพ.ประเสริฐ สวัสดิ์วิภาชัย (ภาควิชาวิสัญญีวิทยา)</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">13.00–16.30</span><div class="row-body"><div class="topic-line"><span class="topic">ปฏิบัติการตรวจร่างกาย Lab 1: Head, Face, Neck, Skin and Lymphatic System</span><span class="pill fmt-onsite">LRC</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ และทีม (ผศ.ดร.ณัฐมา ทองธีรธรรม, ผศ.พรสินี เต็งพานิชกุล, ผศ.สกุลรัตน์ เตียววานิช, อ.ดร.ภรณ์ทิพย์ สุญาสิทธิ์, อ.คัทลียา คงเพ็ชร, อ.นลินทิพย์ นิรันดร์ทวีชัย)</span></div></div></div>
-</section>
-<section class="day" data-date="2026-09-08">
-  <div class="day-head"><span class="day-head-text">วันอังคาร 8 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-08">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">ปฏิบัติการตรวจร่างกาย Lab 1: Head, Face, Neck, Skin and Lymphatic System</span><span class="pill fmt-onsite">LRC</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ และทีม (ผศ.ดร.ณัฐมา ทองธีรธรรม, ผศ.พรสินี เต็งพานิชกุล, ผศ.สกุลรัตน์ เตียววานิช, อ.ดร.ภรณ์ทิพย์ สุญาสิทธิ์, อ.คัทลียา คงเพ็ชร, อ.นลินทิพย์ นิรันดร์ทวีชัย)</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">13.00–16.30</span><div class="row-body"><div class="topic-line"><span class="topic">ปฏิบัติการตรวจร่างกาย Lab 2: Thorax, lung and Cardiovascular system, Abdomen and Breasts</span><span class="pill fmt-onsite">LRC</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ และทีม (ผศ.ดร.ณัฐมา ทองธีรธรรม, ผศ.พรสินี เต็งพานิชกุล, ผศ.สกุลรัตน์ เตียววานิช, อ.ดร.ภรณ์ทิพย์ สุญาสิทธิ์, อ.คัทลียา คงเพ็ชร, อ.นลินทิพย์ นิรันดร์ทวีชัย)</span></div></div></div>
-</section>
-<section class="day" data-date="2026-09-09">
-  <div class="day-head"><span class="day-head-text">วันพุธ 9 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-09">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–09.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
+<div class="row"><div class="row-main"><span class="time">13.00–16.30</span><div class="row-body"><div class="topic-line"><span class="topic">ปฏิบัติการตรวจร่างกาย Lab 1: Head, Face, Neck, Skin and Lymphatic System</span><span class="pill fmt-onsite">LRC</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ และทีม (ผศ.ดร.ณัฐมา ทองธีรธรรม, ผศ.พรสินี เต็งพานิชกุล, ผศ.สกุลรัตน์ เตียววานิช, อ.ดร.ภรณ์ทิพย์ สุญาสิทธิ์, อ.คัทลียา คงเพ็ชร, อ.นลินทิพย์ นิรันดร์ทวีชัย)</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-09-08">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอังคาร 8 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-08">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">ปฏิบัติการตรวจร่างกาย Lab 1: Head, Face, Neck, Skin and Lymphatic System</span><span class="pill fmt-onsite">LRC</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ และทีม (ผศ.ดร.ณัฐมา ทองธีรธรรม, ผศ.พรสินี เต็งพานิชกุล, ผศ.สกุลรัตน์ เตียววานิช, อ.ดร.ภรณ์ทิพย์ สุญาสิทธิ์, อ.คัทลียา คงเพ็ชร, อ.นลินทิพย์ นิรันดร์ทวีชัย)</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">13.00–16.30</span><div class="row-body"><div class="topic-line"><span class="topic">ปฏิบัติการตรวจร่างกาย Lab 2: Thorax, lung and Cardiovascular system, Abdomen and Breasts</span><span class="pill fmt-onsite">LRC</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ และทีม (ผศ.ดร.ณัฐมา ทองธีรธรรม, ผศ.พรสินี เต็งพานิชกุล, ผศ.สกุลรัตน์ เตียววานิช, อ.ดร.ภรณ์ทิพย์ สุญาสิทธิ์, อ.คัทลียา คงเพ็ชร, อ.นลินทิพย์ นิรันดร์ทวีชัย)</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-09-09">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพุธ 9 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-09">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–09.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
 <div class="row"><div class="row-main"><span class="time">09.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic"><s>Acquired heart disease and surgery / Surgical treatment of Aortic disease</s> (ย้ายไป 11 ก.ย.69)</span><span class="pill fmt-onsite">508</span></div><span class="who">อ.นพ.อังศุธร ชาติรังสรรค์ (ภาควิชาศัลยศาสตร์)</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">13.00–17.00</span><div class="row-body"><div class="topic-line"><span class="topic">ปฏิบัติการตรวจร่างกาย Lab 2: Thorax, lung and Cardiovascular system, Abdomen and Breasts</span><span class="pill fmt-onsite">LRC</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ และทีม</span></div></div></div>
-</section>
-<section class="day" data-date="2026-09-10">
-  <div class="day-head"><span class="day-head-text">วันพฤหัสบดี 10 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-10">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">กิจกรรมไหว้ครู</span><span class="pill fmt-onsite">ชั้น 1 ศาลายา</span></div></div></div></div>
+<div class="row"><div class="row-main"><span class="time">13.00–17.00</span><div class="row-body"><div class="topic-line"><span class="topic">ปฏิบัติการตรวจร่างกาย Lab 2: Thorax, lung and Cardiovascular system, Abdomen and Breasts</span><span class="pill fmt-onsite">LRC</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ และทีม</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-09-10">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพฤหัสบดี 10 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-10">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">กิจกรรมไหว้ครู</span><span class="pill fmt-onsite">ชั้น 1 ศาลายา</span></div></div></div></div>
 <div class="row"><div class="row-main"><span class="time">10.30–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">เยี่ยมชมหอพระราชประวัติศรีสวรินทิราราชภักดี และหอพระราชประวัติบรมราชบุพการีกิตติประกาศ</span><span class="pill fmt-onsite">คณะพยาบาลศาสตร์ ศาลายา</span></div></div></div></div>
-<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
-</section>
-<div class="week-div">สัปดาห์ที่ 5</div><section class="day" data-date="2026-09-11">
-  <div class="day-head"><span class="day-head-text">วันศุกร์ 11 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-11">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–13.30</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
-<div class="row"><div class="row-main"><span class="time">13.30–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Acquired heart disease and surgery / Surgical treatment of Aortic disease (ย้ายมาจาก 9 ก.ย.69) Online Zoom</span><span class="pill fmt-onsite">508</span></div><span class="who">อ.นพ.อังศุธร ชาติรังสรรค์ (ภาควิชาศัลยศาสตร์)</span></div></div></div>
-</section>
-<section class="day holiday" data-date="2026-09-12">
-  <div class="day-head"><span class="day-head-text">วันเสาร์ 12 ก.ย. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day holiday" data-date="2026-09-13">
-  <div class="day-head"><span class="day-head-text">วันอาทิตย์ 13 ก.ย. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day" data-date="2026-09-14">
-  <div class="day-head"><span class="day-head-text">วันจันทร์ 14 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-14">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">ปฏิบัติการตรวจร่างกาย Lab 3: Nervous System and Musculoskeletal System</span><span class="pill fmt-onsite">LRC</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ และทีม (ผศ.ดร.ณัฐมา ทองธีรธรรม, ผศ.พรสินี เต็งพานิชกุล, ผศ.สกุลรัตน์ เตียววานิช, อ.ดร.ภรณ์ทิพย์ สุญาสิทธิ์, อ.คัทลียา คงเพ็ชร, อ.นลินทิพย์ นิรันดร์ทวีชัย)</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">13.00–16.30</span><div class="row-body"><div class="topic-line"><span class="topic">ปฏิบัติการตรวจร่างกาย Lab 3: Nervous System and Musculoskeletal System</span><span class="pill fmt-onsite">LRC</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ และทีม (ผศ.ดร.ณัฐมา ทองธีรธรรม, ผศ.พรสินี เต็งพานิชกุล, ผศ.สกุลรัตน์ เตียววานิช, อ.ดร.ภรณ์ทิพย์ สุญาสิทธิ์, อ.คัทลียา คงเพ็ชร, อ.นลินทิพย์ นิรันดร์ทวีชัย)</span></div></div></div>
-</section>
-<section class="day" data-date="2026-09-15">
-  <div class="day-head"><span class="day-head-text">วันอังคาร 15 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-15">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–09.30</span><div class="row-body"><div class="topic-line"><span class="topic">สอบข้อเขียนวิชาพยศ 506: การประเมินภาวะสุขภาพ</span><span class="pill fmt-exam">สอบ</span></div><span class="who">ผศ.พรสินี เต็งพานิชกุล</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div></div>
+</details>
+<div class="week-div">สัปดาห์ที่ 5</div><details class="day" data-date="2026-09-11">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันศุกร์ 11 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-11">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–13.30</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
+<div class="row"><div class="row-main"><span class="time">13.30–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Acquired heart disease and surgery / Surgical treatment of Aortic disease (ย้ายมาจาก 9 ก.ย.69) Online Zoom</span><span class="pill fmt-onsite">508</span></div><span class="who">อ.นพ.อังศุธร ชาติรังสรรค์ (ภาควิชาศัลยศาสตร์)</span></div></div></div></div>
+</details>
+<details class="day holiday" data-date="2026-09-12" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันเสาร์ 12 ก.ย. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day holiday" data-date="2026-09-13" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอาทิตย์ 13 ก.ย. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day" data-date="2026-09-14">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันจันทร์ 14 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-14">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">ปฏิบัติการตรวจร่างกาย Lab 3: Nervous System and Musculoskeletal System</span><span class="pill fmt-onsite">LRC</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ และทีม (ผศ.ดร.ณัฐมา ทองธีรธรรม, ผศ.พรสินี เต็งพานิชกุล, ผศ.สกุลรัตน์ เตียววานิช, อ.ดร.ภรณ์ทิพย์ สุญาสิทธิ์, อ.คัทลียา คงเพ็ชร, อ.นลินทิพย์ นิรันดร์ทวีชัย)</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">13.00–16.30</span><div class="row-body"><div class="topic-line"><span class="topic">ปฏิบัติการตรวจร่างกาย Lab 3: Nervous System and Musculoskeletal System</span><span class="pill fmt-onsite">LRC</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ และทีม (ผศ.ดร.ณัฐมา ทองธีรธรรม, ผศ.พรสินี เต็งพานิชกุล, ผศ.สกุลรัตน์ เตียววานิช, อ.ดร.ภรณ์ทิพย์ สุญาสิทธิ์, อ.คัทลียา คงเพ็ชร, อ.นลินทิพย์ นิรันดร์ทวีชัย)</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-09-15">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอังคาร 15 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-15">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–09.30</span><div class="row-body"><div class="topic-line"><span class="topic">สอบข้อเขียนวิชาพยศ 506: การประเมินภาวะสุขภาพ</span><span class="pill fmt-exam">สอบ</span></div><span class="who">ผศ.พรสินี เต็งพานิชกุล</span></div></div></div>
 <div class="row cancelled"><div class="row-main"><span class="time">10.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">Anatomy and Physiology and Surgery in GI Surgery (ย้ายไป 6 ต.ค.69 08–10)</span><span class="pill fmt-cancelled">เลื่อน</span></div><span class="who">อ.พญ.อิสริยา มงคลศุภวาร (ภาควิชาศัลยศาสตร์)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–15.00</span><div class="row-body"><div class="topic-line"><span class="topic">Orientation for Seminar in Perioperative Nursing แบ่งกลุ่มประเด็นและแนวโน้ม ประชุมครั้งที่ 1 (ย้ายมาจาก 27/8)</span><span class="pill fmt-onsite">508</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ / อ.นลินทิพย์ นิรันดร์ทวีชัย</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
-</section>
-<section class="day" data-date="2026-09-16">
-  <div class="day-head"><span class="day-head-text">วันพุธ 16 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-16">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–09.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
+<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div></div>
+</details>
+<details class="day" data-date="2026-09-16">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพุธ 16 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-16">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–09.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
 <div class="row"><div class="row-main"><span class="time">09.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">Perioperative Nursing care in Otorhinolaryngology: DISE and Modified UPPP</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.สุภาวดี ดีเจริญ (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">10.00–11.00</span><div class="row-body"><div class="topic-line"><span class="topic">Perioperative Nursing care in Otorhinolaryngology: Sialendoscopy</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.นฤมล พละสุข (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">11.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">Emergency management in ENT</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.กร อังสุวรรณเขต (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–14.00</span><div class="row-body"><div class="topic-line"><span class="topic">Perioperative Nursing Care in Neurology Navigator: Usage and maintenance</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.ธนัชพร ผลทวีชัย (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">14.00–15.00</span><div class="row-body"><div class="topic-line"><span class="topic">Perioperative Nursing Care in Neurology Navigator: Apply to neurosurgery</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.จันจิรา จารุพัตร (งานการพยาบาลผ่าตัด)</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Perioperative Nursing Care in Neurology Endoscope in neurosurgery</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.ธนพรรณ กุณาละสิริ / ผศ.พญ.เพียงพร ศักดิ์ศิริวุฒิโฆ (งานการพยาบาลผ่าตัด)</span></div></div></div>
-</section>
-<section class="day" data-date="2026-09-17">
-  <div class="day-head"><span class="day-head-text">วันพฤหัสบดี 17 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-17">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">Ophthalmic anatomy and physiology</span><span class="pill fmt-onsite">508</span></div><span class="who">ผศ.พญ.เพียงพร ศักดิ์ศิริวุฒิโฆ (ภาควิชาจักษุวิทยา)</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Perioperative Nursing Care in Neurology Endoscope in neurosurgery</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.ธนพรรณ กุณาละสิริ / ผศ.พญ.เพียงพร ศักดิ์ศิริวุฒิโฆ (งานการพยาบาลผ่าตัด)</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-09-17">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพฤหัสบดี 17 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-17">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">Ophthalmic anatomy and physiology</span><span class="pill fmt-onsite">508</span></div><span class="who">ผศ.พญ.เพียงพร ศักดิ์ศิริวุฒิโฆ (ภาควิชาจักษุวิทยา)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">10.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">Ophthalmic surgery</span><span class="pill fmt-onsite">508</span></div><span class="who">รศ.นพ.พิทยา ภมรเวชวรรณ (ภาควิชาจักษุวิทยา)</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Anatomy, Physiology of ENT system / surgery</span><span class="pill fmt-onsite">508</span></div><span class="who">รศ.นพ.ภาวิน เกษกุล (ภาควิชาโสต ศอ นาสิก ลาริงซ์วิทยา)</span></div></div></div>
-</section>
-<div class="week-div">สัปดาห์ที่ 6</div><section class="day" data-date="2026-09-18">
-  <div class="day-head"><span class="day-head-text">วันศุกร์ 18 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-18">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">Recommendation practice for sterilization</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.กุลวรา คุปรัตน์ (งานการพยาบาลผ่าตัด)</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Anatomy, Physiology of ENT system / surgery</span><span class="pill fmt-onsite">508</span></div><span class="who">รศ.นพ.ภาวิน เกษกุล (ภาควิชาโสต ศอ นาสิก ลาริงซ์วิทยา)</span></div></div></div></div>
+</details>
+<div class="week-div">สัปดาห์ที่ 6</div><details class="day" data-date="2026-09-18">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันศุกร์ 18 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-18">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">Recommendation practice for sterilization</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.กุลวรา คุปรัตน์ (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">10.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">สอบทฤษฎี ครั้งที่ 1</span><span class="pill fmt-exam">สอบ</span></div><span class="who">อาจารย์ประจำสาขา (ควบคุมสอบ)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–14.00</span><div class="row-body"><div class="topic-line"><span class="topic">Loaner Instrument</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.หทัยา รัตนโชติ (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">14.00–15.00</span><div class="row-body"><div class="topic-line"><span class="topic">การส่งต่อข้อมูล (Hand off communication)</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.สุดารัตน์ ศรีสมุทรนาค (งานการพยาบาลผ่าตัด)</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
-</section>
-<section class="day holiday" data-date="2026-09-19">
-  <div class="day-head"><span class="day-head-text">วันเสาร์ 19 ก.ย. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day holiday" data-date="2026-09-20">
-  <div class="day-head"><span class="day-head-text">วันอาทิตย์ 20 ก.ย. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day" data-date="2026-09-21">
-  <div class="day-head"><span class="day-head-text">วันจันทร์ 21 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-21">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">ปฏิบัติการตรวจร่างกาย Lab 1, 2, 3</span><span class="pill fmt-onsite">LRC</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ และทีม (ผศ.ดร.ณัฐมา ทองธีรธรรม, ผศ.พรสินี เต็งพานิชกุล, ผศ.สกุลรัตน์ เตียววานิช, อ.ดร.ภรณ์ทิพย์ สุญาสิทธิ์, อ.คัทลียา คงเพ็ชร, อ.นลินทิพย์ นิรันดร์ทวีชัย)</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">13.00–16.30</span><div class="row-body"><div class="topic-line"><span class="topic">ปฏิบัติการตรวจร่างกาย Lab 1, 2, 3</span><span class="pill fmt-onsite">LRC</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ และทีม (ผศ.ดร.ณัฐมา ทองธีรธรรม, ผศ.พรสินี เต็งพานิชกุล, ผศ.สกุลรัตน์ เตียววานิช, อ.ดร.ภรณ์ทิพย์ สุญาสิทธิ์, อ.คัทลียา คงเพ็ชร, อ.นลินทิพย์ นิรันดร์ทวีชัย)</span></div></div></div>
-</section>
-<section class="day" data-date="2026-09-22">
-  <div class="day-head"><span class="day-head-text">วันอังคาร 22 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-22">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">สอบปฏิบัติตรวจร่างกาย</span><span class="pill fmt-exam">สอบ</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ และทีม (ผศ.ดร.ณัฐมา ทองธีรธรรม, ผศ.พรสินี เต็งพานิชกุล, ผศ.สกุลรัตน์ เตียววานิช, อ.ดร.ภรณ์ทิพย์ สุญาสิทธิ์, อ.คัทลียา คงเพ็ชร, อ.นลินทิพย์ นิรันดร์ทวีชัย)</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">สอบปฏิบัติตรวจร่างกาย</span><span class="pill fmt-exam">สอบ</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ และทีม (ผศ.ดร.ณัฐมา ทองธีรธรรม, ผศ.พรสินี เต็งพานิชกุล, ผศ.สกุลรัตน์ เตียววานิช, อ.ดร.ภรณ์ทิพย์ สุญาสิทธิ์, อ.คัทลียา คงเพ็ชร, อ.นลินทิพย์ นิรันดร์ทวีชัย)</span></div></div></div>
-</section>
-<section class="day" data-date="2026-09-23">
-  <div class="day-head"><span class="day-head-text">วันพุธ 23 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-23">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">Surgery in Neurology</span><span class="pill fmt-onsite">508</span></div><span class="who">ศ.นพ.บรรพต สิทธินามสุวรรณ (ภาควิชาศัลยศาสตร์)</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div></div>
+</details>
+<details class="day holiday" data-date="2026-09-19" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันเสาร์ 19 ก.ย. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day holiday" data-date="2026-09-20" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอาทิตย์ 20 ก.ย. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day" data-date="2026-09-21">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันจันทร์ 21 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-21">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">ปฏิบัติการตรวจร่างกาย Lab 1, 2, 3</span><span class="pill fmt-onsite">LRC</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ และทีม (ผศ.ดร.ณัฐมา ทองธีรธรรม, ผศ.พรสินี เต็งพานิชกุล, ผศ.สกุลรัตน์ เตียววานิช, อ.ดร.ภรณ์ทิพย์ สุญาสิทธิ์, อ.คัทลียา คงเพ็ชร, อ.นลินทิพย์ นิรันดร์ทวีชัย)</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">13.00–16.30</span><div class="row-body"><div class="topic-line"><span class="topic">ปฏิบัติการตรวจร่างกาย Lab 1, 2, 3</span><span class="pill fmt-onsite">LRC</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ และทีม (ผศ.ดร.ณัฐมา ทองธีรธรรม, ผศ.พรสินี เต็งพานิชกุล, ผศ.สกุลรัตน์ เตียววานิช, อ.ดร.ภรณ์ทิพย์ สุญาสิทธิ์, อ.คัทลียา คงเพ็ชร, อ.นลินทิพย์ นิรันดร์ทวีชัย)</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-09-22">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอังคาร 22 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-22">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">สอบปฏิบัติตรวจร่างกาย</span><span class="pill fmt-exam">สอบ</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ และทีม (ผศ.ดร.ณัฐมา ทองธีรธรรม, ผศ.พรสินี เต็งพานิชกุล, ผศ.สกุลรัตน์ เตียววานิช, อ.ดร.ภรณ์ทิพย์ สุญาสิทธิ์, อ.คัทลียา คงเพ็ชร, อ.นลินทิพย์ นิรันดร์ทวีชัย)</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">สอบปฏิบัติตรวจร่างกาย</span><span class="pill fmt-exam">สอบ</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ และทีม (ผศ.ดร.ณัฐมา ทองธีรธรรม, ผศ.พรสินี เต็งพานิชกุล, ผศ.สกุลรัตน์ เตียววานิช, อ.ดร.ภรณ์ทิพย์ สุญาสิทธิ์, อ.คัทลียา คงเพ็ชร, อ.นลินทิพย์ นิรันดร์ทวีชัย)</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-09-23">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพุธ 23 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-23">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">Surgery in Neurology</span><span class="pill fmt-onsite">508</span></div><span class="who">ศ.นพ.บรรพต สิทธินามสุวรรณ (ภาควิชาศัลยศาสตร์)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">10.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">ERAS: Concepts &amp; How to Implement?</span><span class="pill fmt-onsite">508</span></div><span class="who">รศ.พญ.มิ่งขวัญ วงษ์ยิ่งสิน (ภาควิชาวิสัญญีวิทยา)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–15.00</span><div class="row-body"><div class="topic-line"><span class="topic">Anatomy, Physiology and Surgery in Neurology</span><span class="pill fmt-onsite">508</span></div><span class="who">ผศ.นพ.ปฤณัต อิทธิเมธินทร์ (ภาควิชาศัลยศาสตร์)</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
-</section>
-<section class="day" data-date="2026-09-24">
-  <div class="day-head"><span class="day-head-text">วันพฤหัสบดี 24 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-24">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">–</span><div class="row-body"><div class="topic-line"><span class="topic">วันมหิดล</span><span class="pill fmt-onsite">Onsite</span></div></div></div></div>
-</section>
-<div class="week-div">สัปดาห์ที่ 7</div><section class="day" data-date="2026-09-25">
-  <div class="day-head"><span class="day-head-text">วันศุกร์ 25 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-25">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–09.00</span><div class="row-body"><div class="topic-line"><span class="topic">Anatomy, Physiology and surgery in OBGYN</span><span class="pill fmt-onsite">508</span></div><span class="who">ผศ.นพ.พิสุทธิ์ ศรีชัยกุล (ภาควิชาสูติศาสตร์-นรีเวชวิทยา)</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div></div>
+</details>
+<details class="day" data-date="2026-09-24">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพฤหัสบดี 24 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-24">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">–</span><div class="row-body"><div class="topic-line"><span class="topic">วันมหิดล</span><span class="pill fmt-onsite">Onsite</span></div></div></div></div></div>
+</details>
+<div class="week-div">สัปดาห์ที่ 7</div><details class="day" data-date="2026-09-25">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันศุกร์ 25 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-25">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–09.00</span><div class="row-body"><div class="topic-line"><span class="topic">Anatomy, Physiology and surgery in OBGYN</span><span class="pill fmt-onsite">508</span></div><span class="who">ผศ.นพ.พิสุทธิ์ ศรีชัยกุล (ภาควิชาสูติศาสตร์-นรีเวชวิทยา)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">09.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">Perioperative Nursing care in OBGYN surgery</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.ฐิติยา วายุภักตร์ (งานการพยาบาลสูติศาสตร์-นรีเวชวิทยา)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">10.00–11.00</span><div class="row-body"><div class="topic-line"><span class="topic">Perioperative Nursing care in GYN: Robotic surgery</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.สุชาดา กล่อมจิต (งานการพยาบาลสูติศาสตร์-นรีเวชวิทยา)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">11.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">Robotic Surgery in GYN</span><span class="pill fmt-onsite">508</span></div><span class="who">ผศ.นพ.บุญเลิศ วิริยะภาค (ภาควิชาสูติศาสตร์-นรีเวชวิทยา)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–15.00</span><div class="row-body"><div class="topic-line"><span class="topic">Perioperative Nursing care in Ophthalmic surgery</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.อัจฉราวดี สุบรรณเสณี (งานการพยาบาลผ่าตัด)</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">MEWs / Pressure Injury Prevention in OR</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.นพเก ภาชนะภัย (งานการพยาบาลผ่าตัด)</span></div></div></div>
-</section>
-<section class="day holiday" data-date="2026-09-26">
-  <div class="day-head"><span class="day-head-text">วันเสาร์ 26 ก.ย. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day holiday" data-date="2026-09-27">
-  <div class="day-head"><span class="day-head-text">วันอาทิตย์ 27 ก.ย. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day" data-date="2026-09-28">
-  <div class="day-head"><span class="day-head-text">วันจันทร์ 28 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-28">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
+<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">MEWs / Pressure Injury Prevention in OR</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.นพเก ภาชนะภัย (งานการพยาบาลผ่าตัด)</span></div></div></div></div>
+</details>
+<details class="day holiday" data-date="2026-09-26" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันเสาร์ 26 ก.ย. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day holiday" data-date="2026-09-27" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอาทิตย์ 27 ก.ย. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day" data-date="2026-09-28">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันจันทร์ 28 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-28">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
 <div class="row"><div class="row-main"><span class="time">10.00–11.00</span><div class="row-body"><div class="topic-line"><span class="topic">Perioperative Nursing Care in Vascular Surgery</span><span class="pill fmt-online">Online</span></div><span class="who">พว.ศันศนีย์ บัวพูล (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">11.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–15.00</span><div class="row-body"><div class="topic-line"><span class="topic">Anatomy, Physiology of Craniomaxillofacial System &amp; Surgery</span><span class="pill fmt-online">Online</span></div><span class="who">ศ.คลินิกเกียรติคุณ นพ.อภิรักษ์ ช่วงสุวนิช (ภาควิชาศัลยศาสตร์)</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
-</section>
-<section class="day" data-date="2026-09-29">
-  <div class="day-head"><span class="day-head-text">วันอังคาร 29 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-29">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–09.00</span><div class="row-body"><div class="topic-line"><span class="topic">Common Operative Urogynecological Procedures to Correct Pelvic Floor Disorders and Malfunction</span><span class="pill fmt-onsite">508</span></div><span class="who">ผศ.พญ.พัทยา เฮงรัศมี (ภาควิชาสูติศาสตร์-นรีเวชวิทยา)</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div></div>
+</details>
+<details class="day" data-date="2026-09-29">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอังคาร 29 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-29">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–09.00</span><div class="row-body"><div class="topic-line"><span class="topic">Common Operative Urogynecological Procedures to Correct Pelvic Floor Disorders and Malfunction</span><span class="pill fmt-onsite">508</span></div><span class="who">ผศ.พญ.พัทยา เฮงรัศมี (ภาควิชาสูติศาสตร์-นรีเวชวิทยา)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">09.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">Postoperative Nursing care during Recovery period</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.สรรสณีย์ รัตนมนตรี (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">10.00–11.00</span><div class="row-body"><div class="topic-line"><span class="topic">การพยาบาลผู้ป่วยกลุ่มที่ต้องได้รับการดูแลเป็นพิเศษ (เด็ก/ผู้สูงอายุ)</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.สรรสณีย์ รัตนมนตรี (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">11.00–13.00</span><div class="row-body"><div class="topic-line"><span class="topic">Anatomy, physiology and surgery in Spine (ย้ายจาก 12.30–14.30) Online Zoom</span><span class="pill fmt-online">Online</span></div><span class="who">ผศ.นพ.เอกพจน์ กออุฒิกุลรังษี (ภาควิชาศัลยศาสตร์ออร์โธปิดิคส์และกายภาพบำบัด)</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
-</section>
-<section class="day" data-date="2026-09-30">
-  <div class="day-head"><span class="day-head-text">วันพุธ 30 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-30">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">Anatomy Physiology and surgery of thoracic system</span><span class="pill fmt-onsite">508</span></div><span class="who">ผศ.นพ.ปุณณฤกษ์ ทองเจริญ</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div></div>
+</details>
+<details class="day" data-date="2026-09-30">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพุธ 30 ก.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-09-30">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">Anatomy Physiology and surgery of thoracic system</span><span class="pill fmt-onsite">508</span></div><span class="who">ผศ.นพ.ปุณณฤกษ์ ทองเจริญ</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">10.00–11.00</span><div class="row-body"><div class="topic-line"><span class="topic">Anatomy, Physiology of Breast</span><span class="pill fmt-onsite">508</span></div><span class="who">อ.ดร.นพ.ธนากร ธราพงษ์พันธ์ (ภาควิชาศัลยศาสตร์)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">11.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">Perioperative Nursing Care in Breast Surgery</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.ธันยชนก จิรภัตตานนท์ (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–14.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
 <div class="row"><div class="row-main"><span class="time">14.00–15.00</span><div class="row-body"><div class="topic-line"><span class="topic">Perioperative Nursing Care in Plastic Surgery: Palatoplasty</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.อุชุตา เรืองวิญญูเวช (งานการพยาบาลผ่าตัด)</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
-</section>
-<section class="day" data-date="2026-10-01">
-  <div class="day-head"><span class="day-head-text">วันพฤหัสบดี 1 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-01">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–09.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
+<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div></div>
+</details>
+<details class="day" data-date="2026-10-01">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพฤหัสบดี 1 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-01">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–09.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
 <div class="row"><div class="row-main"><span class="time">09.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">Perioperative nursing care in GI surgery: Vascular sealing</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.พจนีย์ ศิลปชัย (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">10.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">Infection Control in OR</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.ศิริพร ราชคมน์ (งานโรคติดเชื้อ)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–14.00</span><div class="row-body"><div class="topic-line"><span class="topic">General Principle of Organ Transplantation</span><span class="pill fmt-onsite">508</span></div><span class="who">ผศ.นพ.ประวัฒน์ โฆษิตะมงคล (งานเปลี่ยนอวัยวะฯ)</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">14.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
-</section>
-<div class="week-div">สัปดาห์ที่ 8</div><section class="day" data-date="2026-10-02">
-  <div class="day-head"><span class="day-head-text">วันศุกร์ 2 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-02">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">สอบทฤษฎี ครั้งที่ 2</span><span class="pill fmt-exam">สอบ</span></div><span class="who">อาจารย์ประจำสาขา (ควบคุมสอบ)</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">14.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div></div>
+</details>
+<div class="week-div">สัปดาห์ที่ 8</div><details class="day" data-date="2026-10-02">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันศุกร์ 2 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-02">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">สอบทฤษฎี ครั้งที่ 2</span><span class="pill fmt-exam">สอบ</span></div><span class="who">อาจารย์ประจำสาขา (ควบคุมสอบ)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">10.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–15.00</span><div class="row-body"><div class="topic-line"><span class="topic">Non technical skills for Patient safety</span><span class="pill fmt-onsite">508</span></div><span class="who">ดร.วรรณวิมล คงสุวรรณ (งานการพยาบาลผ่าตัด)</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
-</section>
-<section class="day holiday" data-date="2026-10-03">
-  <div class="day-head"><span class="day-head-text">วันเสาร์ 3 ต.ค. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day holiday" data-date="2026-10-04">
-  <div class="day-head"><span class="day-head-text">วันอาทิตย์ 4 ต.ค. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day" data-date="2026-10-05">
-  <div class="day-head"><span class="day-head-text">วันจันทร์ 5 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-05">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–11.00</span><div class="row-body"><div class="topic-line"><span class="topic">Design Thinking in Healthcare (เลื่อนเวลา จากเดิม 09.00–12.00)</span><span class="pill fmt-onsite">508</span></div><span class="who">นพ.สิชล ลือฤทธิพงษ์ และทีม (ศูนย์ขับเคลื่อนคุณค่าการบริการ)</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div></div>
+</details>
+<details class="day holiday" data-date="2026-10-03" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันเสาร์ 3 ต.ค. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day holiday" data-date="2026-10-04" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอาทิตย์ 4 ต.ค. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day" data-date="2026-10-05">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันจันทร์ 5 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-05">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–11.00</span><div class="row-body"><div class="topic-line"><span class="topic">Design Thinking in Healthcare (เลื่อนเวลา จากเดิม 09.00–12.00)</span><span class="pill fmt-onsite">508</span></div><span class="who">นพ.สิชล ลือฤทธิพงษ์ และทีม (ศูนย์ขับเคลื่อนคุณค่าการบริการ)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–15.00</span><div class="row-body"><div class="topic-line"><span class="topic">การจัดทำโครงการพัฒนาคุณภาพ</span><span class="pill fmt-onsite">508</span></div><span class="who">ดร.วรรณวิมล คงสุวรรณ (งานการพยาบาลผ่าตัด)</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
-</section>
-<section class="day" data-date="2026-10-06">
-  <div class="day-head"><span class="day-head-text">วันอังคาร 6 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-06">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">Anatomy and Physiology and Surgery in GI Surgery (ย้ายมาจาก 15 ก.ย.69)</span><span class="pill fmt-onsite">508</span></div><span class="who">อ.พญ.อิสริยา มงคลศุภวาร (ภาควิชาศัลยศาสตร์)</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div></div>
+</details>
+<details class="day" data-date="2026-10-06">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอังคาร 6 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-06">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">Anatomy and Physiology and Surgery in GI Surgery (ย้ายมาจาก 15 ก.ย.69)</span><span class="pill fmt-onsite">508</span></div><span class="who">อ.พญ.อิสริยา มงคลศุภวาร (ภาควิชาศัลยศาสตร์)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">10.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">Anatomy Physiology and Surgery in vascular surgery</span><span class="pill fmt-onsite">508</span></div><span class="who">ผศ.ดร.นพ.คณินท์ พฤกษ์ประเสริฐ (ภาควิชาศัลยศาสตร์)</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div>
-</section>
-<section class="day" data-date="2026-10-07">
-  <div class="day-head"><span class="day-head-text">วันพุธ 7 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-07">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">สัมมนากลุ่ม 1–2</span><span class="pill fmt-onsite">508</span></div><span class="who">อาจารย์ประจำกลุ่มและทีมอาจารย์ผู้สอน</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">สัมมนากลุ่ม 3–4</span><span class="pill fmt-onsite">508</span></div><span class="who">อาจารย์ประจำกลุ่มและทีมอาจารย์ผู้สอน</span></div></div></div>
-</section>
-<section class="day" data-date="2026-10-08">
-  <div class="day-head"><span class="day-head-text">วันพฤหัสบดี 8 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-08">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">สัมมนากลุ่ม 5–6</span><span class="pill fmt-onsite">508</span></div><span class="who">อาจารย์ประจำกลุ่มและทีมอาจารย์ผู้สอน</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">สัมมนากลุ่ม 7–8</span><span class="pill fmt-onsite">508</span></div><span class="who">อาจารย์ประจำกลุ่มและทีมอาจารย์ผู้สอน</span></div></div></div>
-</section>
-<div class="week-div">สัปดาห์ที่ 9</div><section class="day" data-date="2026-10-09">
-  <div class="day-head"><span class="day-head-text">วันศุกร์ 9 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-09">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.45–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">หลักการบริหารและจัดการงานการพยาบาล</span><span class="pill fmt-onsite">508</span></div><span class="who">ดร.วรรณวิมล คงสุวรรณ</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Self-study</span><span class="pill fmt-selfstudy">Self-study</span></div></div></div></div></div>
+</details>
+<details class="day" data-date="2026-10-07">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพุธ 7 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-07">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">สัมมนากลุ่ม 1–2</span><span class="pill fmt-onsite">508</span></div><span class="who">อาจารย์ประจำกลุ่มและทีมอาจารย์ผู้สอน</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">สัมมนากลุ่ม 3–4</span><span class="pill fmt-onsite">508</span></div><span class="who">อาจารย์ประจำกลุ่มและทีมอาจารย์ผู้สอน</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-10-08">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพฤหัสบดี 8 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-08">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">สัมมนากลุ่ม 5–6</span><span class="pill fmt-onsite">508</span></div><span class="who">อาจารย์ประจำกลุ่มและทีมอาจารย์ผู้สอน</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">สัมมนากลุ่ม 7–8</span><span class="pill fmt-onsite">508</span></div><span class="who">อาจารย์ประจำกลุ่มและทีมอาจารย์ผู้สอน</span></div></div></div></div>
+</details>
+<div class="week-div">สัปดาห์ที่ 9</div><details class="day" data-date="2026-10-09">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันศุกร์ 9 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-09">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.45–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">หลักการบริหารและจัดการงานการพยาบาล</span><span class="pill fmt-onsite">508</span></div><span class="who">ดร.วรรณวิมล คงสุวรรณ</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">10.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">Orientation การฝึกภาคปฏิบัติ</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.วริศรา ตุวยานนท์</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">OR</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
-</section>
-<section class="day holiday" data-date="2026-10-10">
-  <div class="day-head"><span class="day-head-text">วันเสาร์ 10 ต.ค. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day holiday" data-date="2026-10-11">
-  <div class="day-head"><span class="day-head-text">วันอาทิตย์ 11 ต.ค. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day" data-date="2026-10-12">
-  <div class="day-head"><span class="day-head-text">วันจันทร์ 12 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-12">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
-</section>
-<section class="day" data-date="2026-10-13">
-  <div class="day-head"><span class="day-head-text">วันอังคาร 13 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-13">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">–</span><div class="row-body"><div class="topic-line"><span class="topic">🛑 วันหยุด: วันคล้ายวันสวรรคตพระบาทสมเด็จพระบรมชนกาธิเบศร มหาภูมิพลอดุลยเดชมหาราช บรมนาถบพิตร</span><span class="pill fmt-onsite">Onsite</span></div></div></div></div>
-</section>
-<section class="day" data-date="2026-10-14">
-  <div class="day-head"><span class="day-head-text">วันพุธ 14 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-14">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Emergency Management in OR</span><span class="pill fmt-onsite">SIMSET อาคารอดุลยเดชวิกรม ชั้น 10 · แต่งกายสุภาพ (สวมกางเกง)</span></div></div></div></div>
-</section>
-<section class="day" data-date="2026-10-15">
-  <div class="day-head"><span class="day-head-text">วันพฤหัสบดี 15 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-15">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
-</section>
-<div class="week-div">สัปดาห์ที่ 10</div><section class="day" data-date="2026-10-16">
-  <div class="day-head"><span class="day-head-text">วันศุกร์ 16 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-16">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">–</span><div class="row-body"><div class="topic-line"><span class="topic">🛑 วันหยุด</span><span class="pill fmt-onsite">Onsite</span></div></div></div></div>
-</section>
-<section class="day holiday" data-date="2026-10-17">
-  <div class="day-head"><span class="day-head-text">วันเสาร์ 17 ต.ค. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day holiday" data-date="2026-10-18">
-  <div class="day-head"><span class="day-head-text">วันอาทิตย์ 18 ต.ค. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day" data-date="2026-10-19">
-  <div class="day-head"><span class="day-head-text">วันจันทร์ 19 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-19">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
-</section>
-<section class="day" data-date="2026-10-20">
-  <div class="day-head"><span class="day-head-text">วันอังคาร 20 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-20">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
-</section>
-<section class="day" data-date="2026-10-21">
-  <div class="day-head"><span class="day-head-text">วันพุธ 21 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-21">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
-</section>
-<section class="day" data-date="2026-10-22">
-  <div class="day-head"><span class="day-head-text">วันพฤหัสบดี 22 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-22">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
-</section>
-<div class="week-div">สัปดาห์ที่ 11</div><section class="day" data-date="2026-10-23">
-  <div class="day-head"><span class="day-head-text">วันศุกร์ 23 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-23">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">–</span><div class="row-body"><div class="topic-line"><span class="topic">🛑 วันหยุด: วันปิยมหาราช</span><span class="pill fmt-onsite">Onsite</span></div></div></div></div>
-</section>
-<section class="day holiday" data-date="2026-10-24">
-  <div class="day-head"><span class="day-head-text">วันเสาร์ 24 ต.ค. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day holiday" data-date="2026-10-25">
-  <div class="day-head"><span class="day-head-text">วันอาทิตย์ 25 ต.ค. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day" data-date="2026-10-26">
-  <div class="day-head"><span class="day-head-text">วันจันทร์ 26 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-26">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
-</section>
-<section class="day" data-date="2026-10-27">
-  <div class="day-head"><span class="day-head-text">วันอังคาร 27 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-27">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
-</section>
-<section class="day" data-date="2026-10-28">
-  <div class="day-head"><span class="day-head-text">วันพุธ 28 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-28">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
-</section>
-<section class="day" data-date="2026-10-29">
-  <div class="day-head"><span class="day-head-text">วันพฤหัสบดี 29 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-29">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
-</section>
-<div class="week-div">สัปดาห์ที่ 12</div><section class="day" data-date="2026-10-30">
-  <div class="day-head"><span class="day-head-text">วันศุกร์ 30 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-30">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
-</section>
-<section class="day holiday" data-date="2026-10-31">
-  <div class="day-head"><span class="day-head-text">วันเสาร์ 31 ต.ค. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day holiday" data-date="2026-11-01">
-  <div class="day-head"><span class="day-head-text">วันอาทิตย์ 1 พ.ย. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day" data-date="2026-11-02">
-  <div class="day-head"><span class="day-head-text">วันจันทร์ 2 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-02">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
-</section>
-<section class="day" data-date="2026-11-03">
-  <div class="day-head"><span class="day-head-text">วันอังคาร 3 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-03">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
-</section>
-<section class="day" data-date="2026-11-04">
-  <div class="day-head"><span class="day-head-text">วันพุธ 4 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-04">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
-</section>
-<section class="day" data-date="2026-11-05">
-  <div class="day-head"><span class="day-head-text">วันพฤหัสบดี 5 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-05">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
-</section>
-<div class="week-div">สัปดาห์ที่ 13</div><section class="day" data-date="2026-11-06">
-  <div class="day-head"><span class="day-head-text">วันศุกร์ 6 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-06">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
-</section>
-<section class="day holiday" data-date="2026-11-07">
-  <div class="day-head"><span class="day-head-text">วันเสาร์ 7 พ.ย. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day holiday" data-date="2026-11-08">
-  <div class="day-head"><span class="day-head-text">วันอาทิตย์ 8 พ.ย. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day" data-date="2026-11-09">
-  <div class="day-head"><span class="day-head-text">วันจันทร์ 9 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-09">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
-</section>
-<section class="day" data-date="2026-11-10">
-  <div class="day-head"><span class="day-head-text">วันอังคาร 10 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-10">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
-</section>
-<section class="day" data-date="2026-11-11">
-  <div class="day-head"><span class="day-head-text">วันพุธ 11 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-11">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
-</section>
-<section class="day" data-date="2026-11-12">
-  <div class="day-head"><span class="day-head-text">วันพฤหัสบดี 12 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-12">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">นำเสนอโครงการพัฒนาคุณภาพ</span><span class="pill fmt-onsite">508</span></div><span class="who">อาจารย์ภาคปฏิบัติและทีมอาจารย์ผู้สอน</span></div></div></div>
-</section>
-<div class="week-div">สัปดาห์ที่ 14</div><section class="day" data-date="2026-11-13">
-  <div class="day-head"><span class="day-head-text">วันศุกร์ 13 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-13">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">นำเสนอโครงการพัฒนาคุณภาพ (ต่อ)</span><span class="pill fmt-onsite">508</span></div><span class="who">อาจารย์ภาคปฏิบัติและทีมอาจารย์ผู้สอน</span></div></div></div>
-</section>
-<section class="day holiday" data-date="2026-11-14">
-  <div class="day-head"><span class="day-head-text">วันเสาร์ 14 พ.ย. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day holiday" data-date="2026-11-15">
-  <div class="day-head"><span class="day-head-text">วันอาทิตย์ 15 พ.ย. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day" data-date="2026-11-16">
-  <div class="day-head"><span class="day-head-text">วันจันทร์ 16 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-16">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
-</section>
-<section class="day" data-date="2026-11-17">
-  <div class="day-head"><span class="day-head-text">วันอังคาร 17 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-17">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
-</section>
-<section class="day" data-date="2026-11-18">
-  <div class="day-head"><span class="day-head-text">วันพุธ 18 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-18">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
-</section>
-<section class="day" data-date="2026-11-19">
-  <div class="day-head"><span class="day-head-text">วันพฤหัสบดี 19 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-19">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
-</section>
-<div class="week-div">สัปดาห์ที่ 15</div><section class="day" data-date="2026-11-20">
-  <div class="day-head"><span class="day-head-text">วันศุกร์ 20 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-20">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: GI Center ตึก 84/3 (กลุ่ม GEN 12 คน · เลื่อนจาก 27 พ.ย.) — Preceptor พว.ลักษมี</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">พว.ปฐมพร บุนนาค</span></div></div></div>
-</section>
-<section class="day holiday" data-date="2026-11-21">
-  <div class="day-head"><span class="day-head-text">วันเสาร์ 21 พ.ย. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day holiday" data-date="2026-11-22">
-  <div class="day-head"><span class="day-head-text">วันอาทิตย์ 22 พ.ย. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day" data-date="2026-11-23">
-  <div class="day-head"><span class="day-head-text">วันจันทร์ 23 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-23">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">OR</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div></div>
+</details>
+<details class="day holiday" data-date="2026-10-10" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันเสาร์ 10 ต.ค. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day holiday" data-date="2026-10-11" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอาทิตย์ 11 ต.ค. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day" data-date="2026-10-12">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันจันทร์ 12 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-12">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-10-13">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอังคาร 13 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-13">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">–</span><div class="row-body"><div class="topic-line"><span class="topic">🛑 วันหยุด: วันคล้ายวันสวรรคตพระบาทสมเด็จพระบรมชนกาธิเบศร มหาภูมิพลอดุลยเดชมหาราช บรมนาถบพิตร</span><span class="pill fmt-onsite">Onsite</span></div></div></div></div></div>
+</details>
+<details class="day" data-date="2026-10-14">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพุธ 14 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-14">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Emergency Management in OR</span><span class="pill fmt-onsite">SIMSET อาคารอดุลยเดชวิกรม ชั้น 10 · แต่งกายสุภาพ (สวมกางเกง)</span></div></div></div></div></div>
+</details>
+<details class="day" data-date="2026-10-15">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพฤหัสบดี 15 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-15">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div></div>
+</details>
+<div class="week-div">สัปดาห์ที่ 10</div><details class="day" data-date="2026-10-16">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันศุกร์ 16 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-16">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">–</span><div class="row-body"><div class="topic-line"><span class="topic">🛑 วันหยุด</span><span class="pill fmt-onsite">Onsite</span></div></div></div></div></div>
+</details>
+<details class="day holiday" data-date="2026-10-17" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันเสาร์ 17 ต.ค. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day holiday" data-date="2026-10-18" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอาทิตย์ 18 ต.ค. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day" data-date="2026-10-19">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันจันทร์ 19 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-19">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-10-20">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอังคาร 20 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-20">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-10-21">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพุธ 21 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-21">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-10-22">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพฤหัสบดี 22 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-22">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div></div>
+</details>
+<div class="week-div">สัปดาห์ที่ 11</div><details class="day" data-date="2026-10-23">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันศุกร์ 23 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-23">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">–</span><div class="row-body"><div class="topic-line"><span class="topic">🛑 วันหยุด: วันปิยมหาราช</span><span class="pill fmt-onsite">Onsite</span></div></div></div></div></div>
+</details>
+<details class="day holiday" data-date="2026-10-24" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันเสาร์ 24 ต.ค. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day holiday" data-date="2026-10-25" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอาทิตย์ 25 ต.ค. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day" data-date="2026-10-26">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันจันทร์ 26 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-26">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-10-27">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอังคาร 27 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-27">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-10-28">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพุธ 28 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-28">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-10-29">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพฤหัสบดี 29 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-29">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div></div>
+</details>
+<div class="week-div">สัปดาห์ที่ 12</div><details class="day" data-date="2026-10-30">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันศุกร์ 30 ต.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-10-30">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div></div>
+</details>
+<details class="day holiday" data-date="2026-10-31" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันเสาร์ 31 ต.ค. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day holiday" data-date="2026-11-01" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอาทิตย์ 1 พ.ย. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day" data-date="2026-11-02">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันจันทร์ 2 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-02">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-11-03">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอังคาร 3 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-03">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-11-04">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพุธ 4 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-04">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-11-05">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพฤหัสบดี 5 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-05">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div></div>
+</details>
+<div class="week-div">สัปดาห์ที่ 13</div><details class="day" data-date="2026-11-06">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันศุกร์ 6 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-06">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div></div>
+</details>
+<details class="day holiday" data-date="2026-11-07" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันเสาร์ 7 พ.ย. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day holiday" data-date="2026-11-08" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอาทิตย์ 8 พ.ย. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day" data-date="2026-11-09">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันจันทร์ 9 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-09">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-11-10">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอังคาร 10 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-10">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-11-11">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพุธ 11 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-11">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-11-12">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพฤหัสบดี 12 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-12">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">นำเสนอโครงการพัฒนาคุณภาพ</span><span class="pill fmt-onsite">508</span></div><span class="who">อาจารย์ภาคปฏิบัติและทีมอาจารย์ผู้สอน</span></div></div></div></div>
+</details>
+<div class="week-div">สัปดาห์ที่ 14</div><details class="day" data-date="2026-11-13">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันศุกร์ 13 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-13">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">นำเสนอโครงการพัฒนาคุณภาพ (ต่อ)</span><span class="pill fmt-onsite">508</span></div><span class="who">อาจารย์ภาคปฏิบัติและทีมอาจารย์ผู้สอน</span></div></div></div></div>
+</details>
+<details class="day holiday" data-date="2026-11-14" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันเสาร์ 14 พ.ย. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day holiday" data-date="2026-11-15" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอาทิตย์ 15 พ.ย. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day" data-date="2026-11-16">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันจันทร์ 16 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-16">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-11-17">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอังคาร 17 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-17">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-11-18">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพุธ 18 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-18">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-11-19" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพฤหัสบดี 19 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-19">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div></div>
+</details>
+<div class="week-div">สัปดาห์ที่ 15</div><details class="day" data-date="2026-11-20">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันศุกร์ 20 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-20">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: GI Center ตึก 84/3 (กลุ่ม GEN 12 คน · เลื่อนจาก 27 พ.ย.) — Preceptor พว.ลักษมี</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">พว.ปฐมพร บุนนาค</span></div></div></div></div>
+</details>
+<details class="day holiday" data-date="2026-11-21" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันเสาร์ 21 พ.ย. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day holiday" data-date="2026-11-22" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอาทิตย์ 22 พ.ย. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day" data-date="2026-11-23">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันจันทร์ 23 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-23">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">10.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: คลินิกเวชศาสตร์การกีฬา (กลุ่ม ORTHO 6 คน) — Preceptor พว.อัญชลี</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">พว.ดวงดาว มหา (ภาควิชาศัลยศาสตร์ออร์โธปิดิกส์และกายภาพบำบัด สาขาเวชศาสตร์การกีฬา)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: RR3 (กลุ่ม EYE 5 คน) — Preceptor พว.อัจฉราวดี</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">พว.เบญจวรรณ พวงเพชร</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: RR4 (กลุ่ม CVT 6 คน) — Preceptor พว.วิไลวรรณ</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">พว.ทวิวรรณ อินทรแก้ว</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: RR5 (กลุ่ม GEN 6 คน) — Preceptor พว.อุชุตา</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">พว.พัทธมน ทิพกร</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: หน่วยตรวจและติดตามผลการรักษาออร์โธปิดิกส์ (กลุ่ม ORTHO 6 คน) — Preceptor พว.อัญชลี</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">พว.วริศรา เข็มทอง</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: Stroke Unit (กลุ่ม Neuro 5 คน) — Preceptor พว.ธนพรรณ</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">พว.มนันชยา กองเมืองปัก (งานการพยาบาลอายุรศาสตร์)</span></div></div></div>
-</section>
-<section class="day" data-date="2026-11-24">
-  <div class="day-head"><span class="day-head-text">วันอังคาร 24 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-24">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: Stroke Unit (กลุ่ม Neuro 5 คน) — Preceptor พว.ธนพรรณ</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">พว.มนันชยา กองเมืองปัก (งานการพยาบาลอายุรศาสตร์)</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-11-24">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอังคาร 24 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-24">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: RR3 (กลุ่ม ORTHO 6 คน) — Preceptor พว.อัญชลี</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">พว.เบญจวรรณ พวงเพชร</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: RR4 (กลุ่ม Neuro 5 คน) — Preceptor พว.ธนพรรณ</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">พว.ทวิวรรณ อินทรแก้ว</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: RR5 (กลุ่ม GEN 6 คน) — Preceptor พว.อุชุตา</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">พว.พัทธมน ทิพกร</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: หน่วยผ่าตัดและตรวจพิเศษระบบปัสสาวะ (กลุ่ม URO 4 คน) — Preceptor พว.นัทฐา</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">พว.เกษร สีนิลแท้, พว.ประภัสสร ปฏิพันธ์</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: Fetal therapy center ตึกพระศรีฯ ชั้น 6 (กลุ่ม OBG 5 คน) — Preceptor พว.ฐิติยา</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">พว.สมหมาย วิบูลย์ชาติ</span></div></div></div>
-</section>
-<section class="day" data-date="2026-11-25">
-  <div class="day-head"><span class="day-head-text">วันพุธ 25 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-25">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: ห้องตรวจ CVT ตึกสยามินทร์ ชั้น 1 (กลุ่ม CVT 6 คน) — Preceptor พว.วิไลวรรณ</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">พว.วนิดา อาจศิริ</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: Fetal therapy center ตึกพระศรีฯ ชั้น 6 (กลุ่ม OBG 5 คน) — Preceptor พว.ฐิติยา</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">พว.สมหมาย วิบูลย์ชาติ</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-11-25">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพุธ 25 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-25">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: ห้องตรวจ CVT ตึกสยามินทร์ ชั้น 1 (กลุ่ม CVT 6 คน) — Preceptor พว.วิไลวรรณ</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">พว.วนิดา อาจศิริ</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: ห้องตรวจ Vascular ตึกสยามินทร์ ชั้น 1 (กลุ่ม GEN 12 คน) — Preceptor พว.ลักษมี</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">พว.กุลรดา ศิวสฤษดิ์</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: RR4 (กลุ่ม ENT 5 คน) — Preceptor พว.สุภาวดี</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">พว.ทวิวรรณ อินทรแก้ว</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: RR5 (กลุ่ม Uro 4 คน) — Preceptor พว.ญาณนันท์</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">พว.พัทธมน ทิพกร</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: หน่วยตรวจโรคนรีเวชวิทยา (กลุ่ม OBG 5 คน) — Preceptor พว.ฐิติยา</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">พว.มัลลิกา วังสระ (งานการพยาบาลสูติศาสตร์-นรีเวชวิทยา)</span></div></div></div>
-</section>
-<section class="day" data-date="2026-11-26">
-  <div class="day-head"><span class="day-head-text">วันพฤหัสบดี 26 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-26">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: ห้องตรวจจักษุ (กลุ่ม EYE 5 คน) — Preceptor พว.อัจฉราวดี</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">พว.สุพัตรา ศราธพันธ์</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: หน่วยตรวจโรคนรีเวชวิทยา (กลุ่ม OBG 5 คน) — Preceptor พว.ฐิติยา</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">พว.มัลลิกา วังสระ (งานการพยาบาลสูติศาสตร์-นรีเวชวิทยา)</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-11-26">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพฤหัสบดี 26 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-26">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: ห้องตรวจจักษุ (กลุ่ม EYE 5 คน) — Preceptor พว.อัจฉราวดี</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">พว.สุพัตรา ศราธพันธ์</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: ห้องตรวจพิเศษ ENT ตึกสยามินทร์ ชั้น 1 (กลุ่ม ENT 5 คน) — Preceptor พว.สุภาวดี</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">พว.วิมลทิพย์ ศรีเจริญ</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: BREAST CENTER (กลุ่ม GEN 12 คน) — Preceptor พว.วทัญญุตา</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">พว.เยาวลักษณ์ คล้ายทอง</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: BREAST CENTER (กลุ่ม OBGYN 5 คน) — Preceptor พว.ฐิติยา</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">พว.เยาวลักษณ์ คล้ายทอง</span></div></div></div>
-</section>
-<div class="week-div">สัปดาห์ที่ 16</div><section class="day" data-date="2026-11-27">
-  <div class="day-head"><span class="day-head-text">วันศุกร์ 27 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-27">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–11.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice (ครึ่งวันเช้า — ขึ้นรถดูงาน 11.00 น.)</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: BREAST CENTER (กลุ่ม OBGYN 5 คน) — Preceptor พว.ฐิติยา</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">พว.เยาวลักษณ์ คล้ายทอง</span></div></div></div></div>
+</details>
+<div class="week-div">สัปดาห์ที่ 16</div><details class="day" data-date="2026-11-27">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันศุกร์ 27 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-27">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–11.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice (ครึ่งวันเช้า — ขึ้นรถดูงาน 11.00 น.)</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">11.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">ดูงาน OR รพ.จุฬาภรณ์ (รถออกคณะพยาบาลศาสตร์ 11.00 น.)</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">Preceptor: พว.ญาณนันท์ 089-048-5809, พว.อุชุตา 095-813-7655</span></div></div></div>
-<div class="row cancelled"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: GI Center ตึก 84/3 (กลุ่ม GEN 12 คน) → ย้ายไป 20 พ.ย. 13.00–16.00</span><span class="pill fmt-cancelled">เลื่อน</span></div><span class="who">พว.ปฐมพร บุนนาค</span></div></div></div>
-</section>
-<section class="day holiday" data-date="2026-11-28">
-  <div class="day-head"><span class="day-head-text">วันเสาร์ 28 พ.ย. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day holiday" data-date="2026-11-29">
-  <div class="day-head"><span class="day-head-text">วันอาทิตย์ 29 พ.ย. 2569</span></div>
-  <div class="holiday-row">— วันหยุด —</div>
-</section>
-<section class="day" data-date="2026-11-30">
-  <div class="day-head"><span class="day-head-text">วันจันทร์ 30 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-30">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
+<div class="row cancelled"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Site visit: GI Center ตึก 84/3 (กลุ่ม GEN 12 คน) → ย้ายไป 20 พ.ย. 13.00–16.00</span><span class="pill fmt-cancelled">เลื่อน</span></div><span class="who">พว.ปฐมพร บุนนาค</span></div></div></div></div>
+</details>
+<details class="day holiday" data-date="2026-11-28" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันเสาร์ 28 พ.ย. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day holiday" data-date="2026-11-29" open>
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอาทิตย์ 29 พ.ย. 2569</span></summary>
+  <div class="day-body"><div class="holiday-row">— วันหยุด —</div></div>
+</details>
+<details class="day" data-date="2026-11-30">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันจันทร์ 30 พ.ย. 2569</span><button type="button" class="day-week-link" data-date="2026-11-30">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">Clinical practice</span><span class="pill fmt-clinical">หอผู้ป่วย</span></div><span class="who">อาจารย์ภาคปฏิบัติ</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–14.00</span><div class="row-body"><div class="topic-line"><span class="topic">Evolution Treatment of Acute Limb Ischemia (ย้ายจาก 2 ธ.ค.)</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.อาณดา แก้วนาคุณมณี (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">14.00–15.00</span><div class="row-body"><div class="topic-line"><span class="topic">Perioperative Nursing Care in MIS Cardiovascular Thoracic Surgery (ย้ายจาก 2 ธ.ค.)</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.อรวรรณ คำเหล้า (งานการพยาบาลผ่าตัด)</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Hip Fast Track (ย้ายจาก 2 ธ.ค.)</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.พลอยชนกภรณ์ กุลวัฒนาพันธ์ (งานการพยาบาลผ่าตัด)</span></div></div></div>
-</section>
-<section class="day" data-date="2026-12-01">
-  <div class="day-head"><span class="day-head-text">วันอังคาร 1 ธ.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-12-01">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–09.00</span><div class="row-body"><div class="topic-line"><span class="topic">บทบาทการพยาบาลในการผ่าตัดผู้ป่วย Hemorrhagic Stroke</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.ธนัชพร ผลทวีชัย (งานการพยาบาลผ่าตัด)</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Hip Fast Track (ย้ายจาก 2 ธ.ค.)</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.พลอยชนกภรณ์ กุลวัฒนาพันธ์ (งานการพยาบาลผ่าตัด)</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-12-01">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันอังคาร 1 ธ.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-12-01">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–09.00</span><div class="row-body"><div class="topic-line"><span class="topic">บทบาทการพยาบาลในการผ่าตัดผู้ป่วย Hemorrhagic Stroke</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.ธนัชพร ผลทวีชัย (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">09.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">บทบาทการพยาบาลกับ New Technology in Urology Surgery</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.ญาณนันท์ รัตนธีรวิเชียร (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">10.00–11.00</span><div class="row-body"><div class="topic-line"><span class="topic">บทบาทการพยาบาลในการผ่าตัด Pressurized Intraperitoneal Aerosol Chemotherapy (PIPAC)</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.สุนันทา ดิษฐประเสริฐ (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">11.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">นวัตกรรมการให้ความรู้ผู้ป่วยเพื่อส่งเสริมการฟื้นตัวหลังผ่าตัด</span><span class="pill fmt-onsite">508</span></div><span class="who">ดร.สุทธินี ทองทิพย์ (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–14.00</span><div class="row-body"><div class="topic-line"><span class="topic">บทบาทพยาบาลห้องผ่าตัดกับการผ่าตัดเปลี่ยนกระจกตา</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.อัจฉราวดี สุบรรณเสณี (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">14.00–15.00</span><div class="row-body"><div class="topic-line"><span class="topic">บทบาทการพยาบาลในการผ่าตัด Lymphedema</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.พีรดา คุณานันทกิจ (งานการพยาบาลผ่าตัด)</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">บทบาทของพยาบาลในการผ่าตัด Endoscopic Assisted Mastectomy</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.ธันยชนก จิรภัตตานนท์ (งานการพยาบาลผ่าตัด)</span></div></div></div>
-</section>
-<section class="day" data-date="2026-12-02">
-  <div class="day-head"><span class="day-head-text">วันพุธ 2 ธ.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-12-02">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–09.00</span><div class="row-body"><div class="topic-line"><span class="topic">บทบาทพยาบาลห้องผ่าตัดในการดูแลผู้ป่วยโรคหลอดเลือด</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.รัตนา เพียรเจริญสิน (งานการพยาบาลผ่าตัด)</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">บทบาทของพยาบาลในการผ่าตัด Endoscopic Assisted Mastectomy</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.ธันยชนก จิรภัตตานนท์ (งานการพยาบาลผ่าตัด)</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-12-02">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพุธ 2 ธ.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-12-02">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–09.00</span><div class="row-body"><div class="topic-line"><span class="topic">บทบาทพยาบาลห้องผ่าตัดในการดูแลผู้ป่วยโรคหลอดเลือด</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.รัตนา เพียรเจริญสิน (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">09.00–10.00</span><div class="row-body"><div class="topic-line"><span class="topic">บทบาทการพยาบาลผู้ป่วย CA Endometrium</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.ธิติยา ศาลไพล (งานการพยาบาลสูติศาสตร์-นรีเวชวิทยา)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">10.00–11.00</span><div class="row-body"><div class="topic-line"><span class="topic">บทบาทพยาบาลในการดูแลผู้ป่วยผ่าตัด Full Endoscopic Discectomy</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.กฤษณี ก้อนพิงค์ (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">11.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">New Technology in GI Scope: What Endoscopy Nurses Should Know?</span><span class="pill fmt-onsite">508</span></div><span class="who">พว.ภัคภร เกตุสีสังข์ (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">ดูงาน OR &amp; CSSD รพ.ศิริราชปิยมหาราชการุณย์ (Siph) — นัดห้อง 508 คณะพยาบาลศาสตร์ 13.00 น. ฟัง brief จากวิทยากรก่อนไปดูงาน</span><span class="pill fmt-sitevisit">Site visit</span></div><span class="who">Preceptor: พว.ปิยนันท์ (ENT), พว.วิราพร (Ortho)</span></div></div></div>
 <div class="row cancelled"><div class="row-main"><span class="time">13.00–14.00</span><div class="row-body"><div class="topic-line"><span class="topic">Evolution Treatment of Acute Limb Ischemia → ย้ายไป 30 พ.ย. 13.00–14.00</span><span class="pill fmt-cancelled">เลื่อน</span></div><span class="who">พว.อาณดา แก้วนาคุณมณี (งานการพยาบาลผ่าตัด)</span></div></div></div>
 <div class="row cancelled"><div class="row-main"><span class="time">14.00–15.00</span><div class="row-body"><div class="topic-line"><span class="topic">Perioperative Nursing Care in MIS Cardiovascular Thoracic Surgery → ย้ายไป 30 พ.ย. 14.00–15.00</span><span class="pill fmt-cancelled">เลื่อน</span></div><span class="who">พว.อรวรรณ คำเหล้า (งานการพยาบาลผ่าตัด)</span></div></div></div>
-<div class="row cancelled"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Hip Fast Track → ย้ายไป 30 พ.ย. 15.00–16.00</span><span class="pill fmt-cancelled">เลื่อน</span></div><span class="who">พว.พลอยชนกภรณ์ กุลวัฒนาพันธ์ (งานการพยาบาลผ่าตัด)</span></div></div></div>
-</section>
-<section class="day" data-date="2026-12-03">
-  <div class="day-head"><span class="day-head-text">วันพฤหัสบดี 3 ธ.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-12-03">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">สะท้อนคิด ผลที่ได้รับ</span><span class="pill fmt-onsite">508</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ และทีมอาจารย์ผู้สอน</span></div></div></div>
-<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">ประเมินผลการเรียนการสอน</span><span class="pill fmt-onsite">508</span></div><span class="who">ทีมอาจารย์ผู้สอน</span></div></div></div>
-</section>
-<section class="day" data-date="2026-12-04">
-  <div class="day-head"><span class="day-head-text">วันศุกร์ 4 ธ.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-12-04">ดูรายสัปดาห์</button></div>
-  <div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">พิธีปิดการอบรม</span><span class="pill fmt-onsite">301</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ และทีมอาจารย์ผู้สอน</span></div></div></div>
-</section>
+<div class="row cancelled"><div class="row-main"><span class="time">15.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">Hip Fast Track → ย้ายไป 30 พ.ย. 15.00–16.00</span><span class="pill fmt-cancelled">เลื่อน</span></div><span class="who">พว.พลอยชนกภรณ์ กุลวัฒนาพันธ์ (งานการพยาบาลผ่าตัด)</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-12-03">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันพฤหัสบดี 3 ธ.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-12-03">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">สะท้อนคิด ผลที่ได้รับ</span><span class="pill fmt-onsite">508</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ และทีมอาจารย์ผู้สอน</span></div></div></div>
+<div class="row"><div class="row-main"><span class="time">13.00–16.00</span><div class="row-body"><div class="topic-line"><span class="topic">ประเมินผลการเรียนการสอน</span><span class="pill fmt-onsite">508</span></div><span class="who">ทีมอาจารย์ผู้สอน</span></div></div></div></div>
+</details>
+<details class="day" data-date="2026-12-04">
+  <summary class="day-head"><span class="day-caret" aria-hidden="true">▸</span><span class="day-head-text">วันศุกร์ 4 ธ.ค. 2569</span><button type="button" class="day-week-link" data-date="2026-12-04">ดูรายสัปดาห์</button></summary>
+  <div class="day-body"><div class="row"><div class="row-main"><span class="time">08.00–12.00</span><div class="row-body"><div class="topic-line"><span class="topic">พิธีปิดการอบรม</span><span class="pill fmt-onsite">301</span></div><span class="who">ศ.ดร.อุษาวดี อัศดรวิเศษ และทีมอาจารย์ผู้สอน</span></div></div></div></div>
+</details>
         </main>
       </div>
     </div>
@@ -1437,6 +1448,7 @@ body.docs-mode #fabToday { display: none; }
     // else 'ถัดไป' (next class, e.g. weekend/holiday)
     var label = exact ? 'วันนี้' : 'ถัดไป';
     target.classList.add('today');
+    if (target.tagName === 'DETAILS') { target.open = true; }
     var head = target.querySelector('.day-head-text') || target.querySelector('.day-head');
     if (head && !head.querySelector('.today-badge')) {
       var badge = document.createElement('span');
@@ -1597,7 +1609,9 @@ body.docs-mode #fabToday { display: none; }
   });
 
   links.forEach(function (link) {
-    link.addEventListener('click', function () {
+    link.addEventListener('click', function (ev) {
+      // the button lives inside <summary> — don't let it toggle the accordion
+      if (ev) { ev.preventDefault(); ev.stopPropagation(); }
       var gridTab = document.querySelector('.view-tab[data-view="grid"]');
       if (gridTab) gridTab.click();
 
